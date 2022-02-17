@@ -2,7 +2,7 @@
 //  Avatar.swift
 //  Ladle_thePlot
 //
-//  Created by Jasmine Aufiero on 13/02/22.
+//  Created by Irene Fernando on 17/02/22.
 //
 
 import SwiftUI
