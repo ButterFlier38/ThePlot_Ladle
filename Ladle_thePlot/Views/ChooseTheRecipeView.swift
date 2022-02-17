@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChooseTheRecipeView: View {
     @StateObject private var modelView = RecipeViewModel()
+    @Binding var username : String
     
     let layout = [
         GridItem(.flexible(minimum: 175)),
@@ -32,7 +33,15 @@ struct ChooseTheRecipeView: View {
                 Text("Recipes").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
                     .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
                     .shadow(color: CustomColor.selectionblue, radius: 3)
-                
+                Text("lala").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+                    .shadow(color: CustomColor.selectionblue, radius: 3)
+                Text("\(username)").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+                    .shadow(color: CustomColor.selectionblue, radius: 3)
+                Text(self.username).font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+                    .shadow(color: CustomColor.selectionblue, radius: 3)
                 LazyVGrid(columns: layout ,content: {
                     ForEach(modelView.recipesStore) { recipe in
                         NavigationLink {
@@ -52,10 +61,4 @@ struct ChooseTheRecipeView: View {
     }
 }
 
-struct ChooseTheRecipeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChooseTheRecipeView()
-            .previewDevice("iPad Pro (11-inch) (3rd generation)")
-.previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+

@@ -14,11 +14,12 @@ struct IngredientsView: View {
         
         GeometryReader { geometry in
         ZStack{
+            ZStack{
             Circle().foregroundColor(CustomColor.bggreen).scaleEffect(0.57).position(x: 650, y: 170)
             Circle().foregroundColor(CustomColor.bgblue).scaleEffect(0.45).position(x: 370, y: 80)
             Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.35).position(x: 1100, y: 60)
             Circle().foregroundColor(CustomColor.bgyellow).scaleEffect(0.45).position(x: 900, y: 100)
-                        
+            }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9,alignment: .topTrailing)
             
             Ellipse().foregroundColor(CustomColor.bggreen)
                 .scaleEffect(1.2).position(x: 570, y: 950)
