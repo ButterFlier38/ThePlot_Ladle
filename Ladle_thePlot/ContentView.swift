@@ -11,6 +11,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView  {
 //            AvatarSelectionView()
+            
+            
+//         TimelineView(recipe: RecipeViewModel().recipesStore[0])
+            
+            
             NameInputView()
         }.navigationBarHidden(true)
             .navigationViewStyle(StackNavigationViewStyle())

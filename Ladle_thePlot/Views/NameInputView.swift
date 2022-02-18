@@ -21,12 +21,9 @@ struct CustomColor {
     // Add more here...
 }
 
-
-
-
 struct NameInputView: View {
-    @State public var usernamee: String = "fg"
-   
+    @State public var usernamee: String = "gh"
+    @State public var name: String = ""
     var body: some View {
         GeometryReader { geometry in
         ZStack{
@@ -55,9 +52,18 @@ struct NameInputView: View {
                                          RoundedRectangle(cornerRadius: 60)
                                              .stroke(CustomColor.selectionblue, lineWidth: 4))
 //
-                    
-                    TextField("Input name", text: $usernamee,onCommit: {ChooseTheRecipeView(username: $usernamee)}).frame(width: 300, height: 80, alignment: .center).font(Font.custom("HappyMonkey-Regular", size: 20)).foregroundColor(CustomColor.selectionblue) .shadow(color: CustomColor.bgblue, radius: 1)
+//                    ChooseTheRecipeView(username: $usernamee)
+//                    Accessing State's value outside of being installed on a View. This will result in a constant Binding of the initial value and will not update.
+                    TextField("Input name", text: $usernamee
+                         ,onCommit: {name = usernamee})
+                        .frame(width: 300, height: 80, alignment: .center)
+                        .font(Font.custom("HappyMonkey-Regular", size: 20))
+                        .foregroundColor(CustomColor.selectionblue)
+                        .shadow(color: CustomColor.bgblue, radius: 1)
                    }
+                Text("\(name)").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+                    .shadow(color: CustomColor.selectionblue, radius: 3)
                 NavigationLink {
                     AvatarSelectionView()
                    

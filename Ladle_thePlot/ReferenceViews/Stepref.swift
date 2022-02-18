@@ -1,17 +1,15 @@
 //
-//  CreateRecipeView.swift
+//  Step1.swift
 //  Ladle_thePlot
 //
-//  Created by Irene Fernando on 11/02/22.
+//  Created by Irene Fernando on 17/02/22.
 //
 
 import SwiftUI
 
-
-
-struct CreateRecipeView: View {
-    
+struct Step12: View {
     @State var dragAmount = CGSize.zero
+    var recipe :Recipe
     
     var body: some View {
         
@@ -22,71 +20,55 @@ struct CreateRecipeView: View {
 //               TimelineView(recipe: RecipeViewModel().recipesStore[0]))
 //
         ZStack{
-            RoundedRectangle(cornerRadius: 50, style: .continuous)
+            RoundedRectangle(cornerRadius: 100, style: .continuous)
                 .foregroundColor(CustomColor.bggreen)
                 .ignoresSafeArea()
-                .offset(x: geometry.size.width/8, y: 0)
+                .offset(x: geometry.size.width/9, y: 0)
             
 //            i put geometry.size.width/8 as the width of the space dedicated to the timeline in the screenso that all the other measures take this dimesnion into account
+         
             
+            ZStack{
+                Path { path in
+                    path.move(to: CGPoint(x: geometry.size.width/10, y: geometry.size.height/11))
+                    path.addLine(to: CGPoint(x: geometry.size.width/10, y: geometry.size.height - 50))
+//                    path.move(to: CGPoint(x: 0, y: 0))
+//                    path.addLine(to: CGPoint(x:0, y: 0))
+                }
+                .stroke(CustomColor.selectionblue, style: StrokeStyle(lineWidth: 10, dash: [20]))
+        VStack{
             Text("Start")
                 .font(Font.custom("HappyMonkey-Regular", size: 40))
                 .foregroundColor(CustomColor.selectionblue)
 //                .shadow(color: CustomColor.selectionblue, radius: 3, x: 2, y: 2)
-                .position(x: geometry.size.width/18, y: geometry.size.height/20 - 20)
+                .position(x: geometry.size.width/18, y: geometry.size.height/10 - 10)
             
-//            timeline dotted line
-            Path { path in
-                path.move(to: CGPoint(x: geometry.size.width/20, y: geometry.size.height/11))
-                path.addLine(to: CGPoint(x: geometry.size.width/20, y: geometry.size.height - 50))
-
-            }
-            .stroke(CustomColor.selectionblue, style: StrokeStyle(lineWidth: 10, dash: [20]))
-            
-            
-//            timeline
-            VStack (alignment: .trailing, spacing: 2){
-                
-              
+            ForEach(recipe.noofsteps, id: \.self){step in
+                NavigationLink(destination: Step0()){
+                    Spacer()
+                ZStack{
                     
-
-                Group {
-//               for in in steps yit needs to print the number in the circle
-                    Circle()
-                        .overlay(
-                    Text("1")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
+                Circle()
+                   
+                        Text(step.description)
                         .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("2")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("3")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("4")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("5")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
+                        .font(Font.custom("HappyMonkey-Regular", size: 30))
+                    }
+                .navigationViewStyle(.columns)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
                 }
-                .scaleEffect(0.5)
-                .foregroundColor(CustomColor.selectionblue)
                 
-            }.position(x: geometry.size.width/20, y: geometry.size.width/3)
+//                Text("\(recipe.noofsteps)").foregroundColor(.black)
+            }
+        
+        }.frame(width: 110, height: 950, alignment: .leading)
+            }
+//            .frame(width: 100, height: 900, alignment: .center)
+      
+        .position(x: geometry.size.width/20, y: geometry.size.width/3)
+                
+         
             
             VStack (spacing:2) {
                 
@@ -163,7 +145,7 @@ struct CreateRecipeView: View {
                         .scaleEffect(0.8)
                         .aspectRatio(0.7, contentMode: .fit)
 //                        .position(x: 250, y: 650)
-                        .position(x: geometry.size.width/4.3, y: geometry.size.height/2.6)
+                        .position(x: geometry.size.width/4.6, y: geometry.size.height/2.6)
                     
 //                    blender
                     Circle()
@@ -182,11 +164,11 @@ struct CreateRecipeView: View {
         } //close geometry bracket
     }
     }
-}
+    }
 
-struct CreateRecipeView_Previews: PreviewProvider {
+
+struct Step12_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRecipeView().previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
+        Step12(recipe: RecipeViewModel().recipesStore[0])
     }
 }

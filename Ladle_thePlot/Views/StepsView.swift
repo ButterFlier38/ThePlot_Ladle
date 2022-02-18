@@ -23,16 +23,7 @@ struct StepsView: View {
             Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.5).position(x: 530, y: 850)
             }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9,alignment: .topTrailing)
         VStack{
-            HStack{
-                Spacer().frame(width: 20)
-                NavigationLink( destination: IngredientsView()){
-                    ZStack{
-            Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-                    Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-                }
-                
-        Text("Steps").font(Font.custom("HappyMonkey-Regular", size: 80 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading)              .shadow(color: CustomColor.selectionblue, radius: 10)
-            }
+          
             VStack{
             VStack(alignment: .leading){
                 ZStack{
@@ -77,7 +68,7 @@ struct StepsView: View {
             }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing, 70)
                 
             }
-            .navigationBarHidden(true)
+           
                 Spacer()
              
             }
@@ -103,7 +94,10 @@ struct StepsView: View {
                                 .aspectRatio(0.7, contentMode: .fit)
                                 .position(x: 170, y: 650)
             NavigationLink {
-                            CreateRecipeView()
+                Step0()
+//                Step1(recipe: RecipeViewModel().recipesStore[0])
+//                TimelineView(recipe: RecipeViewModel().recipesStore[0])
+//                CreateRecipeView()
                          } label: {
                              RoundedRectangle(cornerRadius: 60, style: .continuous)
                                  .fill(CustomColor.selectionblue)
@@ -112,38 +106,31 @@ struct StepsView: View {
                                      Text("Continue").font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
 
                          }  .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
-        }
-//                                .navigationBarItems(leading:
-//                                ZStack{
-//                        Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-//                                Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-//
-//                                , trailing:     ZStack{
-//            Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-//                    Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-//                )
-           
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar{
-            ToolbarItem(placement:.principal){
-                Text("Steps")
-                    .font(Font.custom("HappyMonkey-Regular", size: 80))
-                    .foregroundColor(CustomColor.selectionblue)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .shadow(color: CustomColor.selectionblue, radius: 10)
-            }
+            
+                .navigationBarTitleDisplayMode(.large) .edgesIgnoringSafeArea(.bottom)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        ZStack{
+                                  Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
+                                          Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
+                                      })
+                .toolbar{
+                    ToolbarItem(placement:.principal){
+                        Text("Steps")
+                            .font(Font.custom("HappyMonkey-Regular", size: 80))
+                            .foregroundColor(CustomColor.selectionblue)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .shadow(color: CustomColor.selectionblue, radius: 10)
+                    }
+                } .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
+
+                      
         }
 
-               .edgesIgnoringSafeArea(.bottom)
-               .navigationBarBackButtonHidden(true)
-               .navigationBarItems(leading:
-                   Button(action: {
-                       self.presentationMode.wrappedValue.dismiss()
-                   }) {
-                       ZStack{
-                                 Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-                                         Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-                                     })
+       
     }
    }
 }

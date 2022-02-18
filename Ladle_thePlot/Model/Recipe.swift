@@ -17,5 +17,7 @@ struct Recipe : Identifiable {
     var alternativeIngredients :[Int: String] // all the alternative ingredients (A dictionary in which the key is the order of the ingredient in the recipe, and the value is the alternative ingredient)
  
     var steps : [Int:String]// the number of steps and the steps description
+  
     var alternativeSteps : [Int:String]
+    var noofsteps : [Int]
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChooseTheRecipeView: View {
     @StateObject private var modelView = RecipeViewModel()
-    @Binding var username : String
+    @Binding var name : String
     
     let layout = [
         GridItem(.flexible(minimum: 175)),
@@ -18,7 +18,7 @@ struct ChooseTheRecipeView: View {
     ]
     
     var body: some View {
-        
+        GeometryReader { geometry in
         ZStack(alignment: .leading){
             
             Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.4).position(x: 150, y: 0)
@@ -30,11 +30,11 @@ struct ChooseTheRecipeView: View {
             
             VStack(alignment: .leading) {
                 
-                Text("Recipes").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
-                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
-                    .shadow(color: CustomColor.selectionblue, radius: 3)
+//                Text("Recipes").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+//                    .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+//                    .shadow(color: CustomColor.selectionblue, radius: 3)
                
-                Text("\(username)").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
+                Text("\(name)").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
                     .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
                     .shadow(color: CustomColor.selectionblue, radius: 3)
                 
@@ -50,8 +50,21 @@ struct ChooseTheRecipeView: View {
                 })
             }
             
-            
-            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar{
+                ToolbarItem(placement:.principal){
+                    Text("Recipes")
+                        .font(Font.custom("HappyMonkey-Regular", size: 80))
+                        .foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .shadow(color: CustomColor.selectionblue, radius: 10)
+                }
+            } .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
+
+                   .edgesIgnoringSafeArea(.bottom)
+                   .navigationBarBackButtonHidden(true)
+//            .navigationBarHidden(true)
+        }
         }
         
     }
