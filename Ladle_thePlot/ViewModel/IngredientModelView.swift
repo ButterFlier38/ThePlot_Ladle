@@ -37,7 +37,7 @@ struct IngredientViewModel {
     func getIngredientsFromTheRecipe(recipe :String) -> [Ingredient] {
         var ingredients : [Ingredient] {
             IngredientViewModel().ingredientsStore.filter {
-                $0.recipeName == "pizza"
+                $0.recipeName == recipe
             }
         }
         return ingredients

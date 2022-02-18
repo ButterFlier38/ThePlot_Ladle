@@ -5,11 +5,12 @@
 //  Created by Jasmine Aufiero on 15/02/22.
 //
 
-import Foundation
+import SwiftUI
+
 class AvatarViewModel : ObservableObject {
-    @Published private var selectedAvatar = Set<UUID>()
+    @Published var selectedAvatar = Set<UUID>()
     
-    @Published var avatarsStorage : [Avatar] = [
+    var avatarsStorage : [Avatar] = [
     Avatar(name: "giorgia", image: "character_giorgia", headImage: "head_giorgia", backgroundColor: "bggreen", selectedColor: "selectiongreen"),
     
     Avatar(name: "gino", image: "character_gino", headImage: "head_gino", backgroundColor: "bgpink", selectedColor: "selectionpink"),
@@ -25,19 +26,21 @@ class AvatarViewModel : ObservableObject {
     func toggleAvatarSelection(id: UUID) {
         if selectedAvatar.contains(id) {
             selectedAvatar.remove(id)
+            print(selectedAvatar)
         }else {
             selectedAvatar.removeAll()
             selectedAvatar.insert(id)
+            print(selectedAvatar)
         }
     }
     
-    func getSelectedAvatar() -> [Avatar] { // which avatar is selected
-        return avatarsStorage.filter { avatar in
-            selectedAvatar.contains(avatar.id)
-        }
+    func getSelectedAvatar() -> Avatar { // which avatar is selected
+        print(avatarsStorage)
+        print(selectedAvatar.first)
+        return avatarsStorage.first(where:  { $0.id ==  selectedAvatar.first})!
     }
     
-    func isSomeAvatarSelected() -> Bool {
+    func isSomeAvatarSelected() -> Bool { // returns true if is empty
         return selectedAvatar.isEmpty
     }
 }

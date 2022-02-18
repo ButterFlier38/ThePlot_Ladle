@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ChooseTheRecipeView: View {
-    @StateObject private var modelView = RecipeViewModel()
-//    @Binding var name : String
+    var modelView = RecipeViewModel()
     
     let layout = [
         GridItem(.flexible(minimum: 175)),
@@ -18,7 +17,7 @@ struct ChooseTheRecipeView: View {
     ]
     
     var body: some View {
-        GeometryReader { geometry in
+        
         ZStack(alignment: .leading){
             
             Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.4).position(x: 150, y: 0)
@@ -33,13 +32,11 @@ struct ChooseTheRecipeView: View {
                 Text("Recipes").font(Font.custom("HappyMonkey-Regular", size: 70 )).fontWeight(.bold)
                     .foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
                     .shadow(color: CustomColor.selectionblue, radius: 3)
-               
-            
                 
                 LazyVGrid(columns: layout ,content: {
                     ForEach(modelView.recipesStore) { recipe in
                         NavigationLink {
-                            IngredientsView()
+                            ShowTheIngredientsView(recipe: recipe)
                         }label: {
                             RecipeCardView(recipe: recipe)
                         }
@@ -48,11 +45,18 @@ struct ChooseTheRecipeView: View {
                 })
             }
             
-           
+            
             .navigationBarHidden(true)
         }
-        }
         
+    }
+}
+
+struct ChooseTheRecipeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChooseTheRecipeView()
+            .previewDevice("iPad Pro (11-inch) (3rd generation)")
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
 

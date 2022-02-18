@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var avatarViewModel : AvatarViewModel
+    
     init(){
         UINavigationBar.setAnimationsEnabled(false)
     }

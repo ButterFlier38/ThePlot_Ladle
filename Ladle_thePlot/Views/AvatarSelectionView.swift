@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AvatarSelectionView: View {
-    @StateObject private var modelView = AvatarViewModel()
+    @EnvironmentObject var avatarViewModel : AvatarViewModel
     
     var body: some View {
         //        NavigationView {
@@ -28,19 +28,19 @@ struct AvatarSelectionView: View {
             // Circle creation
             HStack {
                 
-                ForEach(modelView.avatarsStorage) { avatar in
+                ForEach(avatarViewModel.avatarsStorage) { avatar in
                     
                     Button(action:  {withAnimation(.easeOut(duration: 0.2)) {
-                        modelView.toggleAvatarSelection(id: avatar.id)
+                        avatarViewModel.toggleAvatarSelection(id: avatar.id)
                     }}){
                         
                         Circle()
-                            .scaleEffect(modelView.isAvatarSelected(id: avatar.id) ? 1.2 : 1)
-                            .foregroundColor(modelView.isAvatarSelected(id: avatar.id) ? Color(avatar.selectedColor) : Color.white)
+                            .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 1.2 : 1)
+                            .foregroundColor(avatarViewModel.isAvatarSelected(id: avatar.id) ? Color(avatar.selectedColor) : Color.white)
                             .overlay(Circle().stroke(Color(avatar.selectedColor), lineWidth: 4)
                                         .overlay(Image(avatar.image)
-                                                    .scaleEffect(modelView.isAvatarSelected(id: avatar.id) ? 0.04 : 0.029)
-                                                    .clipShape(Circle().scale( modelView.isAvatarSelected(id: avatar.id) ? 0.07 : 0.06))))
+                                                    .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.04 : 0.029)
+                                                    .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.07 : 0.06))))
                         
                     }.padding(.horizontal, 10)
                     
@@ -52,13 +52,13 @@ struct AvatarSelectionView: View {
                 ChooseTheRecipeView()
             } label: {
                 RoundedRectangle(cornerRadius: 60, style: .continuous)
-                    .fill(modelView.isSomeAvatarSelected() ?  CustomColor.selectionblue.opacity(0.4) : CustomColor.selectionblue)
+                    .fill(avatarViewModel.isSomeAvatarSelected() ?  CustomColor.selectionblue.opacity(0.4) : CustomColor.selectionblue)
                     .frame(width: 200, height: 60, alignment: .center)
                     .overlay(
                         Text("Continue").font(Font.custom("HappyMonkey-Regular", size: 25 )).foregroundColor(.white).shadow(color: .white, radius: 1))
             } // :Continue Button
             .padding(.bottom)
-            .disabled(modelView.isSomeAvatarSelected())
+            .disabled(avatarViewModel.isSomeAvatarSelected())
         }}
         .cornerRadius(25)
         .overlay(

@@ -13,7 +13,7 @@ struct IngredientCardView: View {
     
     var body: some View {
         
-        VStack{
+        VStack(alignment: .center, spacing: 2){
             Circle()
                 .scaleEffect(1.1)
                 .foregroundColor(.white)
@@ -32,5 +32,6 @@ struct IngredientCardView: View {
 struct IngredientCardView_Previews: PreviewProvider {
     static var previews: some View {
         IngredientCardView(ingredient: IngredientViewModel().ingredientsStore[10])
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
