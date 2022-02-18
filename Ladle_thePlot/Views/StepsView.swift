@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StepsView: View {
-    @Environment(\.presentationMode) var presentationMode
+   
 //    @State var recipe: Recipe
    var body: some View {
        GeometryReader { geometry in
@@ -23,7 +23,16 @@ struct StepsView: View {
             Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.5).position(x: 530, y: 850)
             }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9,alignment: .topTrailing)
         VStack{
-          
+            HStack{
+                Spacer().frame(width: 20)
+                NavigationLink( destination: IngredientsView()){
+                    ZStack{
+            Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
+                    Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
+                }
+                
+        Text("Steps").font(Font.custom("HappyMonkey-Regular", size: 80 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading)              .shadow(color: CustomColor.selectionblue, radius: 10)
+            }
             VStack{
             VStack(alignment: .leading){
                 ZStack{
@@ -107,25 +116,8 @@ struct StepsView: View {
 
                          }  .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
             
-                .navigationBarTitleDisplayMode(.large) .edgesIgnoringSafeArea(.bottom)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading:
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        ZStack{
-                                  Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-                                          Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-                                      })
-                .toolbar{
-                    ToolbarItem(placement:.principal){
-                        Text("Steps")
-                            .font(Font.custom("HappyMonkey-Regular", size: 80))
-                            .foregroundColor(CustomColor.selectionblue)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .shadow(color: CustomColor.selectionblue, radius: 10)
-                    }
-                } .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
+                .navigationBarHidden(true)
+               
 
                       
         }

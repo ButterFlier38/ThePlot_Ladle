@@ -168,16 +168,21 @@ struct Step4: View {
                 }
                 
             } //close the VSTack
-            NavigationLink(destination: StepsView()){
-            Circle()
-//                        .resizable()
-                .scaleEffect(0.06)
-                .foregroundColor(.red)
-                .overlay(Text("X")
-                            .font(Font.custom("HappyMonkey-Regular", size: 40)).foregroundColor(.white))
-                .position(x: geometry.size.width/1.06, y: geometry.size.height/14)
-                
-            }
+            
+            
+//            NavigationLink(destination: StepsView()){
+//            Circle()
+////                        .resizable()
+//                .scaleEffect(0.06)
+//                .foregroundColor(.red)
+//                .overlay(Text("X")
+//                            .font(Font.custom("HappyMonkey-Regular", size: 40)).foregroundColor(.white))
+//                .position(x: geometry.size.width/1.06, y: geometry.size.height/14)
+//
+//            }
+            
+            
+            
         } //close the ZStack
         } //close geometry bracket
     }

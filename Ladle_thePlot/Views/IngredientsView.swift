@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct IngredientsView: View {
-    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -25,6 +25,16 @@ struct IngredientsView: View {
                 .scaleEffect(1.2).position(x: 570, y: 950)
                        
             VStack{
+                HStack{
+                    Spacer().frame(width: 20)
+                    NavigationLink( destination: ChooseTheRecipeView()){
+                        ZStack{
+                Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
+                        Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
+                    }
+                    
+            Text("Ingredients").font(Font.custom("HappyMonkey-Regular", size: 80 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading)              .shadow(color: CustomColor.selectionblue, radius: 10)
+                }
             Spacer()
                             
             HStack(alignment: .center, spacing: 80){
@@ -120,29 +130,10 @@ struct IngredientsView: View {
             }
             .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
 //
+            .navigationBarHidden(true)
             
         } //close zstack
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar{
-            ToolbarItem(placement:.principal){
-                Text("Ingredients")
-                    .font(Font.custom("HappyMonkey-Regular", size: 80))
-                    .foregroundColor(CustomColor.selectionblue)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .shadow(color: CustomColor.selectionblue, radius: 10)
-            }
-        } .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
-
-               .edgesIgnoringSafeArea(.bottom)
-               .navigationBarBackButtonHidden(true)
-               .navigationBarItems(leading:
-                   Button(action: {
-                       self.presentationMode.wrappedValue.dismiss()
-                   }) {
-                       ZStack{
-                                 Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-                                         Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-                                     })
+       
         } //close geometry reader
         }
 }

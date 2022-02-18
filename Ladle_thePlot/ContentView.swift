@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    init(){
+        UINavigationBar.setAnimationsEnabled(false)
+    }
     var body: some View {
         NavigationView  {
 //            AvatarSelectionView()
