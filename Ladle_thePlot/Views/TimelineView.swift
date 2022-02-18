@@ -60,6 +60,6 @@ struct TimelineView: View {
 
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineView(recipe: RecipeViewModel().recipesStore[0])
+        TimelineView(recipe: RecipeViewModel().recipesStore[1])
     }
 }
