@@ -13,7 +13,7 @@ struct ShowTheIngredientsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     
     var recipe :Recipe
-
+    
     
     var body: some View {
         
@@ -29,72 +29,73 @@ struct ShowTheIngredientsView: View {
                 Ellipse().foregroundColor(CustomColor.bggreen)
                     .scaleEffect(1.2).position(x: 570, y: 950)
                 
-                VStack{
-                    
-                    HStack {
-                        
-                        NavigationLink {
-                            ChooseTheRecipeView()
-                        }label: {
-                            Image(systemName: "arrowshape.turn.up.backward.circle.fill")
-                                .resizable()
-                                .frame(width: 80, height: 80, alignment: .topLeading)
-                                .foregroundColor(Color("accentColor"))
-                                .padding(.leading, 50)
-                            
-                        }.frame(width: 100, height: 100, alignment: .topLeading)
-                        
-
-                    } //:HStack
-                    
-                    ScrollView(.horizontal, showsIndicators: false){
-
-                        HStack {
-                            // display the ingredients
-                            ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
-                                
-                                if ingredient != "" {
-                                    IngredientCardView(ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
-                                }
-                            } // :ForEach for ingredients
-                        } //:HStack for ingredients
-
-                    } // :Horizontal Scroll View for ingredients
-                } // :VStack
                 
-//                // Shows the Avatar
+                HStack(alignment: .top) {
+                    
+                    NavigationLink {
+                        ChooseTheRecipeView()
+                    }label: {
+                        Image(systemName: "arrowshape.turn.up.backward.circle.fill")
+                            .resizable()
+                            .frame(width: 80, height: 80, alignment: .topLeading)
+                            .foregroundColor(Color("accentColor"))
+                            .padding(.leading, 50)
+                        
+                    }.frame(width: 100, height: 100, alignment: .topLeading)
+                        .padding()
+                    
+                    
+                } //:HStack
+                
+                ScrollView(.horizontal, showsIndicators: false){
+                    
+                    HStack(alignment: .center) {
+                        // display the ingredients
+                        ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
+                            
+                            if ingredient != "" {
+                                IngredientCardView(ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                            }
+                        } // :ForEach for ingredients
+                    } //:HStack for ingredients
+                    
+                } // :Horizontal Scroll View for ingredients
+                
+                
+                // Shows the Avatar
                 Image(avatarViewModel.getSelectedAvatar().image)
-                        .resizable()
-                        .scaleEffect(0.5)
-                        .aspectRatio(0.7, contentMode: .fit)
-                        .position(x: 170, y: 650)
+                    .resizable()
+                    .scaleEffect(0.5)
+                    .aspectRatio(0.7, contentMode: .fit)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomLeading)
+                
                 
                 // Continue Button
                 NavigationLink {
-                  StepsView()
+                    StepsView()
                 } label: {
                     RoundedRectangle(cornerRadius: 60, style: .continuous)
                         .fill(CustomColor.selectionblue)
                         .frame(width: 270, height: 100)
                         .overlay(
                             Text("Continue").font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
-                       
+                    
                 }
                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
                 
             } // :ZStack
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar{
-            ToolbarItem(placement:.principal){
-                Text("Ingredients")
-                    .font(Font.custom("HappyMonkey-Regular", size: 80))
-                    .foregroundColor(CustomColor.selectionblue)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .shadow(color: CustomColor.selectionblue, radius: 10)
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar{
+                ToolbarItem(placement:.principal){
+                    Text("Ingredients")
+                        .font(Font.custom("HappyMonkey-Regular", size: 80))
+                        .foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .shadow(color: CustomColor.selectionblue, radius: 10)
+                }
             }
-        }
-        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
-        
+            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
+            
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:

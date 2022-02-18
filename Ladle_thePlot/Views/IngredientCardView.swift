@@ -13,19 +13,20 @@ struct IngredientCardView: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 2){
+        VStack(alignment: .center, spacing: 0.1){
             Circle()
-                .scaleEffect(1.1)
+                .frame(width: 200, height: 200, alignment: .center)
                 .foregroundColor(.white)
                 .overlay(Image(ingredient.image)
                             .scaleEffect(0.02))
             
-            Text(ingredient.quantity + " " + ingredient.name)
-                .font(Font.custom("HappyMonkey-Regular", size: 30 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
+            Text(ingredient.quantity + "\n" + ingredient.name)
+                .font(Font.custom("HappyMonkey-Regular", size: 30 ))
+                .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
+                .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.leading)
    
-        }
+        }.padding(.horizontal)
     }
 }
 

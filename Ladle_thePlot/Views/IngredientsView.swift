@@ -81,8 +81,6 @@ struct IngredientsView: View {
                             .padding(.leading)
                     
                 }
-        
-//                sbdnkcnakvnaj
                 
                 VStack (spacing: 9){
                         ZStack{
@@ -106,7 +104,7 @@ struct IngredientsView: View {
                 Spacer()
                 Spacer()
                 Spacer()
-//                nsdvnsjdvjsdfnvjn
+
 
             } //close vstack
             .frame(height: geometry.size.height, alignment: .center)
