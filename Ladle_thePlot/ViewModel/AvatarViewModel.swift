@@ -35,8 +35,7 @@ class AvatarViewModel : ObservableObject {
     }
     
     func getSelectedAvatar() -> Avatar { // which avatar is selected
-        print(avatarsStorage)
-        print(selectedAvatar.first)
+   
         return avatarsStorage.first(where:  { $0.id ==  selectedAvatar.first})!
     }
     

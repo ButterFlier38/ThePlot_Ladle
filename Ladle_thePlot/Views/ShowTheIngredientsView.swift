@@ -12,8 +12,6 @@ struct ShowTheIngredientsView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     
-    var recipeModelView = RecipeViewModel()
-    var ingredientModelView = IngredientViewModel()
     var recipe :Recipe
 
     
@@ -46,21 +44,22 @@ struct ShowTheIngredientsView: View {
                             
                         }.frame(width: 100, height: 100, alignment: .topLeading)
                         
-                        Text ("Ingredients")
-                            .font(Font.custom("HappyMonkey-Regular", size: 80 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .topTrailing)
-                            .padding(.trailing, 50)
+
                     } //:HStack
                     
-//                    ScrollView(.horizontal, showsIndicators: false){
-//
-//                        HStack {
-//                            // display the ingredients
-//                            ForEach(recipeModelView.getIngredients(recipe: recipe), id: \.self) { ingredient in
-//                                IngredientCardView(ingredient: ingredientModelView.getIngredient(name: ingredient)[0])
-//                            } // :ForEach for ingredients
-//                        } //:HStack for ingredients
-//
-//                    } // :Horizontal Scroll View for ingredients
+                    ScrollView(.horizontal, showsIndicators: false){
+
+                        HStack {
+                            // display the ingredients
+                            ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
+                                
+                                if ingredient != "" {
+                                    IngredientCardView(ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                                }
+                            } // :ForEach for ingredients
+                        } //:HStack for ingredients
+
+                    } // :Horizontal Scroll View for ingredients
                 } // :VStack
                 
 //                // Shows the Avatar

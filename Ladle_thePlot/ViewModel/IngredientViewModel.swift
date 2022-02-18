@@ -28,15 +28,19 @@ struct IngredientViewModel {
         Ingredient(name: "Honey", image: "honey", quantity: "40g", recipeName: "ice cream", isAlternative: true)
         ]
     
-    func getIngredient(name :String) -> [Ingredient] {
-        return ingredientsStore.filter { ingredient in
-            ingredient.name == name
+    
+    // returns an ingredient from the name
+    func getIngredient(ingredient :String, recipe :String) -> Ingredient? {
+        if ingredient != "" {
+            return ingredientsStore.first(where:  { $0.name.lowercased() ==  ingredient && $0.recipeName == recipe})!
         }
+        return nil
     }
     
+    // return all the ingredients from the recipe
     func getIngredientsFromTheRecipe(recipe :String) -> [Ingredient] {
         var ingredients : [Ingredient] {
-            IngredientViewModel().ingredientsStore.filter {
+            ingredientsStore.filter {
                 $0.recipeName == recipe
             }
         }

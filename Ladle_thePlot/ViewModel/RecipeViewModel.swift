@@ -21,23 +21,9 @@ struct RecipeViewModel {
         var ingredients :[String] = []
         for(key, value) in recipe.ingredients {
             ingredients.append(value)
+            print(ingredients)
         }
         return ingredients
     }
-    
-//    // get the quantity of one ingredient
-//    func getIngredientQuantity(recipe :Recipe, ingredientkey :String) -> String {
-//        return recipe.ingredientsQuantities[ingredientkey] ?? ""
-//    }
-    
-    //    func isRecipeSelected(id: UUID) -> Bool {
-    //        return selectedRecipe == id ? true : false
-    //    }
-    //
-    //    func getSelectedRecipe() -> [Recipe] { // which recipe is selected
-    //        return recipesStore.filter { recipe in
-    //            selectedRecipe == recipe.id
-    //        }
-    //    }
     
 }
