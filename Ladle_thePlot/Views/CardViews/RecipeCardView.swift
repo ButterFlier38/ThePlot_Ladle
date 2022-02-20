@@ -14,7 +14,8 @@ struct RecipeCardView: View {
         
         RoundedRectangle(cornerRadius: 60, style: .continuous)
             .foregroundColor(Color(recipe.color))
-                        .frame(width: 300, height: 200, alignment: .center)
+                        .frame(height: 200, alignment: .center)
+//        width: 300, 
                         .padding()
                         .overlay(Image(recipe.image[0]).resizable().scaledToFit().padding(37))
                        .overlay(

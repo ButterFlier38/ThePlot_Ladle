@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ShowTheIngredientsView: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     
     var recipe :Recipe
@@ -20,32 +19,33 @@ struct ShowTheIngredientsView: View {
         GeometryReader { geometry in
             
             ZStack{
-                Circle().foregroundColor(CustomColor.bggreen).scaleEffect(0.57).position(x: 650, y: 170)
-                Circle().foregroundColor(CustomColor.bgblue).scaleEffect(0.45).position(x: 370, y: 80)
-                Circle().foregroundColor(CustomColor.bgpink).scaleEffect(0.35).position(x: 1100, y: 60)
-                Circle().foregroundColor(CustomColor.bgyellow).scaleEffect(0.45).position(x: 900, y: 100)
-                
-                
-                Ellipse().foregroundColor(CustomColor.bggreen)
-                    .scaleEffect(1.2).position(x: 570, y: 950)
-                
-                
-                HStack(alignment: .top) {
+                //                Images used for the background
+                Image("IngreBubbTop")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topTrailing)
+                Image("IngreBubbBottom")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .center)
+            } //:ZStack for background
+            
+            VStack{
+                HStack{
+                    Spacer().frame(width: 20)
+                    NavigationLink( destination: ChooseTheRecipeView()){
+                        BackButtonView()
+                    }
                     
-                    NavigationLink {
-                        ChooseTheRecipeView()
-                    }label: {
-                        Image(systemName: "arrowshape.turn.up.backward.circle.fill")
-                            .resizable()
-                            .frame(width: 80, height: 80, alignment: .topLeading)
-                            .foregroundColor(Color("accentColor"))
-                            .padding(.leading, 50)
-                        
-                    }.frame(width: 100, height: 100, alignment: .topLeading)
-                        .padding()
+                    Text("Ingredients")
+                  .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
+                        .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading)
+                        .shadow(color: CustomColor.selectionblue, radius: 10)
                     
-                    
-                } //:HStack
+                }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
+                
+                Spacer()
                 
                 ScrollView(.horizontal, showsIndicators: false){
                     
@@ -58,54 +58,31 @@ struct ShowTheIngredientsView: View {
                             }
                         } // :ForEach for ingredients
                     } //:HStack for ingredients
-                    
+                    .frame( height: geometry.size.height * 0.5, alignment: .center)
                 } // :Horizontal Scroll View for ingredients
                 
                 
+                
                 // Shows the Avatar
-                Image(avatarViewModel.getSelectedAvatar().image)
-                    .resizable()
-                    .scaleEffect(0.5)
-                    .aspectRatio(0.7, contentMode: .fit)
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomLeading)
-                
-                
-                // Continue Button
-                NavigationLink {
-                    StepsView()
-                } label: {
-                    RoundedRectangle(cornerRadius: 60, style: .continuous)
-                        .fill(CustomColor.selectionblue)
-                        .frame(width: 270, height: 100)
-                        .overlay(
-                            Text("Continue").font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
+                HStack{
+                    Image(avatarViewModel.getSelectedAvatar().image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                     
-                }
-                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
+                    Spacer()
+                    // Continue Button
+                    NavigationLink {
+                        StepsView()
+                    } label: {
+                        ContinueButtonView()
+                    } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
+                        .padding(.trailing, 50)
+                        .navigationBarHidden(true)
+                } // : HStack for Avatar and Continue button
                 
-            } // :ZStack
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar{
-                ToolbarItem(placement:.principal){
-                    Text("Ingredients")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(CustomColor.selectionblue)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .shadow(color: CustomColor.selectionblue, radius: 10)
-                }
-            }
-            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .topLeading)
+            } // :VStack for title, ingredient scrollview and avatar continue button
             
-            .edgesIgnoringSafeArea(.bottom)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-                                    Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                ZStack{
-                    Circle().foregroundColor(CustomColor.selectionblue).frame(width: 100, height: 100)
-                    Image(systemName: "arrowshape.turn.up.backward.fill").scaleEffect(2.5).foregroundColor(.white)}
-            })
         } // :GeometryReader
     }
 }
