@@ -13,18 +13,31 @@ struct AvatarSelectionView: View {
     var body: some View {
         //        NavigationView {
         GeometryReader { geometry in
+         
         VStack {
             // All the avatars on the top of the view
-            ZStack {
-                RoundedRectangle(cornerRadius: 80, style: .continuous)
-                    .fill(Color.white)
-                    .frame(width: 600, height: 320, alignment: .center)
-                    .overlay(Image("character_tonia").scaleEffect(0.03).position(x: 430, y: 120))
-                    .overlay(Image("character_giorgia").scaleEffect(0.03).position(x: 160, y: 120))
-                    .overlay(Image("character_nino").scaleEffect(0.03).position(x: 250, y: 120))
-                    .overlay(Image("character_gino").scaleEffect(0.03).position(x: 340, y: 120))
-                    .overlay( Text("Select your avatar : ").font(Font.custom("HappyMonkey-Regular", size: 35 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue) .shadow(color: CustomColor.selectionblue, radius: 1).position(x: 300, y: 250))
+            ZStack{
+            Image("character_tonia")  .resizable()
+                        .scaledToFit()
+                        .frame( height: geometry.size.height * 0.2).offset(x: 110)
+           
+           
+            Image("character_giorgia")  .resizable()
+                        .scaledToFit()
+                        .frame( height: geometry.size.height * 0.2).offset(x: -110)
+          
+            Image("character_nino")  .resizable()
+                        .scaledToFit()
+                        .frame( height: geometry.size.height * 0.222).offset(x: 35)
+                Image("character_gino")  .resizable()
+                            .scaledToFit()
+                            .frame( height: geometry.size.height * 0.22).offset(x: -35)
             }
+            
+            Text("Choose your avatar :")
+                .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.4: geometry.size.height * 0.05))
+               .foregroundColor(CustomColor.selectionblue)
+                       .shadow(color: CustomColor.selectionblue, radius: 1)
             // Circle creation
             HStack {
                 
@@ -38,35 +51,39 @@ struct AvatarSelectionView: View {
                             .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 1.2 : 1)
                             .foregroundColor(avatarViewModel.isAvatarSelected(id: avatar.id) ? Color(avatar.selectedColor) : Color.white)
                             .overlay(Circle().stroke(Color(avatar.selectedColor), lineWidth: 4)
-                                        .overlay(Image(avatar.image)
-                                                    .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.04 : 0.029)
-                                                    .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.07 : 0.06))))
+                                        .overlay(Image(avatar.image).resizable().scaledToFit()
+                                                    .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.9 : 0.69)
+//                                                    .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.04 : 0.029)
+//                                                    .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.07 : 0.06))
+                                                    .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 1.2 : 0.98))))
                         
                     }.padding(.horizontal, 10)
                     
                 } // :ForEach
             }.padding(.horizontal, 20) // :HStack
+                .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.28)
         
             // Continue button
             NavigationLink {
                 ChooseTheRecipeView()
             } label: {
-                RoundedRectangle(cornerRadius: 60, style: .continuous)
-                    .fill(avatarViewModel.isSomeAvatarSelected() ?  CustomColor.selectionblue.opacity(0.4) : CustomColor.selectionblue)
-                    .frame(width: 200, height: 60, alignment: .center)
-                    .overlay(
-                        Text("Continue").font(Font.custom("HappyMonkey-Regular", size: 25 )).foregroundColor(.white).shadow(color: .white, radius: 1))
+                ContinueButtonView() .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
+                
             } // :Continue Button
             .padding(.bottom)
             .disabled(avatarViewModel.isSomeAvatarSelected())
-        }}
-        .cornerRadius(25)
-        .overlay(
+        
+        
+        }.overlay(
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1))
-        .frame(width: 800, height: 650, alignment: .center)
-//    }
-        .navigationBarHidden(true)
+                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
+                .padding(.all).frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9)
+                .frame(width: geometry.size.width, height: geometry.size.height))
+        .frame(width: geometry.size.width * 0.8)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .navigationBarHidden(true)
+        
+    }
     }
 }
 

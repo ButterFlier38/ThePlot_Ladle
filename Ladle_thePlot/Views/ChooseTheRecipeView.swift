@@ -19,12 +19,15 @@ struct ChooseTheRecipeView: View {
     
     var body: some View {
         GeometryReader{ geometry in
-        ZStack(alignment: .leading){
-            
             Image("IngreBubbTop")
                 .resizable()
                 .scaledToFit()
                 .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topLeading)
+            
+            
+        
+            
+          
             
         
             
@@ -36,13 +39,21 @@ struct ChooseTheRecipeView: View {
                     .foregroundColor(CustomColor.selectionblue)
                     .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
                     .shadow(color: CustomColor.selectionblue, radius: 3)
+                    HStack{
+                        Image("nuvoletta") .resizable()
+                            .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                            .overlay(Text("Hi Giulia!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
+                            .frame( height: geometry.size.height * 0.15, alignment: .topTrailing)
                 Image(avatarViewModel.getSelectedAvatar().image)
                     .resizable()
                     .scaledToFit()
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                     .frame( height: geometry.size.height * 0.25, alignment: .topTrailing)
+                }
                 }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                Spacer()
+                
+                Spacer().frame(height: geometry.size.height * 0.15)
+                
                 LazyVGrid(columns: layout ,content: {
                     ForEach(modelView.recipesStore) { recipe in
                         NavigationLink {
@@ -51,15 +62,15 @@ struct ChooseTheRecipeView: View {
                             RecipeCardView(recipe: recipe)
                         }
                         
-                    }
-                })  .frame( height: geometry.size.height * 0.45, alignment: .center)
+                    } .frame( height: geometry.size.height * 0.35, alignment: .center)
+                })
                 Spacer()
 
             }
             
             
             .navigationBarHidden(true)
-        }
+        
         }
     }
 }

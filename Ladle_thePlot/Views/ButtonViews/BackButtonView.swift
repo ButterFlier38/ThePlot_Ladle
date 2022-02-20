@@ -12,7 +12,7 @@ struct BackButtonView: View {
         
             Circle().foregroundColor(CustomColor.selectionblue).scaledToFit()
             .overlay(  Image(systemName: "arrowshape.turn.up.backward.fill").resizable().scaleEffect(0.55).foregroundColor(.white))
-//                .frame(width: 100, height: 100)
+
           
     }
 }

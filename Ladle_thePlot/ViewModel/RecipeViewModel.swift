@@ -15,11 +15,11 @@ struct RecipeViewModel {
      
      Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bgpink", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
      
-     Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bgpink", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
+     Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bggreen", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
      
      Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bgpink", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
      
-     Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bgpink", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
+     Recipe(name: "ice cream", image: ["pizza"],color: "bgblue", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2]),
      
      Recipe(name: "ice cream", image: ["icecream1", "icecream2"],color: "bgpink", ingredients: [1 : "condensed milk", 2: "ice cubes", 3: "strawberries", 4: "banana"], alternativeIngredients: [1: "yogurt", 2: "", 3: "frozen fruit", 4: "honey"], steps: [1: "Take the condensed milk and add it to the blender. Then take the ice and add it too.", 2: "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!"], alternativeSteps: [1: "Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", 2: "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], noofsteps: [1,2])]
     
@@ -27,11 +27,15 @@ struct RecipeViewModel {
     // get all the ingredients of the recipe
     func getIngredients(recipe :Recipe) -> [String] {
         var ingredients :[String] = []
+        
         for(key, value) in recipe.ingredients {
+            autoreleasepool(invoking: ){
             ingredients.append(value)
             print(ingredients)
+            }
         }
         return ingredients
     }
+    
     
 }

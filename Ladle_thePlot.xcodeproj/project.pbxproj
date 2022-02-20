@@ -16,6 +16,8 @@
 		2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754CEA727B7AB3E002761F9 /* RecipeViewModel.swift */; };
 		27705A9E27C23A8D00F996B4 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705A9D27C23A8D00F996B4 /* ContinueButtonView.swift */; };
 		27705AA027C23A9500F996B4 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705A9F27C23A9500F996B4 /* BackButtonView.swift */; };
+		27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AA227C246CB00F996B4 /* StepCardView.swift */; };
+		27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AA427C24AD700F996B4 /* StepCircleCard.swift */; };
 		2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37527B65B57001B34CE /* CreateRecipeView.swift */; };
 		2780A37827B65B87001B34CE /* AvatarSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37727B65B87001B34CE /* AvatarSelectorView.swift */; };
 		2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37927B65BDA001B34CE /* NameInputView.swift */; };
@@ -56,6 +58,8 @@
 		2754CEA727B7AB3E002761F9 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		27705A9D27C23A8D00F996B4 /* ContinueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		27705A9F27C23A9500F996B4 /* BackButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
+		27705AA227C246CB00F996B4 /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
+		27705AA427C24AD700F996B4 /* StepCircleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCircleCard.swift; sourceTree = "<group>"; };
 		2780A37527B65B57001B34CE /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		2780A37727B65B87001B34CE /* AvatarSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectorView.swift; sourceTree = "<group>"; };
 		2780A37927B65BDA001B34CE /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */,
 				27F0081A27BE86E200C7975D /* IngredientCardView.swift */,
+				27705AA227C246CB00F996B4 /* StepCardView.swift */,
+				27705AA427C24AD700F996B4 /* StepCircleCard.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -324,10 +330,12 @@
 				27F0082527BEBE4500C7975D /* TimelineView.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				27F982C927BF0F6600EBF14B /* Step4.swift in Sources */,
+				27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */,
 				2780A37C27B65BFF001B34CE /* RecipesView.swift in Sources */,
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
+				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
 				27705A9E27C23A8D00F996B4 /* ContinueButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,8 +475,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,8 +507,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

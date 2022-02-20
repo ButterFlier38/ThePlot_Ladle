@@ -11,18 +11,21 @@ struct RecipeCardView: View {
     var recipe :Recipe
     
     var body: some View {
-        
+        GeometryReader{ geometry in
         RoundedRectangle(cornerRadius: 60, style: .continuous)
             .foregroundColor(Color(recipe.color))
-                        .frame(height: 200, alignment: .center)
-//        width: 300, 
+                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.7)
                         .padding()
-                        .overlay(Image(recipe.image[0]).resizable().scaledToFit().padding(37))
+                        .overlay(Image(recipe.image[0]).resizable().scaledToFit()
+                                    .padding(37)
+                        )
                        .overlay(
                             RoundedRectangle(cornerRadius: 60)
-                                .stroke(Color(recipe.color), lineWidth: 25).padding())
+                                .stroke(Color(recipe.color), lineWidth: geometry.size.width * 0.04)
+//                                .padding()
+                                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.7))
                        
-
+        }
     }
 }
 
