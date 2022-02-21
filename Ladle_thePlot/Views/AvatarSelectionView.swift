@@ -9,29 +9,39 @@ import SwiftUI
 
 struct AvatarSelectionView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
-    
+    @Binding var username : String
     var body: some View {
         //        NavigationView {
         GeometryReader { geometry in
-         
+            ZStack{
+                Image("Background")  .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                RoundedRectangle(cornerRadius: 25, style: .continuous).fill(.white)
+//                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
+                    .padding(.all).frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+            
         VStack {
             // All the avatars on the top of the view
             ZStack{
             Image("character_tonia")  .resizable()
                         .scaledToFit()
-                        .frame( height: geometry.size.height * 0.2).offset(x: 110)
-           
+                        .frame( height: geometry.size.height * 0.2)
+                        .offset(x: geometry.frame(in: .global).midX/4.5)
            
             Image("character_giorgia")  .resizable()
                         .scaledToFit()
-                        .frame( height: geometry.size.height * 0.2).offset(x: -110)
-          
+                        .frame( height: geometry.size.height * 0.2)
+                        .offset(x: -(geometry.frame(in: .global).midX/4.5))
             Image("character_nino")  .resizable()
                         .scaledToFit()
-                        .frame( height: geometry.size.height * 0.222).offset(x: 35)
+                        .frame( height: geometry.size.height * 0.222)
+                        .offset(x: geometry.frame(in: .global).midX/13)
                 Image("character_gino")  .resizable()
                             .scaledToFit()
-                            .frame( height: geometry.size.height * 0.22).offset(x: -35)
+                            .frame( height: geometry.size.height * 0.22)
+                            .offset(x: -(geometry.frame(in: .global).midX/13))
             }
             
             Text("Choose your avatar :")
@@ -65,7 +75,7 @@ struct AvatarSelectionView: View {
         
             // Continue button
             NavigationLink {
-                ChooseTheRecipeView()
+                ChooseTheRecipeView(username: $username)
             } label: {
                 ContinueButtonView() .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
                 
@@ -74,15 +84,11 @@ struct AvatarSelectionView: View {
             .disabled(avatarViewModel.isSomeAvatarSelected())
         
         
-        }.overlay(
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
-                .padding(.all).frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9)
-                .frame(width: geometry.size.width, height: geometry.size.height))
+        }
         .frame(width: geometry.size.width * 0.8)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .navigationBarHidden(true)
-        
+        }
     }
     }
 }
@@ -90,10 +96,10 @@ struct AvatarSelectionView: View {
 
 
 
-struct AvatarSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        AvatarSelectionView()
-            .previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct AvatarSelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AvatarSelectionView(username: $username)
+//            .previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

@@ -10,6 +10,8 @@ import SwiftUI
 struct ChooseTheRecipeView: View {
     var modelView = RecipeViewModel()
     @EnvironmentObject var avatarViewModel : AvatarViewModel
+    @Binding var username: String
+    
 //    @State var degrees : Double = 0
     let layout = [
         GridItem(.flexible(minimum: 175)),
@@ -24,13 +26,6 @@ struct ChooseTheRecipeView: View {
                 .scaledToFit()
                 .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topLeading)
             
-            
-        
-            
-          
-            
-        
-            
             VStack(alignment: .leading) {
                 HStack{
                 Text("Recipes")
@@ -42,7 +37,7 @@ struct ChooseTheRecipeView: View {
                     HStack{
                         Image("nuvoletta") .resizable()
                             .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                            .overlay(Text("Hi Giulia!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
+                            .overlay(Text("Hi " + username + "!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
                             .frame( height: geometry.size.height * 0.15, alignment: .topTrailing)
                 Image(avatarViewModel.getSelectedAvatar().image)
                     .resizable()
@@ -57,7 +52,7 @@ struct ChooseTheRecipeView: View {
                 LazyVGrid(columns: layout ,content: {
                     ForEach(modelView.recipesStore) { recipe in
                         NavigationLink {
-                            ShowTheIngredientsView(recipe: recipe)
+                            ShowTheIngredientsView(recipe: recipe, username: $username)
                         }label: {
                             RecipeCardView(recipe: recipe)
                         }
@@ -75,12 +70,12 @@ struct ChooseTheRecipeView: View {
     }
 }
 
-struct ChooseTheRecipeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChooseTheRecipeView()
-            .previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct ChooseTheRecipeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChooseTheRecipeView(text: <#T##Binding<String>#>)
+//            .previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
 
 

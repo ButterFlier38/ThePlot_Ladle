@@ -10,8 +10,9 @@ import SwiftUI
 struct ShowTheIngredientsView: View {
     
     @EnvironmentObject var avatarViewModel : AvatarViewModel
-    
     var recipe :Recipe
+    @Binding var username : String
+   
     
     
     var body: some View {
@@ -36,7 +37,7 @@ struct ShowTheIngredientsView: View {
                         Spacer().frame(height: geometry.size.height * 0.02)
                         HStack{
                             
-                            NavigationLink( destination: ChooseTheRecipeView()){
+                            NavigationLink( destination: ChooseTheRecipeView(username: $username)){
                                 BackButtonView()
                             }.padding(.leading, 20)
                             
@@ -50,7 +51,7 @@ struct ShowTheIngredientsView: View {
                     
                     
                     
-                }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
+                }.frame(width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
                 
                 Spacer().frame(height: geometry.size.height * 0.05)
                 
@@ -63,7 +64,7 @@ struct ShowTheIngredientsView: View {
                             if ingredient != "" {
                                 IngredientCardView(ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
                             }
-                        }.frame( height: geometry.size.height * 0.4, alignment: .center)
+                        }.frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.45, alignment: .center)
                         // :ForEach for ingredients
                     } //:HStack for ingredients
 //                    .frame( height: geometry.size.height * 0.6, alignment: .center)
@@ -85,7 +86,7 @@ struct ShowTheIngredientsView: View {
                     Spacer()
                     // Continue Button
                     NavigationLink {
-                        StepsView()
+                        StepsView(username: $username)
                     } label: {
                         ContinueButtonView()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
@@ -99,8 +100,8 @@ struct ShowTheIngredientsView: View {
     }
 }
 
-struct ShowTheIngredientsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowTheIngredientsView(recipe: RecipeViewModel().recipesStore[1])
-    }
-}
+//struct ShowTheIngredientsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShowTheIngredientsView(recipe: RecipeViewModel().recipesStore[1], username: $username)
+//    }
+//}

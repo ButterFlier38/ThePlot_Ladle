@@ -29,10 +29,10 @@ struct RecipeViewModel {
         var ingredients :[String] = []
         
         for(key, value) in recipe.ingredients {
-            autoreleasepool(invoking: ){
+//            autoreleasepool{
             ingredients.append(value)
             print(ingredients)
-            }
+//            }
         }
         return ingredients
     }

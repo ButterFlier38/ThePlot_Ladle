@@ -30,7 +30,7 @@ struct AretheysimilarView: View {
                 
 //                button here so it's placed always in the same place
                 NavigationLink {
-                 ChooseTheRecipeView()
+//                 ChooseTheRecipeView()
                 } label: {
                     RoundedRectangle(cornerRadius: 60, style: .continuous)
                         .fill(CustomColor.selectionblue)
