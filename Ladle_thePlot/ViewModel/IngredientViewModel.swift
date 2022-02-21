@@ -13,7 +13,7 @@ struct IngredientViewModel {
     var ingredientsStore : [Ingredient] = [
         Ingredient(name: "Flour", image: "flour", quantity: "500g", recipeName: "pizza", isAlternative: false),
         Ingredient(name: "Yeast", image: "yeast", quantity: "7g", recipeName: "pizza", isAlternative: false),
-        Ingredient(name: "Pinch of Sugar", image: "sugar", quantity: "", recipeName: "pizza", isAlternative: false),
+        Ingredient(name: "Sugar", image: "sugar", quantity: "Pinch of", recipeName: "pizza", isAlternative: false),
         Ingredient(name: "Water", image: "water", quantity: "", recipeName: "pizza", isAlternative: false),
         Ingredient(name: "Salt", image: "salt", quantity: "Pinch of", recipeName: "pizza", isAlternative: false),
         Ingredient(name: "Mozzarella", image: "mozzarella", quantity: "", recipeName: "pizza", isAlternative: false),

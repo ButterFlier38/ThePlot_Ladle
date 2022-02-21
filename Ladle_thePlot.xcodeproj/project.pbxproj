@@ -39,6 +39,8 @@
 		47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47260E9227BBFBA900F0ED80 /* AvatarViewModel.swift */; };
 		47260E9527BC242400F0ED80 /* AvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */; };
 		47A8249927BFAA320042B065 /* ShowTheIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */; };
+		47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50927C3EB1800827E4E /* SceneViewModel.swift */; };
+		47B7D50E27C3EB6D00827E4E /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50D27C3EB6D00827E4E /* Scene.swift */; };
 		47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */; };
 		47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */; };
 		5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36427BFB00B0001F73F /* AnimationView.swift */; };
@@ -81,6 +83,8 @@
 		47260E9227BBFBA900F0ED80 /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
 		47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionView.swift; sourceTree = "<group>"; };
 		47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTheIngredientsView.swift; sourceTree = "<group>"; };
+		47B7D50927C3EB1800827E4E /* SceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewModel.swift; sourceTree = "<group>"; };
+		47B7D50D27C3EB6D00827E4E /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTheRecipeView.swift; sourceTree = "<group>"; };
 		5AC3B36427BFB00B0001F73F /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				2754CEA727B7AB3E002761F9 /* RecipeViewModel.swift */,
 				47260E9227BBFBA900F0ED80 /* AvatarViewModel.swift */,
 				27F0081827BE86BA00C7975D /* IngredientViewModel.swift */,
+				47B7D50927C3EB1800827E4E /* SceneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				27F0081427BE863100C7975D /* Recipe.swift */,
 				27F0081627BE866300C7975D /* Avatar.swift */,
 				27F0081E27BE887F00C7975D /* Ingredient.swift */,
+				47B7D50D27C3EB6D00827E4E /* Scene.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				2780A38027B65C60001B34CE /* StepsView.swift in Sources */,
 				2780A37827B65B87001B34CE /* AvatarSelectorView.swift in Sources */,
 				27F982C127BEF68700EBF14B /* Stepref.swift in Sources */,
+				47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */,
 				47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */,
 				27F982C727BF0D8500EBF14B /* Step3.swift in Sources */,
 				47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */,
@@ -335,6 +342,7 @@
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
+				47B7D50E27C3EB6D00827E4E /* Scene.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
 				27705A9E27C23A8D00F996B4 /* ContinueButtonView.swift in Sources */,
 			);
