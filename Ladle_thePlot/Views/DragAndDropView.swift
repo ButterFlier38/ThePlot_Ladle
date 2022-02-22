@@ -13,6 +13,7 @@ struct DragAndDropView: View {
     @State var isDragged = false
     var scene :RecipeScene
     var recipe :Recipe
+   
 
     
     var body: some View {
@@ -28,7 +29,9 @@ struct DragAndDropView: View {
                             .offset(dragAmount)
                             .zIndex(dragAmount == .zero ? 1 : 0)// drag gesture
                         
-                            .gesture(DragGesture(coordinateSpace: .global)
+                            .gesture(
+                                
+                                DragGesture(coordinateSpace: .global)
                                         .onChanged{ self.dragAmount = CGSize(width : $0.translation.width, height: $0.translation.height)
                             }
                                         .onEnded { _ in
@@ -43,6 +46,8 @@ struct DragAndDropView: View {
                                 }
                                 
                             } //: onEnd
+                                    
+                               
                             ) //:gesture
                         
                         
@@ -64,7 +69,7 @@ struct DragAndDropView: View {
     }
 }
 
-
+//
 //struct DragAndDropView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        DragAndDropView()

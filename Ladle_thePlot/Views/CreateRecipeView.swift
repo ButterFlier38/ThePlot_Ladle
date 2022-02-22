@@ -16,7 +16,7 @@ struct CreateRecipeView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            HStack{
+//            HStack{
                 //                The space for the timeline
                 //                Rectangle().frame(width: 120, height: 400)
                 //               TimelineView(recipe: RecipeViewModel().recipesStore[0]))
@@ -26,6 +26,15 @@ struct CreateRecipeView: View {
                         .foregroundColor(Color(avatarViewModel.getSelectedAvatar().backgroundColor))
                         .ignoresSafeArea()
                         .offset(x: geometry.size.width/8, y: 0)
+                    
+                
+                    Text("Let's make it!")
+                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
+                        .fontWeight(.bold)
+                        .foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .top)
+                        .position(x: geometry.size.width / 2, y: geometry.size.height * 0)
+    
                     
                     
                     ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
@@ -50,32 +59,33 @@ struct CreateRecipeView: View {
                     
                     VStack (spacing:2) {
                         
-                        Text("Let's make it!")
-                            .font(Font.custom("HappyMonkey-Regular", size: 80))
-                            .foregroundColor(CustomColor.selectionblue)
-                        
-                        
-                        
-                        //                avatar
                         
                         
                         HStack{
+//                            avatar
                             Image (avatarViewModel.getSelectedAvatar().image)
-                            //                    if the character avatar is tonia we should put a scale affetc = 0.9 or 1 because she is stretched with 0.8 (maybe create a variable with a ternary operator that manages the scale effect)
                                 .resizable()
-                                .scaleEffect(0.8)
-                                .aspectRatio(0.7, contentMode: .fit)
-                            //                        .position(x: 250, y: 650)
-                                .position(x: geometry.size.width/4.3, y: geometry.size.height/2.6)
+                                .scaledToFit()
+                                .position(x: geometry.size.width * 0.2, y: geometry.size.height * 0.5) //perfect position for the character
+                                .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                             
-                        }
+//                            vignette
+                            Image("nuvoletta")
+                                .resizable()
+                                .scaledToFit()
+                                .overlay(Text("Remember the steps? Follow them to get the final result!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
+                                .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+                            Spacer()
+                            
+                            
+                        } //. HSTACK
                         
                     } //close the VSTack
                     
                 } //close the ZStack
             } //close geometry bracket
         }
-    }
+    
     
     // all the actions that could be done in a scene
     func action(scene :RecipeScene, recipe :Recipe) {
@@ -97,7 +107,7 @@ struct CreateRecipeView: View {
         }
     }
     
-}
+} //close view
 
 //struct CreateRecipeView_Previews: PreviewProvider {
 //    static var previews: some View {
