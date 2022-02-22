@@ -86,7 +86,7 @@ struct ShowTheIngredientsView: View {
                     Spacer()
                     // Continue Button
                     NavigationLink {
-                        StepsView(username: $username)
+                        StepsView(recipe: recipe, username: $username)
                     } label: {
                         ContinueButtonView()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)

@@ -12,6 +12,8 @@ struct StepsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
 //    @State var recipe: Recipe
     @Binding var username : String
+    var recipe :Recipe
+    
    var body: some View {
        GeometryReader { geometry in
         ZStack{
@@ -21,10 +23,11 @@ struct StepsView: View {
                 .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topTrailing)
         VStack{
             
-            
-                HStack{
+            HStack{
+                    
                     Spacer().frame(width: 20)
-                    NavigationLink( destination: ChooseTheRecipeView(username: $username)){
+                NavigationLink( destination: ShowTheIngredientsView(recipe: recipe))
+                    {
                         BackButtonView()
                     }
                     
@@ -67,10 +70,11 @@ struct StepsView: View {
                     .scaledToFit()
                     .overlay(Text("Here is the list of all the steps you will have to follow!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
                     .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+                
                 Spacer()
                 // Continue Button
                 NavigationLink {
-                    Step0(username: $username)
+                    CreateRecipeView(recipe: recipe)
                 } label: {
                     ContinueButtonView()
                 } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
@@ -88,7 +92,7 @@ struct StepsView: View {
     }
    }
 }
-
+//        StepsView(username: $username).previewDevice("iPad Pro (11-inch) (3rd generation)")
 //struct StepsView_Previews: PreviewProvider {
 //    static var previews: some View {
 ////        StepsView(recipe:RecipeViewModel())
