@@ -26,7 +26,7 @@ struct StepsView: View {
             HStack{
                     
                     Spacer().frame(width: 20)
-                NavigationLink( destination: ShowTheIngredientsView(recipe: recipe))
+                NavigationLink( destination: ShowTheIngredientsView(recipe: recipe, username: $username))
                     {
                         BackButtonView()
                     }
