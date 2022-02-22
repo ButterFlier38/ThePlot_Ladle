@@ -1,4 +1,3 @@
-/
 //  Scene.swift
 //  Ladle_thePlot
 //
@@ -7,7 +6,7 @@
 
 import SwiftUI
 
-struct Scene :Identifiable {
+struct RecipeScene :Identifiable {
     
     var id = UUID()
     var name :String

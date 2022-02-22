@@ -7,197 +7,101 @@
 
 import SwiftUI
 
-
-
 struct CreateRecipeView: View {
-    
-    @State var dragAmount = CGSize.zero
-    @State var isDragged : Bool = false
+
+    @EnvironmentObject var avatarViewModel : AvatarViewModel
+    var recipe :Recipe
+    var sceneViewModel = SceneViewModel()
     
     var body: some View {
         
         GeometryReader { geometry in
             HStack{
-//                The space for the timeline
-//                Rectangle().frame(width: 120, height: 400)
-//               TimelineView(recipe: RecipeViewModel().recipesStore[0]))
-//
-        ZStack{
-            RoundedRectangle(cornerRadius: 50, style: .continuous)
-                .foregroundColor(CustomColor.bggreen)
-                .ignoresSafeArea()
-                .offset(x: geometry.size.width/8, y: 0)
-            
-//            i put geometry.size.width/8 as the width of the space dedicated to the timeline in the screenso that all the other measures take this dimesnion into account
-            
-            Text("Start")
-                .font(Font.custom("HappyMonkey-Regular", size: 40))
-                .foregroundColor(CustomColor.selectionblue)
-//                .shadow(color: CustomColor.selectionblue, radius: 3, x: 2, y: 2)
-                .position(x: geometry.size.width/18, y: geometry.size.height/20 - 20)
-            
-//            timeline dotted line
-            Path { path in
-                path.move(to: CGPoint(x: geometry.size.width/20, y: geometry.size.height/11))
-                path.addLine(to: CGPoint(x: geometry.size.width/20, y: geometry.size.height - 50))
-
-            }
-            .stroke(CustomColor.selectionblue, style: StrokeStyle(lineWidth: 10, dash: [20]))
-            
-            
-//            timeline
-            VStack (alignment: .trailing, spacing: 2){
-                
-              
+                //                The space for the timeline
+                //                Rectangle().frame(width: 120, height: 400)
+                //               TimelineView(recipe: RecipeViewModel().recipesStore[0]))
+                //
+                ZStack{
+                    RoundedRectangle(cornerRadius: 50, style: .continuous)
+                        .foregroundColor(Color(avatarViewModel.getSelectedAvatar().backgroundColor))
+                        .ignoresSafeArea()
+                        .offset(x: geometry.size.width/8, y: 0)
                     
-
-                Group {
-//               for in in steps yit needs to print the number in the circle
-                    Circle()
-                        .overlay(
-                    Text("1")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("2")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("3")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("4")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                    Circle()
-                        .overlay(
-                    Text("5")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80))
-                        .foregroundColor(.white)
-                        )
-                }
-                .scaleEffect(0.5)
-                .foregroundColor(CustomColor.selectionblue)
-                
-            }.position(x: geometry.size.width/20, y: geometry.size.width/3)
-            
-            
-            
-            Image("blender")
-                    .resizable()
-                    .scaleEffect(0.5)
-                    .aspectRatio(1.2, contentMode: .fit)
-                    .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
-            
-            
-            VStack (spacing:2) {
-                
-                Text("Let's make it!")
-                    .font(Font.custom("HappyMonkey-Regular", size: 80))
-                    .foregroundColor(CustomColor.selectionblue)
-                
-                HStack(spacing:8){
                     
-//                    ingredients to drag and drop
-
-                    Group{
-                        ZStack{
-                        Circle()
-                            Image("latte")
+                    ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
+                        
+                        if sceneViewModel.isEnvironmentNeeded(scene: scene) {
+                            Image(scene.container!)
                                 .resizable()
-                                .scaledToFit()
-                                .scaleEffect(isDragged ? 0.4 : 0.8)
-                                .offset(dragAmount)
-                                .zIndex(dragAmount == .zero ? 1 : 0)
-//                            work on this one to drag on top of things
-//                            works only on the current zstack
-                            
-                            
-//                            drag gesture
-                                .gesture(DragGesture(coordinateSpace: .global)
-                                            .onChanged{ self.dragAmount = CGSize(width : $0.translation.width, height: $0.translation.height)
-                                }
-                                            .onEnded { _ in
-                                    if abs(dragAmount.width) > geometry.size.width/3 {
-                                        isDragged = true
-                                        
-                                        
-//                                        remove the ingredient
-                                    } else {
-                                        self.dragAmount = .zero
-                                        isDragged = false
-                                    }
-                                  
-                                }
-                                )
-//
-                        }
-                        ZStack{
-                        Circle()
-                            Image("character_tonia")
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(0.8)
+                                .scaleEffect(0.5)
+                                .aspectRatio(1.2, contentMode: .fit)
+                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                         }
                         
-                        ZStack{
-                        Circle()
-                            Image("strawberries")
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(0.8)
+                        if scene.name.lowercased().contains("add") {
+                             DragAndDropView(scene: scene, recipe: recipe)
                         }
                         
-                        ZStack{
-                        Circle()
-                            Image("banana")
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(0.8)
-                        }
-                    
-                    
+  
                     }
-                    .foregroundColor(.white)
                     
-                } //close Hstack
-                .frame(width: geometry.size.width - geometry.size.width/8, height: geometry.size.height/3, alignment: .trailing)
-                .offset(x: geometry.size.width/15 , y:0)
-                
-//                avatar
-                
-                
-                HStack{
-                Image ("character_giorgia")
-                    //                    if the character avatar is tonia we should put a scale affetc = 0.9 or 1 because she is stretched with 0.8 (maybe create a variable with a ternary operator that manages the scale effect)
-                        .resizable()
-                        .scaleEffect(0.8)
-                        .aspectRatio(0.7, contentMode: .fit)
-//                        .position(x: 250, y: 650)
-                        .position(x: geometry.size.width/4.3, y: geometry.size.height/2.6)
                     
+                    
+                    
+                    VStack (spacing:2) {
+                        
+                        Text("Let's make it!")
+                            .font(Font.custom("HappyMonkey-Regular", size: 80))
+                            .foregroundColor(CustomColor.selectionblue)
+                        
+                        
+                        
+                        //                avatar
+                        
+                        
+                        HStack{
+                            Image (avatarViewModel.getSelectedAvatar().image)
+                            //                    if the character avatar is tonia we should put a scale affetc = 0.9 or 1 because she is stretched with 0.8 (maybe create a variable with a ternary operator that manages the scale effect)
+                                .resizable()
+                                .scaleEffect(0.8)
+                                .aspectRatio(0.7, contentMode: .fit)
+                            //                        .position(x: 250, y: 650)
+                                .position(x: geometry.size.width/4.3, y: geometry.size.height/2.6)
+                            
+                        }
+                        
+                    } //close the VSTack
+                    
+                } //close the ZStack
+            } //close geometry bracket
+        }
+    }
+    
+    // all the actions that could be done in a scene
+    func action(scene :RecipeScene, recipe :Recipe) {
 
-                }
-                
-            } //close the VSTack
+        if scene.name.lowercased().contains("shake") {
             
-        } //close the ZStack
-        } //close geometry bracket
+        }
+        if scene.name.lowercased().contains("mix") {
+            
+        }
+        if scene.name.lowercased().contains("spread") {
+            
+        }
+        if scene.name.lowercased().contains("grow") {
+            
+        }
+        if scene.name.lowercased().contains("crush") {
+            
+        }
     }
-    }
+    
 }
 
-struct CreateRecipeView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateRecipeView().previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct CreateRecipeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreateRecipeView().previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

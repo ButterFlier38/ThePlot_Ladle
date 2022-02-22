@@ -10,7 +10,8 @@ import SwiftUI
 
 struct StepsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
-//    @State var recipe: Recipe
+    var recipe :Recipe
+
    var body: some View {
        GeometryReader { geometry in
         ZStack{
@@ -23,7 +24,7 @@ struct StepsView: View {
             
                 HStack{
                     Spacer().frame(width: 20)
-                    NavigationLink( destination: IngredientsView()){
+                    NavigationLink( destination: ShowTheIngredientsView(recipe: recipe)){
                         BackButtonView()
                     }
                     
@@ -69,7 +70,7 @@ struct StepsView: View {
                 Spacer()
                 // Continue Button
                 NavigationLink {
-                    StepsView()
+                    CreateRecipeView(recipe: recipe)
                 } label: {
                     ContinueButtonView()
                 } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
@@ -88,10 +89,10 @@ struct StepsView: View {
    }
 }
 
-struct StepsView_Previews: PreviewProvider {
-    static var previews: some View {
-//        StepsView(recipe:RecipeViewModel())
-        StepsView().previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct StepsView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        StepsView(recipe:RecipeViewModel())
+//        StepsView().previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

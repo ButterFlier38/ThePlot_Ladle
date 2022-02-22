@@ -29,7 +29,6 @@
 		27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081827BE86BA00C7975D /* IngredientViewModel.swift */; };
 		27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081A27BE86E200C7975D /* IngredientCardView.swift */; };
 		27F0081F27BE887F00C7975D /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081E27BE887F00C7975D /* Ingredient.swift */; };
-		27F0082527BEBE4500C7975D /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0082427BEBE4500C7975D /* TimelineView.swift */; };
 		27F982BF27BEF67900EBF14B /* Step0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F982BE27BEF67900EBF14B /* Step0.swift */; };
 		27F982C127BEF68700EBF14B /* Stepref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F982C027BEF68700EBF14B /* Stepref.swift */; };
 		27F982C327BEF69200EBF14B /* Step2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F982C227BEF69200EBF14B /* Step2.swift */; };
@@ -40,7 +39,8 @@
 		47260E9527BC242400F0ED80 /* AvatarSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */; };
 		47A8249927BFAA320042B065 /* ShowTheIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */; };
 		47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50927C3EB1800827E4E /* SceneViewModel.swift */; };
-		47B7D50E27C3EB6D00827E4E /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50D27C3EB6D00827E4E /* Scene.swift */; };
+		47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50D27C3EB6D00827E4E /* RecipeScene.swift */; };
+		47B7D51027C4080F00827E4E /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B7D50F27C4080F00827E4E /* DragAndDropView.swift */; };
 		47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */; };
 		47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */; };
 		5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36427BFB00B0001F73F /* AnimationView.swift */; };
@@ -73,7 +73,6 @@
 		27F0081827BE86BA00C7975D /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
 		27F0081A27BE86E200C7975D /* IngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCardView.swift; sourceTree = "<group>"; };
 		27F0081E27BE887F00C7975D /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		27F0082427BEBE4500C7975D /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		27F982BE27BEF67900EBF14B /* Step0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step0.swift; sourceTree = "<group>"; };
 		27F982C027BEF68700EBF14B /* Stepref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepref.swift; sourceTree = "<group>"; };
 		27F982C227BEF69200EBF14B /* Step2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
@@ -84,7 +83,8 @@
 		47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionView.swift; sourceTree = "<group>"; };
 		47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTheIngredientsView.swift; sourceTree = "<group>"; };
 		47B7D50927C3EB1800827E4E /* SceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewModel.swift; sourceTree = "<group>"; };
-		47B7D50D27C3EB6D00827E4E /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		47B7D50D27C3EB6D00827E4E /* RecipeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeScene.swift; sourceTree = "<group>"; };
+		47B7D50F27C4080F00827E4E /* DragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropView.swift; sourceTree = "<group>"; };
 		47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTheRecipeView.swift; sourceTree = "<group>"; };
 		5AC3B36427BFB00B0001F73F /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
@@ -173,13 +173,13 @@
 				2780A37927B65BDA001B34CE /* NameInputView.swift */,
 				47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */,
 				47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */,
-				27F0082427BEBE4500C7975D /* TimelineView.swift */,
 				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 				2780A37F27B65C60001B34CE /* StepsView.swift */,
 				47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */,
 				5AC3B36427BFB00B0001F73F /* AnimationView.swift */,
 				5AC3B36627BFB0160001F73F /* AretheysimilarView.swift */,
 				2780A37527B65B57001B34CE /* CreateRecipeView.swift */,
+				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				27F0081427BE863100C7975D /* Recipe.swift */,
 				27F0081627BE866300C7975D /* Avatar.swift */,
 				27F0081E27BE887F00C7975D /* Ingredient.swift */,
-				47B7D50D27C3EB6D00827E4E /* Scene.swift */,
+				47B7D50D27C3EB6D00827E4E /* RecipeScene.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27705AA027C23A9500F996B4 /* BackButtonView.swift in Sources */,
+				47B7D51027C4080F00827E4E /* DragAndDropView.swift in Sources */,
 				2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */,
 				2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */,
 				27F0081F27BE887F00C7975D /* Ingredient.swift in Sources */,
@@ -334,7 +335,6 @@
 				27F982C527BF020000EBF14B /* Step1.swift in Sources */,
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,
 				5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */,
-				27F0082527BEBE4500C7975D /* TimelineView.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				27F982C927BF0F6600EBF14B /* Step4.swift in Sources */,
 				27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */,
@@ -342,7 +342,7 @@
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
-				47B7D50E27C3EB6D00827E4E /* Scene.swift in Sources */,
+				47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
 				27705A9E27C23A8D00F996B4 /* ContinueButtonView.swift in Sources */,
 			);
@@ -475,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = Z33CSW7W9J;
+				DEVELOPMENT_TEAM = U7LH8RJ437;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";
@@ -507,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = Z33CSW7W9J;
+				DEVELOPMENT_TEAM = U7LH8RJ437;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";

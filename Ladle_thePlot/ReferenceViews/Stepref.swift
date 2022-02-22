@@ -43,21 +43,21 @@ struct Step12: View {
 //                .shadow(color: CustomColor.selectionblue, radius: 3, x: 2, y: 2)
                 .position(x: geometry.size.width/18, y: geometry.size.height/10 - 10)
             
-            ForEach(recipe.noofsteps, id: \.self){step in
-                NavigationLink(destination: Step0()){
-                    Spacer()
-                ZStack{
-                    
-                Circle()
-                   
-                        Text(step.description)
-                        .foregroundColor(.white)
-                        .font(Font.custom("HappyMonkey-Regular", size: 30))
-                    }
-                .navigationViewStyle(.columns)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
-                }
+//            ForEach(recipe.noofsteps, id: \.self){step in
+//                NavigationLink(destination: Step0()){
+//                    Spacer()
+//                ZStack{
+//
+//                Circle()
+//
+//                        Text(step.description)
+//                        .foregroundColor(.white)
+//                        .font(Font.custom("HappyMonkey-Regular", size: 30))
+//                    }
+//                .navigationViewStyle(.columns)
+//                .navigationBarBackButtonHidden(true)
+//                .navigationBarHidden(true)
+//                }
                 
 //                Text("\(recipe.noofsteps)").foregroundColor(.black)
             }
@@ -164,7 +164,7 @@ struct Step12: View {
         } //close geometry bracket
     }
     }
-    }
+//    }
 
 
 struct Step12_Previews: PreviewProvider {
