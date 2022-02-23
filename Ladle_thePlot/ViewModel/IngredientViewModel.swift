@@ -29,6 +29,10 @@ struct IngredientViewModel {
         ]
     
     
+//    [ "flour", "yeast", "pinch of sugar", "water", "salt", "mozzarella", "pomodoro sauce", "olive oil" ]
+    
+    
+    
     // returns an ingredient from the name
     func getIngredient(ingredient :String, recipe :String) -> Ingredient? {
         if ingredient != "" {
