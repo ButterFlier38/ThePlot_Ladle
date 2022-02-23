@@ -144,6 +144,7 @@
 		2754CEA027B66EFB002761F9 /* CustomFonts */ = {
 			isa = PBXGroup;
 			children = (
+				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
 				2754CEA227B66F14002761F9 /* HappyMonkey-Regular.ttf */,
 				2754CEA127B66F14002761F9 /* OFL.txt */,
 			);
@@ -166,7 +167,6 @@
 				5AC3B36427BFB00B0001F73F /* AnimationView.swift */,
 				5AC3B36627BFB0160001F73F /* AretheysimilarView.swift */,
 				2780A37527B65B57001B34CE /* CreateRecipeView.swift */,
-				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,7 +176,6 @@
 			children = (
 				27705A9D27C23A8D00F996B4 /* ContinueButtonView.swift */,
 				27705A9F27C23A9500F996B4 /* BackButtonView.swift */,
-				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
 			);
 			path = ButtonViews;
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 		5A809A5427C671C1006B1749 /* ActionViews */ = {
 			isa = PBXGroup;
 			children = (
+				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
 				5A809A5527C671E6006B1749 /* CrushView.swift */,
 			);
 			path = ActionViews;
