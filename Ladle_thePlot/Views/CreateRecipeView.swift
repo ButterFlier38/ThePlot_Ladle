@@ -27,15 +27,20 @@ struct CreateRecipeView: View {
                         .ignoresSafeArea()
                         .offset(x: geometry.size.width/8, y: 0)
                     
-                
+                    TimeLineView()
+                       
+                    
+                    VStack{
+                    
                     Text("Let's make it!")
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                         .fontWeight(.bold)
                         .foregroundColor(CustomColor.selectionblue)
                         .frame(maxWidth: .infinity, alignment: .top)
                         .position(x: geometry.size.width / 2, y: geometry.size.height * 0)
+                        .padding(20)
     
-                    
+                   
                     
                     ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
                         
@@ -54,10 +59,11 @@ struct CreateRecipeView: View {
   
                     }
                     
+                    }
                     
                     
                     
-                    VStack (spacing:2) {
+                    VStack (spacing:10) {
                         
                         
                         
@@ -66,7 +72,7 @@ struct CreateRecipeView: View {
                             Image (avatarViewModel.getSelectedAvatar().image)
                                 .resizable()
                                 .scaledToFit()
-                                .position(x: geometry.size.width * 0.2, y: geometry.size.height * 0.5) //perfect position for the character
+                                .position(x: geometry.size.width * 0.23, y: geometry.size.height * 0.5) //perfect position for the character
                                 .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                             
 //                            vignette
@@ -83,6 +89,7 @@ struct CreateRecipeView: View {
                     } //close the VSTack
                     
                 } //close the ZStack
+                .navigationBarHidden(true)
             } //close geometry bracket
         }
     
