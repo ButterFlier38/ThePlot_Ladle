@@ -17,6 +17,7 @@ struct AvatarSelectionView: View {
                 Image("Background")  .resizable()
                             .scaledToFill()
                             .frame(width: geometry.size.width, height: geometry.size.height)
+                            .ignoresSafeArea()
                 RoundedRectangle(cornerRadius: 25, style: .continuous).fill(.white)
 //                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
                     .padding(.all).frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9)
