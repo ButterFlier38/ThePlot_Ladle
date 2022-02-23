@@ -52,8 +52,64 @@ struct CreateRecipeView: View {
                                 .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                         }
                         
+                        // adding ingredients
+                        
                         if scene.name.lowercased().contains("add") {
-                             DragAndDropView(scene: scene, recipe: recipe)
+                            
+                            DragAndDropView(scene: scene, recipe: recipe)
+                            
+                        }
+                        
+                        // shaking ingredients
+                        
+                        if scene.name.lowercased().contains("shake") {
+                            
+                            //                            Image(scene.container!)
+                            
+                            //                                .resizable()
+                            
+                            //                                .scaleEffect(0.5)
+                            
+                            //                                .aspectRatio(1.2, contentMode: .fit)
+                            
+                            //                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
+                            
+                            ////                                .onShake(print("DeviceShaken"))
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
+                        if scene.name.lowercased().contains("mix") {
+                            
+                            
+                            
+                        }
+                        
+                        if scene.name.lowercased().contains("spread") {
+                            
+                            
+                            
+                        }
+                        
+                        if scene.name.lowercased().contains("grow") {
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
+                        // crushing ingredients
+                        
+                        if scene.name.lowercased().contains("crush") {
+                            
+                            //CrushView(image: scene.container!)
+                            
+                            
+                            
                         }
                         
   
@@ -76,11 +132,11 @@ struct CreateRecipeView: View {
                                 .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                             
 //                            vignette
-                            Image("nuvoletta")
-                                .resizable()
-                                .scaledToFit()
-                                .overlay(Text("Remember the steps? Follow them to get the final result!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
-                                .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+//                            Image("nuvoletta")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .overlay(Text("Remember the steps? Follow them to get the final result!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
+//                                .frame( height: geometry.size.height * 0.2, alignment: .bottom)
                             Spacer()
                             
                             
