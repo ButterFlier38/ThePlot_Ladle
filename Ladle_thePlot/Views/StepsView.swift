@@ -10,27 +10,52 @@ import SwiftUI
 
 struct StepsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
-//    @State var recipe: Recipe
     @Binding var username : String
     var recipe :Recipe
     
+//   @State var colors : [Color] = [CustomColor.bggreen, CustomColor.bgyellow, CustomColor.bgblue, CustomColor.bgpink]
+    
+    
    var body: some View {
+       
+      
+       
        GeometryReader { geometry in
         ZStack{
             Image("IngreBubbTop")
                 .resizable()
                 .scaledToFit()
+                .rotationEffect(.degrees(13))
+                .opacity(0.7)
                 .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topTrailing)
+                .position(x: geometry.size.width/2, y: geometry.size.height/3.4)
+            
+            
+//            dotted line
+            
+//            Circle()
+//                .trim(from: 0.5, to: 0)
+//                .frame(width: geometry.size.width/3, height: geometry.size.height/3)
+            
+            
+                Semicircle()
+//                .stroke(colors.randomElement()!, style: StrokeStyle(lineWidth: 15, lineCap: .round, dash: [4, 22]))
+                .stroke(CustomColor.bgpink, style: StrokeStyle(lineWidth: 15, lineCap: .round, dash: [4, 22]))
+                .rotationEffect(.degrees(-10))
+            
+            
+            
         VStack{
             
             HStack{
                     
-                    Spacer().frame(width: 20)
+                    Spacer()
+                    .frame(width: 20)
                 NavigationLink( destination: ShowTheIngredientsView(recipe: recipe, username: $username))
                     {
                         BackButtonView()
                     }
-                    
+//                    
                     Text("Steps")
                   .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                         .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
@@ -41,28 +66,34 @@ struct StepsView: View {
 //            VStack{
          
          
-            StepCardView(ingredient: IngredientViewModel().ingredientsStore[10]).frame( width: geometry.size.width ,height: geometry.size.height * 0.3, alignment: .topTrailing)
+            StepCardView(ingredient: IngredientViewModel().ingredientsStore[10])
+                .frame(width: geometry.size.width / 3 ,height: geometry.size.height / 3)
+//                .padding([.top, .leading], 50)
+                .position(x: geometry.size.width * 0.22, y: geometry.size.height * 0.25)
 
-              
+
+
+            StepCardView(ingredient: IngredientViewModel().ingredientsStore[10])
+                .frame(width: geometry.size.width / 3 ,height: geometry.size.height / 3)
+//                .padding([.top, .leading], 50)
+                .position(x: geometry.size.width * 0.77, y: geometry.size.height * 0.0009)  //sto qui devo posizionare bene la card
             
-            StepCardView(ingredient: IngredientViewModel().ingredientsStore[10]).frame( alignment: .trailing)
-                Spacer()
+            
+              
              
             
-//    }
+    } //vstack
            
-            
-            HStack{
-            Circle().fill(CustomColor.bgblue).position(x: 20, y: -0)
-                Circle().fill(CustomColor.bgpink).position(x: 20, y: -20)
-                Circle().fill(CustomColor.bggreen).position(x: 10, y: -50)
-              
-            }.frame(width: 100, height: 25, alignment: .trailing).position(x: 1000, y: 690)
-            
-            
+                Ellipse()
+                .fill(CustomColor.bggreen)
+                .position(x: geometry.size.width/8, y: geometry.size.width/1.38)
+//            smaller y goes lower,
+//                .scaleEffect(1)
+                    
             
             HStack{
                 Image(avatarViewModel.getSelectedAvatar().image)
+//                Image("character_giorgia")
                     .resizable()
                     .scaledToFit()
                     .frame( height: geometry.size.height * 0.4, alignment: .bottom)
@@ -82,21 +113,43 @@ struct StepsView: View {
                     .navigationBarHidden(true)
             }
             
-                .navigationBarHidden(true)
+//                .navigationBarHidden(true)
+        
+            .frame(width: geometry.size.width, height: geometry.size.height * 1.03, alignment: .bottom) //perfect position equal to the one in ingredients view
                
         }
                       
         }
-
-       
-    }
    }
 }
+
+   
+
+struct Semicircle: Shape {
+    func path(in rect: CGRect) -> Path {
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        let radius = rect.width / 4.9
+        let startAngle = Angle(degrees: 340)
+        let endAngle = Angle(degrees: 250)
+        let clockwise = true
+
+        return Path { p in
+            p.addArc(center: center,
+                     radius: radius,
+                     startAngle: startAngle,
+                     endAngle: endAngle,
+                     clockwise: clockwise)
+        }
+    }
+}
+
 //        StepsView(username: $username).previewDevice("iPad Pro (11-inch) (3rd generation)")
+
+
 //struct StepsView_Previews: PreviewProvider {
 //    static var previews: some View {
-////        StepsView(recipe:RecipeViewModel())
-//        StepsView(username: $username).previewDevice("iPad Pro (11-inch) (3rd generation)")
+//        StepsView()
+////        StepsView(username: $username).previewDevice("iPad Pro (11-inch) (3rd generation)")
 //            .previewInterfaceOrientation(.landscapeLeft)
 //    }
 //}
