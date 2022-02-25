@@ -24,7 +24,7 @@ struct StepCardView: View {
                 .padding(20)
             ) //:overlay
             
-                       
+//    comments clanvcnadj
       
 
 //           cirle in the right bottom corner
