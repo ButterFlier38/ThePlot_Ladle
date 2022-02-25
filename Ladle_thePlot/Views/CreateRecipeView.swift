@@ -38,35 +38,42 @@ struct CreateRecipeView: View {
                     TimeLineView()
                        
                     
+                   
                     VStack{
-                    
                     Text("Let's make it!")
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                         .fontWeight(.bold)
                         .foregroundColor(CustomColor.selectionblue)
-                        .frame(maxWidth: .infinity, alignment: .top)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height * 0)
-                        .padding(20)
+                        .frame(width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .top)
+                        //                        .position(x: geometry.size.width / 2, y: geometry.size.height * 0)
+//                        .padding(20)
     
                    
-                    
+                    ZStack{
                     ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
-                        
                         if sceneViewModel.isEnvironmentNeeded(scene: scene) {
                             Image(scene.container!)
                                 .resizable()
-                                .scaleEffect(0.5)
+                                .scaleEffect(0.7)
                                 .aspectRatio(1.2, contentMode: .fit)
-                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
+                                .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
+                                .offset(x: 0 , y:geometry.size.height/6)
+                                .padding()
+//                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                         }
                         
-                        // adding ingredients
+                       
                         
                         if scene.name.lowercased().contains("add") {
                             
-                            DragAndDropView(scene: scene, recipe: recipe)
+                            DragAndDropView(scene: scene, recipe: recipe) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
                             
                         }
+                       
+                        
+                        // adding ingredients
+                        
+                       
                         
                         // shaking ingredients
                         
@@ -119,7 +126,8 @@ struct CreateRecipeView: View {
                             
                             
                         }
-                        
+                       
+                    }
   
                     }
                     

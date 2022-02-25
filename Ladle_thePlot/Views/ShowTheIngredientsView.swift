@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ShowTheIngredientsView: View {
     
     @EnvironmentObject var avatarViewModel : AvatarViewModel
@@ -62,7 +63,7 @@ struct ShowTheIngredientsView: View {
                         ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
                             
                             if ingredient != "" {
-                                IngredientCardView(ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                                IngredientCardView(canDrag: false , ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
                             }
                         }.frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.45, alignment: .center)
                         // :ForEach for ingredients
