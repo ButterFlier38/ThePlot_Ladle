@@ -11,36 +11,55 @@ struct StepCardView: View {
     var ingredient :Ingredient
     var body: some View {
         ZStack{
+            GeometryReader{ geometry in
         
-        
-        RoundedRectangle(cornerRadius: 30, style: .continuous)
+        RoundedRectangle(cornerRadius: 33, style: .continuous)
             .fill(CustomColor.bggreen)
-                        .frame(width: 300)
-        //                .fixedSize()
+            .frame(width: geometry.size.width, height: geometry.size.height * 3/4, alignment: .center)
             .overlay(
-                Circle().scaleEffect(0.7).foregroundColor(.white).position(x: 10, y:40)
+            Text("Take the condensed milk and add it to the blender. Then take the ice and add it too. ")
+                 .foregroundColor(CustomColor.selectionblue)
+                .font(Font.custom("HappyMonkey-Regular", size: 20))
+                .multilineTextAlignment(.center)
+                .padding(20)
+            ) //:overlay
+            
+                       
+      
+
+//           cirle in the right bottom corner
+                Circle()
+                    .overlay(
+                    Image("icecubes")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .scaleEffect(0.47)
+                    ) //: overlay
+                    .foregroundColor(.white)
+                    .scaleEffect(0.5)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .offset(x: geometry.size.width * 0.4, y: geometry.size.height * 0.12)
+                    .padding(50)
+                   
                 
-            )
-            .overlay(
-                Image(ingredient.image).scaleEffect(0.01).foregroundColor(.white).position(x: 10, y:40)
                 
-            )
-            .overlay(
-                Circle().scaleEffect(0.7).foregroundColor(.white).position(x: 490, y:170)
                 
-            )
-            .overlay(
-                Text("Ice Cubes").foregroundColor(CustomColor.selectionblue).position(x: 490, y:170).font(Font.custom("HappyMonkey-Regular", size: 20))
-                
-            )
+//                circle in the left top corner
+                Circle()
+                    .overlay(
+                    Image("strawberry")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .scaleEffect(0.47)
+                        
+                    )
+                    .foregroundColor(.white)
+                    .scaleEffect(0.6)
+                    .offset(x: -geometry.size.width * 0.47, y: -geometry.size.height * 0.5)
+                    .padding(50)
+               
         
-        //                    Text("\(recipe.name)")
-        Text("Take the condensed milk and add it to the blender. Then take the ice and add it too. ")
-//            .frame(width: 330, height: 150, alignment: .center)
-//            .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
-            .foregroundColor(CustomColor.selectionblue)
-        
-        
+            }
         }
         
     }
@@ -49,5 +68,6 @@ struct StepCardView: View {
 struct StepCardView_Previews: PreviewProvider {
     static var previews: some View {
         StepCardView(ingredient: IngredientViewModel().ingredientsStore[10])
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }

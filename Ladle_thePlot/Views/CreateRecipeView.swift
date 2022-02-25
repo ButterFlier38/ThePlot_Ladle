@@ -23,6 +23,14 @@ struct CreateRecipeView: View {
                 //
                 ZStack{
                     RoundedRectangle(cornerRadius: 50, style: .continuous)
+                        .overlay(
+//                            pattern as a background
+                        Image("Background-1")
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(0.5)
+                            .clipShape(RoundedRectangle(cornerRadius: 50))
+                        )
                         .foregroundColor(Color(avatarViewModel.getSelectedAvatar().backgroundColor))
                         .ignoresSafeArea()
                         .offset(x: geometry.size.width/8, y: 0)
