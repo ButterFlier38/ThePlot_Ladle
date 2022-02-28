@@ -24,7 +24,7 @@ struct IngredientCardView: View {
                 .overlay(Image(ingredient.image).resizable()
                             .scaledToFit()
                             .scaleEffect(self.isDragged ? 0.75 : 0.9)
-                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5).offset(dragAmount)
+                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5).offset(dragAmount).hoverEffect(.lift)
 //                            .gesture(    TapGesture(count: 1).onEnded{_ in self.selected = !self.selected})
                             .gesture(
                                 
@@ -37,8 +37,8 @@ struct IngredientCardView: View {
                                             }
                           }
                                  .onEnded { _ in
-                                            if (dragAmount.height) > geometry.size.height/2 && ((dragAmount.width) > geometry.size.width/5) && ((dragAmount.width) < geometry.size.width/2) {
-//                                if abs(dragAmount.width) > geometry.size.width/3 {
+//                                            if (dragAmount.height) > geometry.size.height/2 && ((dragAmount.width) > geometry.size.width/5) && ((dragAmount.width) < geometry.size.width/2) {
+                                if abs(dragAmount.width) > geometry.size.width/2 {
 //                    //                            NavigationLink(destination: Step1()){
                                     isDragged = true
                                 } else {

@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
-
+//extension UIScreen{
+//   static let screenWidth = UIScreen.main.bounds.size.width
+//   static let screenHeight = UIScreen.main.bounds.size.height
+//   static let screenSize = UIScreen.main.bounds.size
+//}
 
 struct ShowTheIngredientsView: View {
     
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     var recipe :Recipe
     @Binding var username : String
-   
+    @State private var ang = 0.0
+    @State private var scal = 1.0
     
     
     var body: some View {
@@ -29,7 +34,7 @@ struct ShowTheIngredientsView: View {
                 Image("IngreBubbBottom")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .center)
+                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .bottom)
             } //:ZStack for background
             
            
@@ -78,12 +83,20 @@ struct ShowTheIngredientsView: View {
                     Image(avatarViewModel.getSelectedAvatar().image)
                         .resizable()
                         .scaledToFit()
+                        .scaleEffect(scal)
+                        .rotation3DEffect(.degrees(ang), axis: (x: 0.2, y: 1, z: 0))
                         .frame( height: geometry.size.height * 0.4, alignment: .bottom)
+                        .onAppear{withAnimation(.spring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.2).repeatForever()){
+                            ang = 30.0
+                            scal = 0.9
+                        }}
+
 //                    Gather the following ingredients
                     Image("nuvoletta") .resizable()
                         .scaledToFit()
                         .overlay(Text(" Gather the following ingredients").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
                         .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+                        
                     Spacer()
                     // Continue Button
                     NavigationLink {
@@ -96,8 +109,12 @@ struct ShowTheIngredientsView: View {
                 } // : HStack for Avatar and Continue button
                 
             } // :VStack for title, ingredient scrollview and avatar continue button
-            
+                    
         } // :GeometryReader
+        .frame(
+           width:UIScreen.main.bounds.width,
+           height:UIScreen.main.bounds.height
+        )
     }
 }
 

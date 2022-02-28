@@ -34,7 +34,7 @@ struct DragAndDropView: View {
                     
                     if ingredient != "" {
                         
-                        IngredientCardView(canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                        IngredientCardView(canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!).hoverEffect(.lift)
                         
 //                            .scaleEffect(self.selected == ingredient ? 0.4 : 0.8)
 //                            .offset((self.selected == ingredient) ? .zero : dragAmount)

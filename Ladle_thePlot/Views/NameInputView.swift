@@ -23,7 +23,7 @@ struct CustomColor {
 
 struct NameInputView: View {
     @State public var username: String = ""
-  
+    @FocusState private var amountIsFocused: Bool
     var body: some View {
         GeometryReader { geometry in
            
@@ -32,6 +32,9 @@ struct NameInputView: View {
                         .scaledToFill()
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .ignoresSafeArea()
+                        .onTapGesture {
+                            amountIsFocused = false
+                        }
             
             RoundedRectangle(cornerRadius: 25, style: .continuous).fill(.white)
 //                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
@@ -77,6 +80,7 @@ struct NameInputView: View {
 
                         
                     TextField("Input name", text: $username )
+                            .focused($amountIsFocused)
                             .frame(width: geometry.size.width * 0.3,height: geometry.size.height * 0.05, alignment: .trailing)
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.4: geometry.size.height * 0.03))
                         .foregroundColor(CustomColor.selectionblue)

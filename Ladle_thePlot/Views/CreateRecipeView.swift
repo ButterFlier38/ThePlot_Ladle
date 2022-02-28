@@ -12,6 +12,8 @@ struct CreateRecipeView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     var recipe :Recipe
     var sceneViewModel = SceneViewModel()
+    @State var currentScene = 1
+//    @State  var hovered : Bool = false
     
     var body: some View {
         
@@ -35,7 +37,7 @@ struct CreateRecipeView: View {
                         .ignoresSafeArea()
                         .offset(x: geometry.size.width/8, y: 0)
                     
-                    TimeLineView()
+                    TimeLineView(currentScene : $currentScene, numberOfScenes: recipe.scenes.count)
                        
                     
                    
@@ -51,6 +53,7 @@ struct CreateRecipeView: View {
                    
                     ZStack{
                     ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
+                        ZStack{
                         if sceneViewModel.isEnvironmentNeeded(scene: scene) {
                             Image(scene.container!)
                                 .resizable()
@@ -59,14 +62,21 @@ struct CreateRecipeView: View {
                                 .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
                                 .offset(x: 0 , y:geometry.size.height/6)
                                 .padding()
+                                .zIndex(0)
+                            
+                                
+//                                .foregroundColor(overText ? .green : .red)
+                                
 //                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                         }
                         
                        
                         
-                        if scene.name.lowercased().contains("add") {
+                        if scene.name.lowercased().contains("add")
+                            && currentScene == scene.sceneNumber
+                        {
                             
-                            DragAndDropView(scene: scene, recipe: recipe) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
+                            DragAndDropView(scene: scene, recipe: recipe) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4).zIndex(1)
                             
                         }
                        
@@ -125,6 +135,7 @@ struct CreateRecipeView: View {
                             
                             
                             
+                        }
                         }
                        
                     }

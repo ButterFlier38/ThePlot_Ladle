@@ -17,7 +17,7 @@ struct CrushView: View {
     var image :String
 
     @State private var scale :CGFloat = 0.4
-
+    @Binding var currentScene : Int
     
 
     var body: some View {
@@ -43,6 +43,9 @@ struct CrushView: View {
                         scale += 0.1
 
                     }
+                    if scale == 0.7 {
+                        currentScene += 1
+                    }
 
                 }
 
@@ -54,12 +57,12 @@ struct CrushView: View {
 
 }
 
-struct CrushView_Previews: PreviewProvider {
-
-    static var previews: some View {
-
-        CrushView(image: "strawberry")
-
-    }
-
-}
+//struct CrushView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//
+//        CrushView(image: "strawberry")
+//
+//    }
+//
+//}

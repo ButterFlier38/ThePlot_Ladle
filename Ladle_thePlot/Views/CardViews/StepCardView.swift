@@ -33,12 +33,12 @@ struct StepCardView: View {
                     Image("icecubes")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .scaleEffect(0.47)
+                        .scaleEffect(0.57)
                     ) //: overlay
                     .foregroundColor(.white)
-                    .scaleEffect(0.5)
+                    .scaleEffect(0.3)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: geometry.size.width * 0.4, y: geometry.size.height * 0.12)
+                    .offset(x: geometry.size.width * 0.35, y: geometry.size.height * 0.1)
                     .padding(50)
                    
                 
@@ -50,12 +50,13 @@ struct StepCardView: View {
                     Image("strawberry")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .scaleEffect(0.47)
+                        .scaleEffect(0.57)
                         
                     )
                     .foregroundColor(.white)
-                    .scaleEffect(0.6)
-                    .offset(x: -geometry.size.width * 0.47, y: -geometry.size.height * 0.5)
+                    .scaleEffect(0.35)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .offset(x: -geometry.size.width * 0.57, y: -geometry.size.height * 0.67)
                     .padding(50)
                
         
