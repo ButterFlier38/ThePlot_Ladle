@@ -37,8 +37,8 @@ struct IngredientCardView: View {
                                             }
                           }
                                  .onEnded { _ in
-                                            if (dragAmount.height) > geometry.size.height/2 && ((dragAmount.width) > geometry.size.width/5) && ((dragAmount.width) < geometry.size.width/2) {
-//                                if abs(dragAmount.width) > geometry.size.width/3 {
+//                                            if (dragAmount.height) > geometry.size.height/2 && ((dragAmount.width) > geometry.size.width/5) && ((dragAmount.width) < geometry.size.width/2) {
+                                if abs(dragAmount.width) > geometry.size.width/2 {
 //                    //                            NavigationLink(destination: Step1()){
                                     isDragged = true
                                 } else {

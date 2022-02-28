@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TimeLineView: View {
     
-    //    var recipe : Recipe
-    var Number_of_scenes : Int = 4 // the numebr of schene it has to come from the viewmodel recipe.scenes.count
+    @Binding var currentScene :Int
+    var numberOfScenes : Int // the numebr of schene it has to come from the viewmodel recipe.scenes.count
     //recipe.scenes.count
     
     var a_che_punto_sto_nella_ricetta : Int = 3
@@ -32,7 +32,7 @@ struct TimeLineView: View {
                         
                         
                         
-                        ForEach(1..<Number_of_scenes + 1) { index in
+                        ForEach(1..<numberOfScenes + 1) { index in
                                 Path { path in
                                     path.move(to: CGPoint(x: geometry.size.width / 20, y: 0))
                                     path.addLine(to: CGPoint(x: geometry.size.width / 20, y: geometry.size.width/2))
@@ -41,7 +41,7 @@ struct TimeLineView: View {
                                 .foregroundColor(CustomColor.selectionblue)
                                 
 
-                            if (index == a_che_punto_sto_nella_ricetta){
+                            if (index == currentScene){
                                 
                                 
                                 Circle()
@@ -63,7 +63,7 @@ struct TimeLineView: View {
                                 
                                 
                                 
-                            } else if (index < a_che_punto_sto_nella_ricetta) {
+                            } else if (index < currentScene) {
                             
                                 Circle()
                                     .strokeBorder(CustomColor.selectionblue,lineWidth: 4)
@@ -83,7 +83,7 @@ struct TimeLineView: View {
                             
                             
                             //
-                            } else if  (index > a_che_punto_sto_nella_ricetta){
+                            } else if  (index > currentScene){
                                 
                                 Circle()
                                 
@@ -117,10 +117,10 @@ struct TimeLineView: View {
 
 
 
-struct TimeLineView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeLineView()
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct TimeLineView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimeLineView()
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
 
