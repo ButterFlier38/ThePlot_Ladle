@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StepCardView: View {
     var ingredient :Ingredient
+    var step :String
+    
     var body: some View {
         ZStack{
             GeometryReader{ geometry in
@@ -17,7 +19,7 @@ struct StepCardView: View {
             .fill(CustomColor.bggreen)
             .frame(width: geometry.size.width, height: geometry.size.height * 3/4, alignment: .center)
             .overlay(
-            Text("Take the condensed milk and add it to the blender. Then take the ice and add it too. ")
+            Text(step)
                  .foregroundColor(CustomColor.selectionblue)
                 .font(Font.custom("HappyMonkey-Regular", size: 20))
                 .multilineTextAlignment(.center)
@@ -65,9 +67,9 @@ struct StepCardView: View {
     }
 }
 
-struct StepCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        StepCardView(ingredient: IngredientViewModel().ingredientsStore[10])
-.previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct StepCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StepCardView(ingredient: IngredientViewModel().ingredientsStore[10])
+//.previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}

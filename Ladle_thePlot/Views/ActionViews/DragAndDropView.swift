@@ -23,6 +23,7 @@ struct DragAndDropView: View {
     @State var isDragged = false
     var scene :RecipeScene
     var recipe :Recipe
+    @Binding var currentScene :Int
    
    
     
@@ -81,6 +82,13 @@ struct DragAndDropView: View {
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height , alignment: .trailing)
             .offset(x: geometry.size.width/8 , y:0)
             
+            Button {
+                currentScene += 1
+            } label: {
+                ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom)
+            }
+
+                        
         }
 //        .frame(
 //            width:UIScreen.main.bounds.width,

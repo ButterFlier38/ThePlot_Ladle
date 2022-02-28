@@ -13,9 +13,6 @@ struct TimeLineView: View {
     var numberOfScenes : Int // the numebr of schene it has to come from the viewmodel recipe.scenes.count
     //recipe.scenes.count
     
-    var a_che_punto_sto_nella_ricetta : Int = 3
-//    it indicates at which point int he recipe you are (gets it from a view model)
-    
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     
     var body: some View {
@@ -40,7 +37,7 @@ struct TimeLineView: View {
                                 .stroke(style: StrokeStyle( lineWidth: 12))
                                 .foregroundColor(CustomColor.selectionblue)
                                 
-
+                            // for the current scene
                             if (index == currentScene){
                                 
                                 
@@ -62,7 +59,7 @@ struct TimeLineView: View {
                                 
                                 
                                 
-                                
+                              // for the previous steps
                             } else if (index < currentScene) {
                             
                                 Circle()
@@ -79,10 +76,13 @@ struct TimeLineView: View {
                              
                                     .position(x: geometry.size.width/20, y: 0)
                                     .frame(height: geometry.size.height/4.5)
+                                    .onTapGesture {
+                                        currentScene = index
+                                    }
                             
                             
                             
-                            //
+                            // for the steps after the current one
                             } else if  (index > currentScene){
                                 
                                 Circle()

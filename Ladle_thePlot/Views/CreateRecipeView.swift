@@ -69,7 +69,7 @@ struct CreateRecipeView: View {
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
                                 
-                                DragAndDropView(scene: scene, recipe: recipe) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
+                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(1)
                             }
                             
