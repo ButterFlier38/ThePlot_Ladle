@@ -12,15 +12,25 @@ struct AnimationView: View {
         ZStack {
             
                    Circle()
-                       .fill(Color.blue)
+                .fill(CustomColor.selectionblue)
                        .frame(width: 20, height: 20)
                        .modifier(ParticlesModifier())
 //                       .offset(x: 0, y : -50)
                    
                    Circle()
-                       .fill(Color.red)
+                .fill(CustomColor.selectionpink)
                        .frame(width: 20, height: 20)
                        .modifier(ParticlesModifier())
+//                       .offset(x: 0, y : -20)
+            Circle()
+         .fill(CustomColor.selectionyellow)
+                .frame(width: 20, height: 20)
+                .modifier(ParticlesModifier())
+//                       .offset(x: 0, y : -20)
+            Circle()
+         .fill(CustomColor.selectiongreen)
+                .frame(width: 20, height: 20)
+                .modifier(ParticlesModifier())
 //                       .offset(x: 0, y : -20)
                }
     }
@@ -69,8 +79,8 @@ struct AnimationView: View {
     }
 
 
-struct AnimationView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimationView()
-    }
-}
+//struct AnimationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AnimationView()
+//    }
+//}

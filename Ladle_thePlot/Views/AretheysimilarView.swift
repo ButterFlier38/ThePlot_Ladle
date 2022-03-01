@@ -11,7 +11,8 @@ import UIKit
 
 struct AretheysimilarView: View {
     
-  
+    @Binding var username : String
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -19,6 +20,14 @@ struct AretheysimilarView: View {
             ZStack {
 //                background
                 RoundedRectangle(cornerRadius: 210, style: .continuous)
+                    .overlay(
+                        //                            pattern as a background
+                        Image("Background-1")
+                            .resizable()
+                            .scaledToFit()
+                            .opacity(0.5)
+                            .clipShape(RoundedRectangle(cornerRadius: 210))
+                    )
                     .foregroundColor(CustomColor.bggreen)
                     .ignoresSafeArea()
                 
@@ -30,14 +39,14 @@ struct AretheysimilarView: View {
                 
 //                button here so it's placed always in the same place
                 NavigationLink {
-//                 ChooseTheRecipeView()
+                    ChooseTheRecipeView(username: $username)
                 } label: {
                     RoundedRectangle(cornerRadius: 60, style: .continuous)
                         .fill(CustomColor.selectionblue)
                         .frame(width: 270, height: 100)
-                        .overlay(
+                       .overlay(
                             Text("Done").font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
-                       
+                        
                 }
                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
                 
@@ -51,7 +60,11 @@ struct AretheysimilarView: View {
                 VStack{ //no timeline
                     
                     Text("Are they Similar?")
-                        .font(Font.custom("HappyMonkey-Regular", size: 80 )).fontWeight(.bold).foregroundColor(CustomColor.selectionblue)  .frame(maxWidth: .infinity, alignment: .center) .padding(.leading)
+                       .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
+                        .fontWeight(.bold)
+                        .foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .shadow(color: CustomColor.selectionblue, radius: 3)
                             
                 
 //                comparison
@@ -98,15 +111,15 @@ struct AretheysimilarView: View {
                 
                 
             }  //close the zstack
-            
+            .navigationBarHidden(true)
         } //close geometry
         
     }
 }
 
-struct AretheysimilarView_Previews: PreviewProvider {
-    static var previews: some View {
-        AretheysimilarView().previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct AretheysimilarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AretheysimilarView().previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
