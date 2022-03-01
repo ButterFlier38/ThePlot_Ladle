@@ -51,6 +51,7 @@ struct CreateRecipeView: View {
                     
                     
                     ZStack{
+//                        container
                         ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
                             if sceneViewModel.isEnvironmentNeeded(scene: scene) {
                                 Image(scene.container!)
@@ -58,9 +59,10 @@ struct CreateRecipeView: View {
                                     .scaleEffect(0.7)
                                     .aspectRatio(1.2, contentMode: .fit)
                                     .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
-                                    .offset(x: 0 , y:geometry.size.height/6)
+                                    .offset(x: geometry.size.width/14, y:geometry.size.height/6)
                                     .padding()
                                     .zIndex(0)
+                              
                                     
                                 //                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                             }

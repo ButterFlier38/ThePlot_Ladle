@@ -26,10 +26,13 @@ struct ShowTheIngredientsView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topTrailing)
+                    .ignoresSafeArea()
                 Image("IngreBubbBottom")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .center)
+                    .ignoresSafeArea()
+                    .frame(width: geometry.size.width , height: geometry.size.height, alignment: .bottom)
+//
             } //:ZStack for background
             
            
