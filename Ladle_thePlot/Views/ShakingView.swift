@@ -34,6 +34,7 @@ struct ShakingView: View {
                 // adding the final result of the recipe
                 print("device shaken at this intensity")
                 currentScene += 1
+                print(currentScene)
                 
             }
             

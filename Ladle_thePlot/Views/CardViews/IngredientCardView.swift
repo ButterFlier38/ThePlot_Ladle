@@ -14,8 +14,6 @@ struct IngredientCardView: View {
     @State var isDragged : Bool = false
     @State var canDrag : Bool
     var ingredient :Ingredient
-    @State var denominatore = UIScreen.main.bounds.width
-    @State var denominatore2 = UIScreen.main.bounds.height
     @State var pos = CGPoint(x: 10, y: 20)
     
 //    let center = CGPoint(x: rect.midX, y: rect.midY)
@@ -26,9 +24,11 @@ struct IngredientCardView: View {
             Circle()
                 .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.8)
                 .foregroundColor(.white)
+                
                 .overlay(Image(ingredient.image).resizable()
                             .scaledToFit()
                             .scaleEffect(self.isDragged ? 0.75 : 0.9)
+                            
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5).offset(dragAmount)
 //                            .gesture(    TapGesture(count: 1).onEnded{_ in self.selected = !self.selected})
                             .gesture(
@@ -44,13 +44,7 @@ struct IngredientCardView: View {
                                             }
                           }
                                  .onEnded { _ in
-                                     
-                                     denominatore = dragAmount.width < UIScreen.main.bounds.width/3 ? dragAmount.width*0.019 : dragAmount.width * 3 //35
-                                     denominatore2 = dragAmount.height < UIScreen.main.bounds.height/3 ? dragAmount.height : dragAmount.height * 4.6
-                                    
-//                                     if ((-dragAmount.width) < abs(UIScreen.main.bounds.width/denominatore)) && ((-dragAmount.height) < abs(UIScreen.main.bounds.height/denominatore2)){
-////                                         denominatore = dragAmount.width
-                                         
+   
                                          
                                      if (pos.x > abs(UIScreen.main.bounds.width/1.8) && (pos.x < abs(UIScreen.main.bounds.width - UIScreen.main.bounds.width/7.8)) && (pos.y > abs(UIScreen.main.bounds.height/2.2)) && (pos.y < abs(UIScreen.main.bounds.height - UIScreen.main.bounds.height/7))){
                                          

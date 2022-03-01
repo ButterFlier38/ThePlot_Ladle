@@ -40,6 +40,30 @@ struct CreateRecipeView: View {
                 TimeLineView(currentScene: $currentScene, numberOfScenes: recipe.scenes.count)
                 
                 
+                NavigationLink {
+                    StepsView(username: $username, recipe: recipe)
+                } label: {
+//                    RoundedRectangle(cornerRadius: 60, style: .continuous)
+                    Circle()
+                        .fill(.red).grayscale(0.2)
+                        .frame(width: geometry.size.width * 0.08,height: geometry.size.height * 0.08)
+                        .overlay(  Image(systemName: "xmark").scaleEffect(2.5).foregroundColor(.white)
+
+                        )
+//                            Image(systemName: "xmark").resizable().scaleEffect(0.4).foregroundColor(.white))
+                        .position(x: geometry.size.width * 0.89, y: geometry.size.height * 0.03)
+//////                                       .shadow(color: .white, radius: 1))
+                        
+//                    Image(systemName: "xmark.").resizable().scaleEffect(0.4).foregroundColor(.white))
+                    
+         
+                    
+                    
+                    
+                }
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9 , alignment: .bottomTrailing)
+                
+                
                 
                 VStack{
                     Text("Let's make it!")
@@ -71,7 +95,7 @@ struct CreateRecipeView: View {
                             // adding ingredients
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
-                                
+                               
                                 DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(1)
                             }
@@ -80,6 +104,7 @@ struct CreateRecipeView: View {
                             
                             if scene.name.lowercased().contains("shake") && currentScene == scene.sceneNumber {
                                 ShakingView(currentScene: $currentScene)
+                              
                             }
                             
                             if scene.name.lowercased().contains("mix") {
@@ -103,7 +128,28 @@ struct CreateRecipeView: View {
                         }
                         
                         if currentScene > recipe.recipeSteps.count {
-                            NavigationLink("Next", destination: AretheysimilarView(username: $username))
+                            
+                            
+                            
+                            NavigationLink {
+                                AretheysimilarView(username: $username, recipe: recipe)
+                            } label: {
+                                RoundedRectangle(cornerRadius: 60, style: .continuous)
+                                    .fill(CustomColor.selectiongreen)
+//                                    .frame(width: 270, height: 100)
+                                    .frame(width: geometry.size.width * 0.08,height: geometry.size.height * 0.1)
+                                    .overlay(Image(systemName: "arrow.forward").resizable().scaleEffect(0.55).foregroundColor(.white))
+                                    .position(x: geometry.size.width * 0.89, y: geometry.size.height * 0.8)
+//                                       .shadow(color: .white, radius: 1))
+                                    
+                            }
+                            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9 , alignment: .bottomTrailing)
+                            .onAppear{
+                                
+                            }
+                            
+                            
+//                            NavigationLink("Next", destination: AretheysimilarView(username: $username, recipe: recipe))
                         }
                         
                     }
@@ -140,6 +186,7 @@ struct CreateRecipeView: View {
             } //close the ZStack
             .navigationBarHidden(true)
         } //close geometry bracket
+        .edgesIgnoringSafeArea([.top,.bottom])
     }
     
 } //close view
