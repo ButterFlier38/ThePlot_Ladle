@@ -11,7 +11,7 @@ import SwiftUI
 struct IngredientCardView: View {
 //    @State var scal = 0.4
     @State var dragAmount = CGSize.zero
-    @Binding var isDragged : Bool 
+    @State var isDragged : Bool = false
     @State var canDrag : Bool
     var ingredient :Ingredient
     @State var pos = CGPoint(x: 10, y: 20)

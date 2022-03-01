@@ -35,7 +35,7 @@ struct DragAndDropView: View {
                     
                     if ingredient != "" {
                         
-                        IngredientCardView(isDragged: $isDragged, canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                        IngredientCardView(canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
 
 //                        while (!isDragged){
 ////                            the botton is not there, as soon as it becomes true it has to be there
