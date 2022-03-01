@@ -35,49 +35,16 @@ struct DragAndDropView: View {
                     
                     if ingredient != "" {
                         
-                        IngredientCardView(canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+                        IngredientCardView(isDragged: $isDragged, canDrag: true, ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!)
+
+//                        while (!isDragged){
+////                            the botton is not there, as soon as it becomes true it has to be there
+//                        }
                         
-//                            .scaleEffect(self.selected == ingredient ? 0.4 : 0.8)
-//                            .offset((self.selected == ingredient) ? .zero : dragAmount)
-//                            .offset(x: self.selected == ingredient ? self.dragOffset.width : 0,
-//                                    y: self.selected == ingredient ? self.dragOffset.height : 0) // CGPoint
-//                            .zIndex(dragAmount == .zero ? 1 : 0)// drag gesture
-//                            .gesture(
-//
-//
-//                                DragGesture(coordinateSpace: .global)
-//                                                                 .onChanged { value in
-//                                                                     // Updated
-//                                                                     if nil == self.selected {
-//                                                                         self.selected = ingredient
-//                                                                     }
-//                        self.dragAmount = CGSize(width : value.translation.width, height: value.translation.height)
-////                                                                     self.dragAmount = CGSize(width : $0.translation.width, height: $0.translation.height)
-//
-//                                                                 }
-//                                                                 .updating(self.$dragOffset, body: { (value, state, transaction) in
-//
-//                                                                     state = value.translation
-//
-//                                                                 }).onEnded { _ in self.selected = nil
-//                                                                     if abs(dragAmount.width) > geometry.size.width/2 && abs(dragAmount.width) < geometry.size.width {
-//                                                                         isDragged = true
-// } else {
-//                                                                         self.dragAmount = .zero
-//                                                                         isDragged = false
-//                                                                     }
-//
-//                                                                 }
-//                                                         )
                     }
                     } // :if Statement
                     
-                    
-//                }  // :ForEach
-                
-                // work on this one to drag on top of things
-                // works only on the current zstack
-                
+
             } //:HStack
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height , alignment: .trailing)
             .offset(x: geometry.size.width/8 , y:0)

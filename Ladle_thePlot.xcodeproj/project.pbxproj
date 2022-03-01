@@ -146,7 +146,6 @@
 		2754CEA027B66EFB002761F9 /* CustomFonts */ = {
 			isa = PBXGroup;
 			children = (
-				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
 				2754CEA227B66F14002761F9 /* HappyMonkey-Regular.ttf */,
 				2754CEA127B66F14002761F9 /* OFL.txt */,
 			);
@@ -156,6 +155,7 @@
 		2754CEA627B7A695002761F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
 				5A809A5427C671C1006B1749 /* ActionViews */,
 				27705AB527C2D70E00F996B4 /* Steps */,
 				27705AA127C23FA000F996B4 /* CardViews */,
@@ -163,13 +163,11 @@
 				2780A37927B65BDA001B34CE /* NameInputView.swift */,
 				47260E9427BC242400F0ED80 /* AvatarSelectionView.swift */,
 				47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */,
-				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 				2780A37F27B65C60001B34CE /* StepsView.swift */,
 				47A8249827BFAA320042B065 /* ShowTheIngredientsView.swift */,
 				5AC3B36427BFB00B0001F73F /* AnimationView.swift */,
 				5AC3B36627BFB0160001F73F /* AretheysimilarView.swift */,
 				2780A37527B65B57001B34CE /* CreateRecipeView.swift */,
-				47BE6C3727CD3BEA000EB64B /* ShakingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,8 +230,10 @@
 		5A809A5427C671C1006B1749 /* ActionViews */ = {
 			isa = PBXGroup;
 			children = (
+				47BE6C3727CD3BEA000EB64B /* ShakingView.swift */,
 				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
 				5A809A5527C671E6006B1749 /* CrushView.swift */,
+				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 			);
 			path = ActionViews;
 			sourceTree = "<group>";
