@@ -13,6 +13,7 @@ struct CreateRecipeView: View {
     var recipe :Recipe
     var sceneViewModel = SceneViewModel()
     @State var currentScene = 1
+    @Binding var username : String
     
     var body: some View {
         
@@ -67,76 +68,42 @@ struct CreateRecipeView: View {
                                 //                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
                             }
                             
-                            
+                            // adding ingredients
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
                                 
                                 DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(1)
                             }
-                            
-                            
-                            // adding ingredients
-                            
-                            
-                            
+
                             // shaking ingredients
                             
                             if scene.name.lowercased().contains("shake") && currentScene == scene.sceneNumber {
-                                
-                                CrushView(image: scene.container!, currentScene: $currentScene)
-                                //                            Image(scene.container!)
-                                
-                                //                                .resizable()
-                                
-                                //                                .scaleEffect(0.5)
-                                
-                                //                                .aspectRatio(1.2, contentMode: .fit)
-                                
-                                //                                .position(x: geometry.size.width - geometry.size.width/4, y: geometry.size.height - geometry.size.height/4)
-                                
-                                ////                                .onShake(print("DeviceShaken"))
-                                
-                                
-                                
+                                ShakingView(currentScene: $currentScene)
                             }
                             
-                            
-                            
                             if scene.name.lowercased().contains("mix") {
-                                
-                                
-                                
+    
                             }
                             
                             if scene.name.lowercased().contains("spread") {
-                                
-                                
-                                
+    
                             }
                             
                             if scene.name.lowercased().contains("grow") {
-                                
-                                
-                                
+
                             }
                             
-                            
-                            
-                            // crushing ingredients
-                            
+
+                            // crushing ingredientsù
                             if scene.name.lowercased().contains("crush") {
-                                
-                                //CrushView(image: scene.container!)
-                                
-                                
-                                
+                                CrushView(image: scene.container!, currentScene: $currentScene)
                             }
                             
                         }
                         
                         if currentScene > recipe.recipeSteps.count {
-                            NavigationLink("Next", destination: AretheysimilarView())
+                            NavigationLink("Next", destination: AretheysimilarView(username: $username))
                         }
                         
                     }

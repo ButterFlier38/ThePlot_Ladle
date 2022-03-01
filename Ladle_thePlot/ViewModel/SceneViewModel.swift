@@ -31,7 +31,11 @@ struct SceneViewModel {
         // for the ice cream
         RecipeScene(name: "Add ingredients", recipeName: "ice cream", sceneNumber: 1, steps: ["Add the condensed milk!", "Add the ice cubes", "Add strawberries", "Add banana"], stepIngredients: ["condensed milk", "ice cubes", "strawberries", "banana"], alternativeStepsIngredient: nil, container: "blender", finalResult: nil),
         
-        RecipeScene(name: "Shake using the blender", recipeName: "ice cream", sceneNumber: 2, steps: ["Shake your iPad to blend the ingredients!"], stepIngredients: nil, alternativeStepsIngredient: nil, container: "blender", finalResult: "blendingredients")
+        RecipeScene(name: "Shake using the blender", recipeName: "ice cream", sceneNumber: 2, steps: ["Shake your iPad to blend the ingredients!"], stepIngredients: nil, alternativeStepsIngredient: nil, container: "blender", finalResult: "blendingredients"),
+        
+        RecipeScene(name: "Add ingredients", recipeName: "crepe", sceneNumber: 1, steps: ["Add the milk!", "Add the eggs", "Add butter", "Add sugar"], stepIngredients: ["milk", "eggs", "melted butter", "sugar","salt","flour"], alternativeStepsIngredient: nil, container: "blender", finalResult: nil),
+        
+        RecipeScene(name: "Shake using the blender", recipeName: "crepe", sceneNumber: 2, steps: ["Shake your iPad to blend the ingredients!"], stepIngredients: nil, alternativeStepsIngredient: nil, container: "blender", finalResult: "blendingredients")
         
         ]
     

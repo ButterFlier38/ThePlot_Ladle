@@ -30,8 +30,8 @@ struct ShowTheIngredientsView: View {
                 Image("IngreBubbBottom")
                     .resizable()
                     .scaledToFit()
-                    .ignoresSafeArea()
                     .frame(width: geometry.size.width , height: geometry.size.height, alignment: .bottom)
+                    .ignoresSafeArea()
 //
             } //:ZStack for background
             
@@ -101,6 +101,7 @@ struct ShowTheIngredientsView: View {
             } // :VStack for title, ingredient scrollview and avatar continue button
             
         } // :GeometryReader
+        .edgesIgnoringSafeArea([.top,.bottom])
     }
 }
 

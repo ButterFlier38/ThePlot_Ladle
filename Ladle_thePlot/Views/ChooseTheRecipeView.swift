@@ -66,7 +66,7 @@ struct ChooseTheRecipeView: View {
             
             .navigationBarHidden(true)
         
-        }
+        }  .edgesIgnoringSafeArea([.top,.bottom])
     }
 }
 
