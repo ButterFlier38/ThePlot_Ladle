@@ -45,7 +45,7 @@ struct IngredientCardView: View {
                                             }
                           }
                                  .onEnded { _ in
-                                      
+                                    
                                      if (pos.x > abs(UIScreen.main.bounds.width/1.8) && (pos.x < abs(UIScreen.main.bounds.width - UIScreen.main.bounds.width/7.8)) && (pos.y > abs(UIScreen.main.bounds.height/2.2)) && (pos.y < abs(UIScreen.main.bounds.height - UIScreen.main.bounds.height/7))){
 
                                                 print("\(pos.x)")
