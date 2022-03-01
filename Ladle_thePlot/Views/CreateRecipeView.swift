@@ -13,6 +13,7 @@ struct CreateRecipeView: View {
     var recipe :Recipe
     var sceneViewModel = SceneViewModel()
     @State var currentScene = 1
+    @Binding var username : String
     
     var body: some View {
         
@@ -102,7 +103,7 @@ struct CreateRecipeView: View {
                         }
                         
                         if currentScene > recipe.recipeSteps.count {
-                            NavigationLink("Next", destination: AretheysimilarView())
+                            NavigationLink("Next", destination: AretheysimilarView(username: $username))
                         }
                         
                     }

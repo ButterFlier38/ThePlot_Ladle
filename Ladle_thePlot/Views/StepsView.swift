@@ -22,14 +22,16 @@ struct StepsView: View {
         GeometryReader { geometry in
             
             ZStack{
+               
                 Image("IngreBubbTop")
                     .resizable()
                     .scaledToFit()
                     .rotationEffect(.degrees(13))
-                    .opacity(0.7)
                     .frame(width: geometry.size.width , height: geometry.size.height, alignment: .topTrailing)
                     .position(x: geometry.size.width/2, y: geometry.size.height/3.4)
                 
+                
+               
                 
                 //            dotted line
                 
@@ -59,8 +61,9 @@ struct StepsView: View {
                         Text("Steps")
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                             .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
-                            .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading)
-                            .shadow(color: CustomColor.selectionblue, radius: 10)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(.leading)
+                            .shadow(color: CustomColor.selectionblue, radius: 3)
                         
                     }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
                     //            VStack{
@@ -102,7 +105,7 @@ struct StepsView: View {
                     Spacer()
                     // Continue Button
                     NavigationLink {
-                        CreateRecipeView(recipe: recipe)
+                        CreateRecipeView(recipe: recipe,username: $username)
                     } label: {
                         ContinueButtonView()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
