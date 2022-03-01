@@ -6,13 +6,33 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AvatarSelectionView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
+    @State var iConName : String = ""
+    @State var done : Bool = false
+    
+    func changeIcon(to iconName: String) {
+      guard UIApplication.shared.supportsAlternateIcons else {
+        return
+      }
+      UIApplication.shared.setAlternateIconName(iconName, completionHandler: { (error) in
+        if let error = error {
+          print("App icon failed to change due to \(error.localizedDescription)")
+        } else {
+          print("App icon changed successfully")
+//            done.toggle()
+        }
+      })
+    }
+    
+    
+    
+    
     var body: some View {
-        //        NavigationView {
-        GeometryReader { geometry in
+       GeometryReader { geometry in
             ZStack{
                 Image("Background")  .resizable()
                             .scaledToFill()
@@ -64,23 +84,36 @@ struct AvatarSelectionView: View {
                             .overlay(Circle().stroke(Color(avatar.selectedColor), lineWidth: 4)
                                         .overlay(Image(avatar.image).resizable().scaledToFit()
                                                     .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.9 : 0.69)
-//                                                    .scaleEffect(avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.04 : 0.029)
-//                                                    .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 0.07 : 0.06))
                                                     .clipShape(Circle().scale( avatarViewModel.isAvatarSelected(id: avatar.id) ? 1.2 : 0.98))))
-                        
-                    }.padding(.horizontal, 10)
+                                                }.padding(.horizontal, 10)
                     
                 } // :ForEach
             }.padding(.horizontal, 20) // :HStack
                 .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.28)
-        
+
             // Continue button
             NavigationLink {
                 ChooseTheRecipeView(username: $username)
             } label: {
-                ContinueButtonView() .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
-                
-            } // :Continue Button
+                ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
+                    .onTapGesture {
+                        if avatarViewModel.getSelectedAvatar().name != iConName.lowercased(){
+                        switch avatarViewModel.getSelectedAvatar().name {
+                        case "nino" :
+                            iConName = "Nino"
+                        case "tonia" :
+                            iConName = "Tonia"
+                        case "giorgia" :
+                            iConName = "Giorgia"
+                        case "gino" :
+                            iConName = "Gino"
+                            default:
+                                print(iConName)
+                            }
+                    changeIcon(to: iConName)
+                            done = false } else {done = true}
+                    }.disabled(done)
+                        } // :Continue Button
             .padding(.bottom)
             .disabled(avatarViewModel.isSomeAvatarSelected())
         

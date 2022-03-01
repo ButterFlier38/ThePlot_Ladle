@@ -25,7 +25,19 @@ struct IngredientViewModel {
         Ingredient(name: "Banana", image: "banana", quantity: "50g", recipeName: "ice cream", isAlternative: false),
         Ingredient(name: "Yogurt", image: "yogurt", quantity: "250g", recipeName: "ice cream", isAlternative: true),
         Ingredient(name: "Frozen Fruit", image: "frozenfruit", quantity: "250g", recipeName: "ice cream", isAlternative: true),
-        Ingredient(name: "Honey", image: "honey", quantity: "40g", recipeName: "ice cream", isAlternative: true)
+        Ingredient(name: "Honey", image: "honey", quantity: "40g", recipeName: "ice cream", isAlternative: true),
+        
+        Ingredient(name: "Ice Cubes", image: "icecubes", quantity: "50g", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Strawberries", image: "strawberry", quantity: "50g", recipeName: "crepe", isAlternative: false)
+        ,
+        Ingredient(name: "Milk", image: "milk", quantity: "500ml", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Melted butter", image: "burro", quantity: "50g", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Eggs", image: "egg", quantity: "4", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Sugar", image: "sugar", quantity: "15g", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Salt", image: "salt", quantity: "Pinch of ", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Flour", image: "flour", quantity: "550gr", recipeName: "crepe", isAlternative: false),
+        Ingredient(name: "Fruit", image: "lampone", quantity: "15g", recipeName: "crepe", isAlternative: false)
+        
         ]
     
     
