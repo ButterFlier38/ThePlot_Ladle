@@ -51,6 +51,7 @@ struct DragAndDropView: View {
             
             Button {
                 currentScene += 1
+                print(currentScene)
             } label: {
                 ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom)
             }

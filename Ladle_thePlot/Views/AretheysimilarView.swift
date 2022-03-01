@@ -10,9 +10,10 @@ import UIKit
 
 
 struct AretheysimilarView: View {
-    
+    @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
-    
+//    var modelView = RecipeViewModel()
+    var recipe :Recipe
     var body: some View {
         
         GeometryReader { geometry in
@@ -38,6 +39,8 @@ struct AretheysimilarView: View {
                 
                 
 //                button here so it's placed always in the same place
+                
+                
                 NavigationLink {
                     ChooseTheRecipeView(username: $username)
                 } label: {
@@ -50,12 +53,14 @@ struct AretheysimilarView: View {
                 }
                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
                 
-                
-                Image ("character_giorgia")
-                        .resizable()
-                        .scaleEffect(0.5)
-                        .aspectRatio(0.7, contentMode: .fit)
-                        .position(x: geometry.size.width * 0.14, y: geometry.size.width * 0.56)
+               
+                Image(avatarViewModel.getSelectedAvatar().image)
+                    .resizable()
+                    .scaledToFit()
+                    .position(x: geometry.size.width * 0.2, y: geometry.size.height * 0.56)
+                   .frame( height: geometry.size.height * 0.5, alignment: .bottomLeading)
+                    
+               
                 
                 VStack{ //no timeline
                     
@@ -72,7 +77,7 @@ struct AretheysimilarView: View {
                 
                     HStack (alignment: .center, spacing: 100) {
                     
-                    Image("icecream1")
+                        Image(recipe.image)
                             .resizable()
                             .aspectRatio(0.9, contentMode: .fit)
                         
