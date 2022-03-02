@@ -57,11 +57,11 @@ struct AnimationView: View {
     struct ParticlesModifier: ViewModifier {
         @State var time = 0.0
         @State var scale = 0.7
-        let duration = 7.0
+        let duration = 15.0
         
         func body(content: Content) -> some View {
             ZStack {
-                ForEach(0..<380, id: \.self) { index in
+                ForEach(0..<500, id: \.self) { index in
                     content
                         .hueRotation(Angle(degrees: time * 80))
                         .scaleEffect(scale)
