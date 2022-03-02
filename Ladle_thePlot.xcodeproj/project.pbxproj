@@ -27,6 +27,7 @@
 		2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37927B65BDA001B34CE /* NameInputView.swift */; };
 		2780A38027B65C60001B34CE /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37F27B65C60001B34CE /* StepsView.swift */; };
 		27E60D0E27CF8EAB00DA1388 /* NextStepButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0D27CF8EAB00DA1388 /* NextStepButtonView.swift */; };
+		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
 		27F0081727BE866300C7975D /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081627BE866300C7975D /* Avatar.swift */; };
 		27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081827BE86BA00C7975D /* IngredientViewModel.swift */; };
@@ -72,6 +73,7 @@
 		2780A37927B65BDA001B34CE /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		2780A37F27B65C60001B34CE /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
 		27E60D0D27CF8EAB00DA1388 /* NextStepButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButtonView.swift; sourceTree = "<group>"; };
+		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		27F0081627BE866300C7975D /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		27F0081827BE86BA00C7975D /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */,
 				27F0081A27BE86E200C7975D /* IngredientCardView.swift */,
+				27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */,
 				27705AA227C246CB00F996B4 /* StepCardView.swift */,
 				27705AA427C24AD700F996B4 /* StepCircleCard.swift */,
 				5A1D3B2927C5271C009301D1 /* splashScreenView.swift */,
@@ -331,6 +334,7 @@
 				2780A38027B65C60001B34CE /* StepsView.swift in Sources */,
 				47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */,
 				5A809A5627C671E6006B1749 /* CrushView.swift in Sources */,
+				27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */,
 				47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */,
 				47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */,
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,

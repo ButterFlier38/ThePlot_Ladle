@@ -37,6 +37,32 @@ struct CreateRecipeView: View {
                     .foregroundColor(Color(avatarViewModel.getSelectedAvatar().backgroundColor))
                     .ignoresSafeArea()
                     .offset(x: geometry.size.width/8, y: 0)
+                HStack{
+//                    Spacer().frame(width: geometry.size.width * 0.05)
+                Text("Let's make it!")
+                    .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
+                    .fontWeight(.bold)
+                    .foregroundColor(CustomColor.selectionblue)
+                    .frame(height: geometry.size.height * 0.1).padding()
+                    
+                    Spacer().frame(width: geometry.size.width * 0.15, alignment: .topTrailing)
+                    NavigationLink {
+                        StepsView(username: $username, recipe: recipe)
+                    } label: {
+                        
+                        Circle()
+                            .fill(.red).grayscale(0.2)
+                            .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .topTrailing)
+                            .overlay(  Image(systemName: "xmark").scaleEffect(2.5).foregroundColor(.white)
+
+                            )
+//                            .position(x: geometry.size.width * 0.9,y: geometry.size.height * 0.1)
+//
+                    }
+                    
+//                    .frame(alignment: .center)
+
+                } .frame(width: geometry.size.width,height: geometry.size.height , alignment: .topTrailing)
                 
                 TimeLineView(currentScene: $currentScene, numberOfScenes: recipe.scenes.count, finalResultNeeded: $finalResultNeeded)
                 
@@ -72,37 +98,12 @@ struct CreateRecipeView: View {
                 
                 
                 VStack{
-                    HStack{
-                        Spacer().frame(width: geometry.size.width * 0.25)
-                    Text("Let's make it!")
-                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
-                        .fontWeight(.bold)
-                        .foregroundColor(CustomColor.selectionblue)
-                        .frame(height: geometry.size.height * 0.1, alignment: .top)
-                    //                        .position(x: geometry.size.width / 2, y: geometry.size.height * 0)
-                    //                        .padding(20)
-                    Spacer().frame(width: geometry.size.width * 0.15)
-                        NavigationLink {
-                            StepsView(username: $username, recipe: recipe)
-                        } label: {
-                            
-                            Circle()
-                                .fill(.red).grayscale(0.2)
-                                .frame(width: geometry.size.width * 0.08,height: geometry.size.height * 0.08)
-                                .overlay(  Image(systemName: "xmark").scaleEffect(2.5).foregroundColor(.white)
-
-                                )
-//                                .position(x: geometry.size.width * 0.89, y: geometry.size.height * 0.2)
-                                
-        //                                       .shadow(color: .white, radius: 1))
-                                
-                        }
-                    }
+                 
                     
                     ZStack{
 //                        container
                         ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
-                            if finalResultNeeded && scene.finalResult != nil{
+                            if finalResultNeeded && scene.finalResult != nil {
                                                             Image(scene.finalResult!)
                                                                 .resizable()
                                                                 .scaleEffect(0.7)
@@ -117,7 +118,9 @@ struct CreateRecipeView: View {
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
                               
-                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene) .frame(width: geometry.size.width  ,height: geometry.size.height * 0.3) .offset(x: 0 , y:-geometry.size.height/4)
+                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene)
+                                    .frame(width: geometry.size.width * 0.9 ,height: geometry.size.height * 0.5)
+                                    .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(1)
                                 
 //                                Button {
@@ -161,8 +164,28 @@ struct CreateRecipeView: View {
                             NavigationLink {
                                          AretheysimilarView(username: $username, recipe: recipe)
                                      } label: {
-                                         NextStepButtonView()
+                                         Circle()
+                                             .fill(CustomColor.selectiongreen).grayscale(0.2)
+                                             .frame(width: geometry.size.width * 0.5,height: geometry.size.height * 0.1, alignment: .topTrailing)
+                                             .overlay(  Image(systemName: "arrow.right").scaleEffect(2.5).foregroundColor(.white)
+
+                                             )
                                      }.frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.12, alignment: .bottomTrailing)
+                                .position(x: geometry.size.width * 0.9 , y: geometry.size.height * 0.9)
+                            
+                            
+                            
+                            
+                           
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                            
 //                                    .position(x: geometry.size.width * 0.89 , y: geometry.size.height * 0.8)

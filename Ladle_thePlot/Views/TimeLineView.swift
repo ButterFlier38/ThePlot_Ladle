@@ -78,7 +78,9 @@ struct TimeLineView: View {
                                     .frame(height: geometry.size.height/4.5)
                                     .onTapGesture {
                                         currentScene = index
+                                        if finalResultNeeded {
                                         finalResultNeeded.toggle()
+                                        }
                                     }
                             
                             
