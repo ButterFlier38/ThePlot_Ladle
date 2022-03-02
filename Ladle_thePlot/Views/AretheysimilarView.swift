@@ -14,6 +14,8 @@ struct AretheysimilarView: View {
     @Binding var username : String
 //    var modelView = RecipeViewModel()
     var recipe :Recipe
+    var buttonText : String = "done"
+    var AreTheySimilarText : String = "Are they similar?"
     var body: some View {
         
         GeometryReader { geometry in
@@ -48,7 +50,7 @@ struct AretheysimilarView: View {
                         .fill(CustomColor.selectionblue)
                         .frame(width: 270, height: 100)
                        .overlay(
-                            Text("Done").font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
+                            Text(LocalizedStringKey(String(buttonText))).font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
                         
                 }
                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
@@ -64,7 +66,7 @@ struct AretheysimilarView: View {
                 
                 VStack{ //no timeline
                     
-                    Text("Are they Similar?")
+                    Text(LocalizedStringKey(String(AreTheySimilarText)))
                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                         .fontWeight(.bold)
                         .foregroundColor(CustomColor.selectionblue)

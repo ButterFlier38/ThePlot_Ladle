@@ -19,7 +19,7 @@ struct StepCardView: View {
             .fill(CustomColor.bggreen)
             .frame(width: geometry.size.width, height: geometry.size.height * 3/4, alignment: .center)
             .overlay(
-            Text(step)
+            Text(LocalizedStringKey(String(step)))
                  .foregroundColor(CustomColor.selectionblue)
                 .font(Font.custom("HappyMonkey-Regular", size: 20))
                 .multilineTextAlignment(.center)
@@ -32,7 +32,7 @@ struct StepCardView: View {
 //           cirle in the right bottom corner
                 Circle()
                     .overlay(
-                    Image("icecubes")
+                        Image(ingredient.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .scaleEffect(0.47)
@@ -49,7 +49,7 @@ struct StepCardView: View {
 //                circle in the left top corner
                 Circle()
                     .overlay(
-                    Image("strawberry")
+                        Image(ingredient.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .scaleEffect(0.47)

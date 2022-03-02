@@ -11,6 +11,7 @@ struct ChooseTheRecipeView: View {
     var modelView = RecipeViewModel()
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username: String
+    var recipesText :String = "Recipes"
     
 //    @State var degrees : Double = 0
     let layout = [
@@ -29,7 +30,7 @@ struct ChooseTheRecipeView: View {
             
             VStack(alignment: .leading) {
                 HStack{
-                Text("Recipes")
+                Text(LocalizedStringKey(String(recipesText)))
                     .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                     .fontWeight(.bold)
                     .foregroundColor(CustomColor.selectionblue)

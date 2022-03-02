@@ -12,6 +12,8 @@ struct Ladle_thePlotApp: App {
     var body: some Scene {
         WindowGroup {
            splashScreenView().environmentObject(AvatarViewModel())
+          
         }
+       
     }
 }
