@@ -23,12 +23,25 @@ struct DragAndDropView: View {
     @State var isDragged = false
     var scene :RecipeScene
     var recipe :Recipe
+    var sceneViewModel :SceneViewModel = SceneViewModel()
     @Binding var currentScene :Int
    
    
     
     var body: some View {
         GeometryReader { geometry in
+            VStack{
+            if sceneViewModel.isEnvironmentNeeded(scene: scene) {
+                                Image(scene.container!)
+                                    .resizable()
+                                    .scaleEffect(0.7)
+                                    .aspectRatio(1.2, contentMode: .fit)
+                                    .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
+                                    .offset(x: geometry.size.width/14, y:geometry.size.height/6)
+                                    .padding()
+                                    .zIndex(0)
+
+                            }
                         HStack {
             
                 ForEach(scene.stepIngredients!, id: \.self) { ingredient in
@@ -46,23 +59,24 @@ struct DragAndDropView: View {
                     
 
             } //:HStack
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height , alignment: .trailing)
+            .frame(width: geometry.size.width * 0.9, height: geometry.size.height , alignment: .trailing)
             .offset(x: geometry.size.width/8 , y:0)
             
-            Button {
-                currentScene += 1
-                print(currentScene)
-            } label: {
-                ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom)
-            }
-
-                        
+                Button{
+                    currentScene += 1
+                }label: {
+                    ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom)
+                }
+        
+//                    .position(x: geometry.size.width * 0.89 , y: geometry.size.height * 0.8)
+                
         }
+//            .frame(width: geometry.size.width , height: geometry.size.height , alignment: .trailing)
 //        .frame(
 //            width:UIScreen.main.bounds.width,
 //            height:UIScreen.main.bounds.height
 //         )
-        
+        }
         // :GeometryReader
     }
 }

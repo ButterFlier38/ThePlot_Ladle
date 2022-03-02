@@ -14,7 +14,7 @@ struct TimeLineView: View {
     //recipe.scenes.count
     
     @EnvironmentObject var avatarViewModel : AvatarViewModel
-    
+    @Binding var finalResultNeeded :Bool
     var body: some View {
         //       timeline view
         ZStack {
@@ -78,6 +78,7 @@ struct TimeLineView: View {
                                     .frame(height: geometry.size.height/4.5)
                                     .onTapGesture {
                                         currentScene = index
+                                        finalResultNeeded.toggle()
                                     }
                             
                             
@@ -106,7 +107,7 @@ struct TimeLineView: View {
 
                     
                 } //:scrollview
-                .frame(width: geometry.size.width, alignment: .leading)
+                .frame(width: geometry.size.width * 0.1, alignment: .leading)
             } //close geometry
 //            .frame( width:UIScreen.main.bounds.width, alignment: .leading)
            

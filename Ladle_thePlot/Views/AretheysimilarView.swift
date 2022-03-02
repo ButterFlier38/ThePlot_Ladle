@@ -29,7 +29,7 @@ struct AretheysimilarView: View {
                             .opacity(0.5)
                             .clipShape(RoundedRectangle(cornerRadius: 210))
                     )
-                    .foregroundColor(CustomColor.bggreen)
+                    .foregroundColor(Color(avatarViewModel.getSelectedAvatar().backgroundColor))
                     .ignoresSafeArea()
                 
 //                animation

@@ -32,7 +32,7 @@ struct ShowTheIngredientsView: View {
                     .scaledToFit()
                     .frame(width: geometry.size.width , height: geometry.size.height, alignment: .bottom)
                     .ignoresSafeArea()
-//
+  
             } //:ZStack for background
             
            
@@ -94,6 +94,10 @@ struct ShowTheIngredientsView: View {
                     } label: {
                         ContinueButtonView()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
+                    
+                  
+                    
+                    
                         .padding(.trailing, 50)
                         .navigationBarHidden(true)
                 } // : HStack for Avatar and Continue button
