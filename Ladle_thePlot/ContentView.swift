@@ -34,5 +34,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .previewInterfaceOrientation(.landscapeLeft)
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .environment(\.locale, .init(identifier: "it"))
     }
 }

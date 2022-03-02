@@ -13,9 +13,9 @@ struct Recipe : Identifiable {
     var name :String // name of the recipe
     var image :String // name of the image
     var color :String
-    var ingredients :[String]
+    var ingredients :[String]  //efore was string
     var alternativeIngredients :[String]?
-    var recipeSteps : [String]// the number of steps and the steps description
+    var recipeSteps : [String]// the number of steps and the steps description    before was a string
     var recipeAlternativeSteps : [String]?
     var scenes :[String]
 }

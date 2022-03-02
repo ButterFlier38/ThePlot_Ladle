@@ -13,6 +13,8 @@ struct ShowTheIngredientsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     var recipe :Recipe
     @Binding var username : String
+    var IngredientsText : String = "Ingredients"
+    var GatherIngredients : String = "Gather the following ingredients"
    
     
     
@@ -45,7 +47,7 @@ struct ShowTheIngredientsView: View {
                                 BackButtonView()
                             }.padding(.leading, 20)
                             
-                        Text("Ingredients")
+                        Text(LocalizedStringKey(String(IngredientsText)))
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                             .fontWeight(.bold)
                             .foregroundColor(CustomColor.selectionblue)
@@ -85,7 +87,7 @@ struct ShowTheIngredientsView: View {
 //                    Gather the following ingredients
                     Image("nuvoletta") .resizable()
                         .scaledToFit()
-                        .overlay(Text(" Gather the following ingredients").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
+                        .overlay(Text(LocalizedStringKey(String(GatherIngredients))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
                         .frame( height: geometry.size.height * 0.2, alignment: .bottom)
                     Spacer()
                     // Continue Button

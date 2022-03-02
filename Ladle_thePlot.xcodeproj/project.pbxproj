@@ -46,6 +46,7 @@
 		5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36427BFB00B0001F73F /* AnimationView.swift */; };
 		5AC3B36727BFB0160001F73F /* AretheysimilarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36627BFB0160001F73F /* AretheysimilarView.swift */; };
 		5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36827BFB1920001F73F /* ShakeView.swift */; };
+		5ACCB70127CFA2E5008A75D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACCB70327CFA2E5008A75D5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,8 @@
 		5AC3B36427BFB00B0001F73F /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		5AC3B36627BFB0160001F73F /* AretheysimilarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AretheysimilarView.swift; sourceTree = "<group>"; };
 		5AC3B36827BFB1920001F73F /* ShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
+		5ACCB70227CFA2E5008A75D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5ACCB70427CFA2EA008A75D5 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		2702B03D27B652C100A0E5DD = {
 			isa = PBXGroup;
 			children = (
+				5ACCB70327CFA2E5008A75D5 /* Localizable.strings */,
 				2702B04827B652C100A0E5DD /* Ladle_thePlot */,
 				2702B04727B652C100A0E5DD /* Products */,
 			);
@@ -280,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 2702B03D27B652C100A0E5DD;
 			productRefGroup = 2702B04727B652C100A0E5DD /* Products */;
@@ -296,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACCB70127CFA2E5008A75D5 /* Localizable.strings in Resources */,
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,
 				2702B05127B652C400A0E5DD /* Preview Assets.xcassets in Resources */,
 				2702B04E27B652C400A0E5DD /* Assets.xcassets in Resources */,
@@ -350,11 +356,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		5ACCB70327CFA2E5008A75D5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ACCB70227CFA2E5008A75D5 /* en */,
+				5ACCB70427CFA2EA008A75D5 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		2702B05227B652C400A0E5DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -416,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -476,7 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = Z33CSW7W9J;
+				DEVELOPMENT_TEAM = 232QK9T2BM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";
@@ -511,7 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = Z33CSW7W9J;
+				DEVELOPMENT_TEAM = 232QK9T2BM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";

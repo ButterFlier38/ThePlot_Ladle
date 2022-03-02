@@ -13,6 +13,8 @@ struct StepsView: View {
     @Binding var username : String
     var recipe :Recipe
     var count = 0
+    var StepsText : String = "Steps"
+    var NuvolettaText : String = "Here is the list of all the steps you will have to follow!!"
     
     //   @State var colors : [Color] = [CustomColor.bggreen, CustomColor.bgyellow, CustomColor.bgblue, CustomColor.bgpink]
     
@@ -58,7 +60,7 @@ struct StepsView: View {
                             BackButtonView()
                         }
                         //
-                        Text("Steps")
+                        Text(LocalizedStringKey(String(StepsText)))
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
                             .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -99,7 +101,7 @@ struct StepsView: View {
                         .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                     Image("nuvoletta") .resizable()
                         .scaledToFit()
-                        .overlay(Text("Here is the list of all the steps you will have to follow!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
+                        .overlay(Text(LocalizedStringKey(String(NuvolettaText))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
                         .frame( height: geometry.size.height * 0.2, alignment: .bottom)
                     
                     Spacer()

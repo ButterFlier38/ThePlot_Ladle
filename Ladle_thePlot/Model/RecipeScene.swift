@@ -12,8 +12,8 @@ struct RecipeScene :Identifiable {
     var name :String
     var recipeName :String
     var sceneNumber :Int
-    var steps :[String] // text to show into the vignettes, explaining the steps during the making part
-    var stepIngredients :[String]? // all the ingredients that the step need to provide
+    var steps :[String] // text to show into the vignettes, explaining the steps during the making part   was string before
+    var stepIngredients :[String]? // all the ingredients that the step need to provide   was string before
     var alternativeStepsIngredient :[String]?
     var container :String? // starting image (empty bowl, blender)
     var finalResult :String? // the result at the end of the scene

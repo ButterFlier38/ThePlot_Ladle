@@ -13,6 +13,7 @@ struct AvatarSelectionView: View {
     @Binding var username : String
     @State var iConName : String = ""
     @State var done : Bool = false
+    var chooseYourAvatar : String = "Choose your avatar: "
     
     func changeIcon(to iconName: String) {
       guard UIApplication.shared.supportsAlternateIcons else {
@@ -65,7 +66,7 @@ struct AvatarSelectionView: View {
                             .offset(x: -(geometry.frame(in: .global).midX/13))
             }
             
-            Text("Choose your avatar :")
+            Text(LocalizedStringKey(String(chooseYourAvatar)))
                 .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.4: geometry.size.height * 0.05))
                .foregroundColor(CustomColor.selectionblue)
                        .shadow(color: CustomColor.selectionblue, radius: 1)

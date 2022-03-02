@@ -24,6 +24,10 @@ struct CustomColor {
 struct NameInputView: View {
     @State public var username: String = ""
     @FocusState private var amountIsFocused: Bool
+//    variables needed to do the localization
+    var WhatIsYourChildName : String = "What's your child's name?"
+    var Inputusername : String = "Input name"
+    
     var body: some View {
         GeometryReader { geometry in
            
@@ -63,7 +67,7 @@ struct NameInputView: View {
                                     .frame( height: geometry.size.height * 0.22)
                                     .offset(x: -(geometry.frame(in: .global).midX/13))
                     }
-                    Text("What's your child's name?")
+                    Text(LocalizedStringKey(String(WhatIsYourChildName)))
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.4: geometry.size.height * 0.05))
 //                                            .frame(width: geometry.size.width * 0.4,height: geometry.size.height * 0.05, alignment: .center)
                                .foregroundColor(CustomColor.selectionblue)
@@ -79,7 +83,7 @@ struct NameInputView: View {
                                              .stroke(CustomColor.selectionblue, lineWidth: 4))
 
                         
-                    TextField("Input name", text: $username )
+                    TextField(LocalizedStringKey(String(Inputusername)), text: $username )
                             .focused($amountIsFocused)
                             .frame(width: geometry.size.width * 0.3,height: geometry.size.height * 0.05, alignment: .trailing)
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.4: geometry.size.height * 0.03))
@@ -99,14 +103,8 @@ struct NameInputView: View {
 
                 
             }
-//                .overlay(
-//                RoundedRectangle(cornerRadius: 25, style: .continuous)
-//                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)
-//                    .padding(.all).foregroundColor(.white)
-//                    .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.75)
-//                    .frame(width: geometry.size.width, height: geometry.size.height))
-//
-        
+
+
             }     .frame(width: geometry.size.width * 0.8)
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .navigationBarHidden(true)
@@ -119,10 +117,10 @@ struct NameInputView: View {
 }
 
 
-struct NameInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        NameInputView().previewDevice("iPad Pro (11-inch) (3rd generation)")
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
+//struct NameInputView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NameInputView().previewDevice("iPad Pro (11-inch) (3rd generation)")
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
 
