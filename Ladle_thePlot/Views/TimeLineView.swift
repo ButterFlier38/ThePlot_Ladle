@@ -20,16 +20,19 @@ struct TimeLineView: View {
         ZStack {
             GeometryReader { geometry in
                 ScrollView{
-                    VStack (alignment:.leading, spacing: 10){
+                    VStack(alignment:.leading, spacing: 10){
+                        
                         Text("Start")
                             .font(Font.custom("HappyMonkey-Regular", size: 40))
+                            .minimumScaleFactor(0.0001)
+                            .lineLimit(1)
                             .foregroundColor(CustomColor.selectionblue)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 10)
+                            .padding(.bottom, 15)
                         
                         
                         
-                        ForEach(1..<numberOfScenes + 1) { index in
+                        ForEach(1..<numberOfScenes+1) { index in
                                 Path { path in
                                     path.move(to: CGPoint(x: geometry.size.width / 20, y: 0))
                                     path.addLine(to: CGPoint(x: geometry.size.width / 20, y: geometry.size.width/2))
@@ -78,6 +81,7 @@ struct TimeLineView: View {
                                     .frame(height: geometry.size.height/4.5)
                                     .onTapGesture {
                                         currentScene = index
+                                        
                                         if finalResultNeeded {
                                         finalResultNeeded.toggle()
                                         }

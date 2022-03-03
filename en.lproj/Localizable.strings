@@ -1,59 +1,11 @@
 
-//iinglese
+"Hi %@ !" = "Hi %@ !";
 
-"welcome" = "welcome";
-"Add the flour!" = "Add the flour!";
-"Add the sugar" = "Add the sugar";
-"Add the yeast!" = "Add the yeast!";
-"Mix to create a hole in the middle!" = "Mix to create a hole in the middle!";
-"Add the warm water!" = "Add the warm water!";
-"Add the oil" = "Add the warm water!";
-"Mix to create the dough!" = "Mix to create the dough!";
-"Now the dough has to grow! Put a linen on the ipad and when you here a sound it means that the dough is ready." = "Now the dough has to grow! Put a linen on the ipad and when you here a sound it means that the dough is ready.";
-"Crush the dough in order to obtain the pizza base!" = "Crush the dough in order to obtain the pizza base!";
-"Add the pomodoro sauce!" = "Add the pomodoro sauce!";
-"Add the salt!" = "Add the salt!";
-"Add the oil!" = "Add the oil!";
-"Spread the seasoning!" = "Spread the seasoning!";
-"Add mozzarella!" = "Add mozzarella!";
-"Add the condensed milk!" = "Add the condensed milk!";
-"Add the ice cubes" = "Add the ice cubes";
-"Add strawberries" = "Add strawberries";
-"Add banana" = "Add banana";
-"Shake your iPad to blend the ingredients!" = "Shake your iPad to blend the ingredients!";
-"Add the milk!" = "Add the milk!";
-"Add the eggs" = "Add the eggs";
-"Add butter" = "Add butter";
-"Add sugar" = "Add sugar";
-"Shake your iPad to blend the ingredients!" = "Shake your iPad to blend the ingredients!";
-"flour" = "flour";
-"yeast" = "yeast";
-"sugar" = "sugar";
-"water" = "water";
-"salt" = "salt";
-"mozzarella" = "mozzarella";
-"pomodoro sauce" = "pomodoro sauce";
-"olive oil" = "olive oil";
-"First of all we have to make the dough. Put the flour, sugar and yeast in a bowl and  make a hole in the middle." = "First of all we have to make the dough. Put the flour, sugar and yeast in a bowl and  make a hole in the middle.";
-"Add the oil and water. Stir with a wooden spoon until you have a sticky dough. Add a splash more water if needed." = "Add the oil and water. Stir with a wooden spoon until you have a sticky dough. Add a splash more water if needed.";
-"Scatter a bit of flour over the surface and tip the dough onto it. Work it until you have a ball (10 mins).  Make sure that the dough is smooth and elastic." =  "Scatter a bit of flour over the surface and tip the dough onto it. Work it until you have a ball (10 mins).  Make sure that the dough is smooth and elastic.";
-"Brush a clean bowl with a little olive oil, put the dough in it and cover with cling film. Leave it somewhere warm for it to grow until doubled in size." = "Brush a clean bowl with a little olive oil, put the dough in it and cover with cling film. Leave it somewhere warm for it to grow until doubled in size.";
-"Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough.Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly." = "Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough.Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly.";
-"condensed milk" = "condensed milk";
-"ice cubes" = "ice cubes";
-"strawberries" = "strawberries";
-"banana" = "banana";
-"Take the condensed milk and add it to the blender. Then take the ice and add it too." = "Take the condensed milk and add it to the blender. Then take the ice and add it too.";
-"Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!" = "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!";
-"milk" = "milk";
-"eggs" = "eggs";
-"melted butter" = "melted butter";
-"sugar" = "sugar";
-"salt" = "salt";
-"flour" = "flour";
-"fruit" = "fruit";
-"Place the milk, eggs, melted butter, sugar, vanilla, salt, and flour into a blender. Blend until the batter Melt a small of pat of butter in a frying pan over medium-low heat." = "Place the milk, eggs, melted butter, sugar, vanilla, salt, and flour into a blender. Blend until the batter Melt a small of pat of butter in a frying pan over medium-low heat.";
-"Pour about 1/4 cup batter into the pan. Turn the pan from side to side to make an even circle.Cook the crepe until lightly browned. Then flip it over and cook the other side. Repeat the process. Place a crepe on a plate and add chocolate and fruit to the center.Roll it up and it’s ready to eat!" = "Pour about 1/4 cup batter into the pan. Turn the pan from side to side to make an even circle.Cook the crepe until lightly browned. Then flip it over and cook the other side. Repeat the process. Place a crepe on a plate and add chocolate and fruit to the center.Roll it up and it’s ready to eat!";
+//buttons and static text
+"Done" = "Done";
+"Recipes" = "Recipes";
+"Choose your avatar: " = "Choose your avatar: ";
+"Input name" = "Input name";
 "Ingredients" = "Ingredients";
 "Steps" = "Steps";
 "Here is the list of all the steps you will have to follow!!" = "Here is the list of all the steps you will have to follow!!";
@@ -61,5 +13,128 @@
 "Are they similar?" = "Are they similar?";
 "What's your child's name?" = "What's your child's name?";
 "Continue" = "Continue";
+"Let's make it!" = "Let's make it!";
+
+//ingredients and quantities (from ingredients view model)
+"Flour" = "Flour";
+"500g" = "500g";
+"Yeast" = "Yeast";
+"7g" = "7g";
+"Sugar" = "Sugar";
+"Pinch of" = "Pinch of";
+"Water" = "Water";
+"" = "";
+"Salt" = "Salt";
+"Pinch of" = "Pinch of";
+ "Mozzarella" =  "Mozzarella";
+"" = "";
+"Pomodoro Sauce"  =  "Pomodoro Sauce";
+"" = "";
+"Olive Oil" = "Olive Oil";
+ "" =  "";
+ "Condensed Milk" =  "Condensed Milk";
+"100ml" = "100ml";
+ "Ice Cubes" =  "Ice Cubes";
+ "50g" =  "50g";
+ "Strawberries" = "Strawberries";
+ "50g" = "50g";
+ "Banana" =  "Banana";
+"50g" = "50g";
+"Yogurt" = "Yogurt";
+ "250g"=  "250g";
+ "Frozen Fruit" =  "Frozen Fruit";
+ "250g" =  "250g";
+"Honey" = "Honey";
+"40g" = "40g";
+"Ice Cubes" = "Ice Cubes";
+"50g" = "50g";
+"Strawberries"= "Strawberries";
+"50g"= "50g";
+ "Milk"=  "Milk";
+"500ml"= "500ml";
+"Melted butter"= "Melted butter";
+"50g"= "50g";
+"Eggs"= "Eggs";
+"4"= "4";
+ "Sugar"=  "Sugar";
+"15g"= "15g";
+"Salt"= "Salt";
+"Pinch of "= "Pinch of ";
+"Flour"= "Flour";
+"550gr" = "550gr";
+"Fruit" = "Fruit";
+"15g" = "15g";
 
 
+
+//from recipe view model
+//recipe steps
+"First of all we have to make the dough. Put the flour, sugar and yeast in a bowl and  make a hole in the middle." = "First of all we have to make the dough. Put the flour, sugar and yeast in a bowl and  make a hole in the middle.";
+"Add the oil and water. Stir with a wooden spoon until you have a sticky dough. Add a splash more water if needed." = "Add the oil and water. Stir with a wooden spoon until you have a sticky dough. Add a splash more water if needed.";
+"Scatter a bit of flour over the surface and tip the dough onto it. Work it until you have a ball (10 mins).  Make sure that the dough is smooth and elastic." = "Scatter a bit of flour over the surface and tip the dough onto it. Work it until you have a ball (10 mins).  Make sure that the dough is smooth and elastic.";
+"Brush a clean bowl with a little olive oil, put the dough in it and cover with cling film. Leave it somewhere warm for it to grow until doubled in size." = "Brush a clean bowl with a little olive oil, put the dough in it and cover with cling film. Leave it somewhere warm for it to grow until doubled in size.";
+"Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough.Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly." = "Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough.Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly.";
+
+//i don't know if this is necessary
+//recipeAlternativeSteps: nil, scenes: ["Add the powders","Mix the powders", "Add the liquids", "Mix to create the dough", "The dough has to growth", "Crush the dough to roll out the dough", "Add the ingredients for the seasoning", "Add mozzarella"]),
+
+ 
+"Take the condensed milk and add it to the blender. Then take the ice and add it too." = "Take the condensed milk and add it to the blender. Then take the ice and add it too.";
+"Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!" = "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!";
+
+//recipeAlternativeSteps: ["Take the chosen fruit, wash it, peel it, cut it in cubes and feeeze it for at least 5 hours.", "Now take the frozen fruit out of the refrigerator and put it in the blener. Finally add the yogurt and the honey and turn the blender on!"], scenes: ["Add ingredients","Shake using the blender"]),
+ 
+"Place the milk, eggs, melted butter, sugar, vanilla, salt, and flour into a blender. Blend until the batter Melt a small of pat of butter in a frying pan over medium-low heat." = "Place the milk, eggs, melted butter, sugar, vanilla, salt, and flour into a blender. Blend until the batter Melt a small of pat of butter in a frying pan over medium-low heat.";
+"Pour about 1/4 cup batter into the pan. Turn the pan from side to side to make an even circle.Cook the crepe until lightly browned. Then flip it over and cook the other side. Repeat the process. Place a crepe on a plate and add chocolate and fruit to the center.Roll it up and it’s ready to eat!" = "Pour about 1/4 cup batter into the pan. Turn the pan from side to side to make an even circle.Cook the crepe until lightly browned. Then flip it over and cook the other side. Repeat the process. Place a crepe on a plate and add chocolate and fruit to the center.Roll it up and it’s ready to eat!";
+//recipeAlternativeSteps: [""], scenes: ["Add ingredients","Rotate the pan"])
+
+
+
+//from scene view model TEXT FOR THE VIGNETTES
+"Add the powders" = "Add the powders";
+"Add the flour!"= "Add the flour!";
+"Add the sugar" = "Add the sugar";
+"Add the yeast!" = "Add the yeast!";
+
+"Mix to the powders" = "Mix to the powders";
+"Mix to create a hole in the middle!" = "Mix to create a hole in the middle!";
+
+"Add the liquids" = "Add the liquids";
+"Add the warm water!" = "Add the warm water!";
+"Add the oil" = "Add the oil";
+
+"Mix to create the dough" = "Mix to create the dough";
+"The dough has to growth" = "The dough has to growth";
+"Now the dough has to grow! Put a linen on the ipad and when you here a sound it means that the dough is ready." = "Now the dough has to grow! Put a linen on the ipad and when you here a sound it means that the dough is ready.";
+
+"Crush the dough to roll out the dough" = "Crush the dough to roll out the dough";
+"Crush the dough in order to obtain the pizza base!"= "Crush the dough in order to obtain the pizza base!";
+
+"Add the ingredients for the seasoning" = "Add the ingredients for the seasoning";
+"Add the pomodoro sauce!" = "Add the pomodoro sauce!";
+"Add the salt!" = "Add the salt!";
+
+"Spread the seasoning" = "Spread the seasoning";
+"Spread the seasoning!" = "Spread the seasoning!";
+
+"Add mozzarella" = "Add mozzarella";
+"Add mozzarella!" = "Add mozzarella!";
+
+
+"Add ingredients" = "Add ingredients";
+"Add the condensed milk!" = "Add the condensed milk!";
+"Add the ice cubes" = "Add the ice cubes";
+"Add strawberries" = "Add strawberries";
+"Add banana" = "Add banana";
+
+"Shake using the blender" = "Shake using the blender";
+"Shake your iPad to blend the ingredients!" = "Shake your iPad to blend the ingredients!";
+
+"Add ingredients" = "Add ingredients";
+"Add the milk!" = "Add the milk!";
+"Add the eggs" = "Add the eggs";
+"Add butter" = "Add butter";
+"Add sugar" = "Add sugar";
+
+"Shake using the blender" = "Shake using the blender";
+"Shake your iPad to blend the ingredients!" = "Shake your iPad to blend the ingredients!";

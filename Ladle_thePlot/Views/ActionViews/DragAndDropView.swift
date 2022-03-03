@@ -75,7 +75,7 @@ struct DragAndDropView: View {
                         currentScene += 1
                     }label: {
                         
-                        NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0.4)
+                        NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0)
                            
                     } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
                .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
@@ -85,6 +85,7 @@ struct DragAndDropView: View {
                 }
               
             }
+        }
         
         // :GeometryReader
     }

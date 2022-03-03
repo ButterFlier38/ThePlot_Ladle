@@ -37,6 +37,7 @@ struct IngredientViewModel {
         Ingredient(name: "Salt", image: "salt", quantity: "Pinch of ", recipeName: "crepe", isAlternative: false),
         Ingredient(name: "Flour", image: "flour", quantity: "550gr", recipeName: "crepe", isAlternative: false),
         Ingredient(name: "Fruit", image: "lampone", quantity: "15g", recipeName: "crepe", isAlternative: false)
+//        localized assets we arrived here. The assets that will be added from here on need to be added also to the localized strings file
         
         ]
     

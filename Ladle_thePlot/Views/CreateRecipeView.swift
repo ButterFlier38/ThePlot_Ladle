@@ -16,6 +16,7 @@ struct CreateRecipeView: View {
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
     @State  var move :CGFloat = 0.42
+    var LetsMakeItText : String = "Let's make it!"
     
     var body: some View {
         GeometryReader { geometry in

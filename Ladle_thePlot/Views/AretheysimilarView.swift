@@ -14,7 +14,7 @@ struct AretheysimilarView: View {
     @Binding var username : String
 //    var modelView = RecipeViewModel()
     var recipe :Recipe
-    var buttonText : String = "done"
+    var buttonText : String = "Done"
     var AreTheySimilarText : String = "Are they similar?"
     var body: some View {
         
