@@ -36,8 +36,7 @@ struct CrushView: View {
                     if scale == 0.7 { // when the tap finish, current scene would be incremented
                         currentScene += 1
                     }
-                }
-                .animation(.interpolatingSpring(stiffness: 20, damping: 2))
+                }.animation(.interpolatingSpring(stiffness: 20, damping: 2))
         }
     }
 }

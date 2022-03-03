@@ -35,7 +35,7 @@ struct ChooseTheRecipeView: View {
                     .fontWeight(.bold)
                     .foregroundColor(CustomColor.selectionblue)
                     .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
-                    .shadow(color: CustomColor.selectionblue, radius: 3)
+//                    .shadow(color: CustomColor.selectionblue, radius: 3)
                     HStack{
                         Image("nuvoletta") .resizable()
                             .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))

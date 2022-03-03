@@ -37,10 +37,8 @@ struct DragAndDropView: View {
                     if sceneViewModel.isEnvironmentNeeded(scene: scene) {
                         Image(scene.container!)
                             .resizable()
-                        //                                        .scaleEffect(0.7)
-                            .aspectRatio(1.2, contentMode: .fit)
+                           .aspectRatio(1.2, contentMode: .fit)
                             .frame(width: geometry.size.width,height: geometry.size.height , alignment: .bottomTrailing)
-//                            .offset(x: geometry.size.width/30, y:geometry.size.height/9)
                             .position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.90)
                             .padding(.top, geometry.size.height * 0.5)
                             .zIndex(0)
@@ -83,19 +81,9 @@ struct DragAndDropView: View {
                .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
                     
-                    
-                    
-//                    .frame(width: geometry.size.width * 0.15 , height: geometry.size.height * 0.1, alignment: .trailing)
-                    
-                    
-                    //                    .position(x: geometry.size.width * 0.89 , y: geometry.size.height * 0.8)
-                    
+  
                 }
-                //            .frame(width: geometry.size.width , height: geometry.size.height , alignment: .trailing)
-                //        .frame(
-                //            width:UIScreen.main.bounds.width,
-                //            height:UIScreen.main.bounds.height
-                //         )
+              
             }
         
         // :GeometryReader

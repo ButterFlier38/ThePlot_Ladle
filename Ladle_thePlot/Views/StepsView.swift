@@ -65,7 +65,7 @@ struct StepsView: View {
                             .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
                             .frame(maxWidth: .infinity, alignment: .leading)
 //                            .padding(.leading)
-                            .shadow(color: CustomColor.selectionblue, radius: 3)
+//                            .shadow(color: CustomColor.selectionblue, radius: 3)
                         
                     }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
                     //            VStack{

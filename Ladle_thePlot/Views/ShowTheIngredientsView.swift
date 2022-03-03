@@ -53,7 +53,7 @@ struct ShowTheIngredientsView: View {
                             .foregroundColor(CustomColor.selectionblue)
                             .frame(maxWidth: .infinity, alignment: .leading)
 //                            .padding(.leading,50)
-                            .shadow(color: CustomColor.selectionblue, radius: 3)
+//                            .shadow(color: CustomColor.selectionblue, radius: 3)
                     
                     
                     
