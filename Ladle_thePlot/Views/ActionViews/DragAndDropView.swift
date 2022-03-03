@@ -76,17 +76,15 @@ struct DragAndDropView: View {
                     Button{
                         currentScene += 1
                     }label: {
-                        Circle()
-                            .fill(CustomColor.selectiongreen).grayscale(0.2)
-                            .frame(width: geometry.size.width * 0.5,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                            .overlay(  Image(systemName: "arrow.right").scaleEffect(2.5).foregroundColor(.white)
-
-                            )
-                            .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0.4)
-                     
                         
-                    }.position(x: geometry.size.width * 0.9 , y: geometry.size.height * 0.9)
+                        NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0.4)
+                           
+                    } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
+               .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
+                    
+                    
+                    
 //                    .frame(width: geometry.size.width * 0.15 , height: geometry.size.height * 0.1, alignment: .trailing)
                     
                     

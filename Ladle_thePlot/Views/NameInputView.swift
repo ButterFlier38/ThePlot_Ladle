@@ -36,9 +36,7 @@ struct NameInputView: View {
                         .scaledToFill()
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .ignoresSafeArea()
-                        .onTapGesture {
-                                                    amountIsFocused = false
-                                                }
+                        .onTapGesture {amountIsFocused = false}
             
             RoundedRectangle(cornerRadius: 25, style: .continuous).fill(.white)
 //                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.2), lineWidth: 1)

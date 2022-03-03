@@ -15,16 +15,11 @@ struct CreateRecipeView: View {
     @State var currentScene = 1
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
+    @State  var move :CGFloat = 0.42
     
     var body: some View {
-        
         GeometryReader { geometry in
-            //            HStack{
-            //                The space for the timeline
-            //                Rectangle().frame(width: 120, height: 400)
-            //               TimelineView(recipe: RecipeViewModel().recipesStore[0]))
-            //
-            ZStack{
+           ZStack{
                 RoundedRectangle(cornerRadius: 50, style: .continuous)
                     .overlay(
                         //                            pattern as a background
@@ -58,7 +53,7 @@ struct CreateRecipeView: View {
                             )
 //                            .position(x: geometry.size.width * 0.9,y: geometry.size.height * 0.1)
 //
-                    }
+                    }.padding(.trailing, 10)
                     
 //                    .frame(alignment: .center)
 
@@ -66,41 +61,13 @@ struct CreateRecipeView: View {
                 
                 TimeLineView(currentScene: $currentScene, numberOfScenes: recipe.scenes.count, finalResultNeeded: $finalResultNeeded)
                 
-//
-//                NavigationLink {
-//                    StepsView(username: $username, recipe: recipe)
-//                } label: {
-//                    RoundedRectangle(cornerRadius: 60, style: .continuous)
-                
-                
-               
-//                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9 , alignment: .topTrailing)
-                
-                
-                
-//
-//                Button{
-//
-//                }label: {
-//
-//
-//                }.position(x: geometry.size.width * 0.89, y: geometry.size.height * 0.5)
-                    
-//                            Image(systemName: "xmark").resizable().scaleEffect(0.4).foregroundColor(.white))
-                      
-//////                                       .shadow(color: .white, radius: 1))
-                        
-//                    Image(systemName: "xmark.").resizable().scaleEffect(0.4).foregroundColor(.white))
-                    
-//                }
+
                 
                 
                 
                 
                 VStack{
-                 
-                    
-                    ZStack{
+                  ZStack{
 //                        container
                         ForEach(sceneViewModel.getAllScenes(recipeName: recipe.name)) { scene in
                             if finalResultNeeded && scene.finalResult != nil {
@@ -123,13 +90,7 @@ struct CreateRecipeView: View {
                                     .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(1)
                                 
-//                                Button {
-//                                    currentScene += 1
-//                                    print(currentScene)
-//                                } label: {
-//                                    NextStepButtonView()
-//                                }.frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.12, alignment: .bottomTrailing)
-//                                        .position(x: geometry.size.width * 0.9 , y: geometry.size.height * 0.8).zIndex(2)
+
                             
                             }
                             // shaking ingredients
@@ -159,57 +120,7 @@ struct CreateRecipeView: View {
                             
                         }
                         
-                        if currentScene > recipe.recipeSteps.count {
-                            
-                            NavigationLink {
-                                         AretheysimilarView(username: $username, recipe: recipe)
-                                     } label: {
-                                         Circle()
-                                             .fill(CustomColor.selectiongreen).grayscale(0.2)
-                                             .frame(width: geometry.size.width * 0.5,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                                             .overlay(  Image(systemName: "arrow.right").scaleEffect(2.5).foregroundColor(.white)
-
-                                             )
-                                     }.frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.12, alignment: .bottomTrailing)
-                                .position(x: geometry.size.width * 0.9 , y: geometry.size.height * 0.9)
-                            
-                            
-                            
-                            
-                           
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                           
-//                                    .position(x: geometry.size.width * 0.89 , y: geometry.size.height * 0.8)
-//                                    .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
-//                                RoundedRectangle(cornerRadius: 60, style: .continuous)
-//                                    .fill(CustomColor.selectiongreen)
-////                                    .frame(width: 270, height: 100)
-//                                    .frame(width: geometry.size.width * 0.08,height: geometry.size.height * 0.1)
-//                                    .overlay(Image(systemName: "arrow.forward").resizable().scaleEffect(0.55).foregroundColor(.white))
-//
-//
-//                                    .onAppear{
-//                                        move = 0.9 }
-//                                       .shadow(color: .white, radius: 1))
-//                                    v.easeInOut(duration : 1).repeatForever()
-                            
-//                            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9 , alignment: .bottomTrailing)
-//                            .Animation(.interpolatingSpring(stiffness: 20, damping: 2))
-                                
-                            
-                            
-                            
-//                            NavigationLink("Next", destination: AretheysimilarView(username: $username, recipe: recipe))
-                        }
+                        
                         
                     }
                     
@@ -226,19 +137,29 @@ struct CreateRecipeView: View {
                         Image (avatarViewModel.getSelectedAvatar().image)
                             .resizable()
                             .scaledToFit()
-                            .position(x: geometry.size.width * 0.23, y: geometry.size.height * 0.5) //perfect position for the character
+                            .position(x: geometry.size.width * 0.15, y: geometry.size.height * 0.5) //perfect position for the character
                             .frame( height: geometry.size.height * 0.4, alignment: .bottom)
+                            .onAppear{
+                               
+                            }
                         
-                        //                            vignette
-                        //                            Image("nuvoletta")
-                        //                                .resizable()
-                        //                                .scaledToFit()
-                        //                                .overlay(Text("Remember the steps? Follow them to get the final result!!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
-                        //                                .frame( height: geometry.size.height * 0.2, alignment: .bottom)
-                        Spacer()
-                        
+                        if currentScene > recipe.recipeSteps.count {
+                           
+                            NavigationLink {
+                                         AretheysimilarView(username: $username, recipe: recipe)
+                                     } label: {
+                                         NextStepButtonView()
+                                            
+                                     } .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
+                                .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
+                                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+                                .onAppear{
+                                    move =  0.44
+                                }
+                        }
                         
                     } //. HSTACK
+                    .frame(width: geometry.size.width * 0.8 ,height: geometry.size.height * 0.3, alignment: .bottomTrailing)
                     
                 } //close the VSTack
                 
