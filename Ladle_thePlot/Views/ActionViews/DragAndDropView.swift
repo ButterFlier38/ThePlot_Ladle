@@ -26,6 +26,7 @@ struct DragAndDropView: View {
     var sceneViewModel :SceneViewModel = SceneViewModel()
     @Binding var currentScene :Int
     @State var dragCount = 0
+    @State  var move :CGFloat = 0.975
     
     
     
@@ -76,10 +77,14 @@ struct DragAndDropView: View {
                     }label: {
                         
                         NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0)
-                           
+                            
                     } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-               .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
+               .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
+                        .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+                        .onAppear{
+                            move =  0.99
+                        }
                     
   
                 }

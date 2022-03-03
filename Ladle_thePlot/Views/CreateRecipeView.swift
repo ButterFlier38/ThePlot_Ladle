@@ -15,7 +15,7 @@ struct CreateRecipeView: View {
     @State var currentScene = 1
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
-    @State  var move :CGFloat = 0.42
+    @State  var move :CGFloat = 0.41
     var LetsMakeItText : String = "Let's make it!"
     
     var body: some View {
@@ -159,7 +159,7 @@ struct CreateRecipeView: View {
                                 .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
                                 .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
                                 .onAppear{
-                                    move =  0.435
+                                    move =  0.425
                                 }
                         }
                         

@@ -25,9 +25,6 @@ struct IngredientCardView: View {
                             .scaleEffect(0.9)
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5))
 
-                          
-               
-           
                 VStack{
                     Text(LocalizedStringKey(String(ingredient.quantity)))
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.07: geometry.size.height * 0.05))
@@ -38,10 +35,7 @@ struct IngredientCardView: View {
                         .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
                         .multilineTextAlignment(.center)
                 }
-
-            
         }
-
     }
     }
 }
