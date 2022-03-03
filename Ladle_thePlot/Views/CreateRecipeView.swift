@@ -15,7 +15,7 @@ struct CreateRecipeView: View {
     @State var currentScene = 1
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
-    @State  var move :CGFloat = 0.42
+    @State  var move :CGFloat = 0.41
     var LetsMakeItText : String = "Let's make it!"
     
     var body: some View {
@@ -76,10 +76,14 @@ struct CreateRecipeView: View {
                                                                 .resizable()
                                                                 .scaleEffect(0.7)
                                                                 .aspectRatio(1.2, contentMode: .fit)
-                                                                .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
-                                                                .offset(x: geometry.size.width/14, y:geometry.size.height/6)
+                                                                .frame(width: geometry.size.width  ,height: geometry.size.height * 0.83, alignment: .center)
+                                                                .offset(x: geometry.size.width/5, y:geometry.size.height/10)
                                                                 .padding()
                                                                 .zIndex(0)
+                                
+                                
+                                
+                                                            
                                                         }
                             
                             // adding ingredients
@@ -155,7 +159,7 @@ struct CreateRecipeView: View {
                                 .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
                                 .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
                                 .onAppear{
-                                    move =  0.44
+                                    move =  0.425
                                 }
                         }
                         

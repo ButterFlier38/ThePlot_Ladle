@@ -26,6 +26,7 @@ struct DragAndDropView: View {
     var sceneViewModel :SceneViewModel = SceneViewModel()
     @Binding var currentScene :Int
     @State var dragCount = 0
+    @State  var move :CGFloat = 0.975
     
     
     
@@ -37,10 +38,8 @@ struct DragAndDropView: View {
                     if sceneViewModel.isEnvironmentNeeded(scene: scene) {
                         Image(scene.container!)
                             .resizable()
-                        //                                        .scaleEffect(0.7)
-                            .aspectRatio(1.2, contentMode: .fit)
+                           .aspectRatio(1.2, contentMode: .fit)
                             .frame(width: geometry.size.width,height: geometry.size.height , alignment: .bottomTrailing)
-//                            .offset(x: geometry.size.width/30, y:geometry.size.height/9)
                             .position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.90)
                             .padding(.top, geometry.size.height * 0.5)
                             .zIndex(0)
@@ -78,16 +77,24 @@ struct DragAndDropView: View {
                     }label: {
                         
                         NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0)
-                           
+                            
                     } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-               .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
+               .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
+                        .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+                        .onAppear{
+                            move =  0.99
+                        }
+                    
+  
+                }
+              
             }
         }
         
         // :GeometryReader
     }
-}
+
 
 //
 //struct DragAndDropView_Previews: PreviewProvider {

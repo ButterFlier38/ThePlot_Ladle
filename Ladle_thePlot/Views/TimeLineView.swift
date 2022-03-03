@@ -108,7 +108,7 @@ struct TimeLineView: View {
                         }
                         
                     } //:Vstack
-                    .frame(maxWidth:.infinity, alignment: .leading)
+                    .frame( alignment: .leading)
                     .padding(5)
 
                     
