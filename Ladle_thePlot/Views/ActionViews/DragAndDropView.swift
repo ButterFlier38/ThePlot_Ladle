@@ -77,26 +77,13 @@ struct DragAndDropView: View {
                         currentScene += 1
                     }label: {
                         
-                        NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0.4)
+                        NextStepButtonView() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0)
                            
                     } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
                .position(x: geometry.size.width * 0.99, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
-                    
-                    
-                    
-//                    .frame(width: geometry.size.width * 0.15 , height: geometry.size.height * 0.1, alignment: .trailing)
-                    
-                    
-                    //                    .position(x: geometry.size.width * 0.89 , y: geometry.size.height * 0.8)
-                    
-                }
-                //            .frame(width: geometry.size.width , height: geometry.size.height , alignment: .trailing)
-                //        .frame(
-                //            width:UIScreen.main.bounds.width,
-                //            height:UIScreen.main.bounds.height
-                //         )
             }
+        }
         
         // :GeometryReader
     }

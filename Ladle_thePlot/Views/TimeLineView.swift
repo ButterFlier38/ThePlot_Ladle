@@ -32,7 +32,7 @@ struct TimeLineView: View {
                         
                         
                         
-                        ForEach(0..<numberOfScenes) { index in
+                        ForEach(1..<numberOfScenes+1) { index in
                                 Path { path in
                                     path.move(to: CGPoint(x: geometry.size.width / 20, y: 0))
                                     path.addLine(to: CGPoint(x: geometry.size.width / 20, y: geometry.size.width/2))
@@ -81,6 +81,7 @@ struct TimeLineView: View {
                                     .frame(height: geometry.size.height/4.5)
                                     .onTapGesture {
                                         currentScene = index
+                                        
                                         if finalResultNeeded {
                                         finalResultNeeded.toggle()
                                         }
