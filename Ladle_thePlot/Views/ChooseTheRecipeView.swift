@@ -13,7 +13,7 @@ struct ChooseTheRecipeView: View {
     @Binding var username: String
     var recipesText :String = "Recipes"
     
-//    @State var degrees : Double = 0
+    //    @State var degrees : Double = 0
     let layout = [
         GridItem(.flexible(minimum: 175)),
         GridItem(.flexible(minimum: 175)),
@@ -30,23 +30,31 @@ struct ChooseTheRecipeView: View {
             
             VStack(alignment: .leading) {
                 HStack{
-                Text(LocalizedStringKey(String(recipesText)))
-                    .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
-                    .fontWeight(.bold)
-                    .foregroundColor(CustomColor.selectionblue)
-                    .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
-                    .shadow(color: CustomColor.selectionblue, radius: 3)
-                    HStack{
-                        Image("nuvoletta") .resizable()
-                            .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                            .overlay(Text("Hi " + username + "!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
-                            .frame( height: geometry.size.height * 0.15, alignment: .topTrailing)
-                Image(avatarViewModel.getSelectedAvatar().image)
-                    .resizable()
-                    .scaledToFit()
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .frame( height: geometry.size.height * 0.25, alignment: .topTrailing)
-                }
+                    Text(LocalizedStringKey(String(recipesText)))
+                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.1))
+                        .fontWeight(.bold)
+                        .foregroundColor(CustomColor.selectionblue)
+                        .frame(maxWidth: .infinity, alignment: .leading) .padding(.leading,50)
+                        .shadow(color: CustomColor.selectionblue, radius: 3)
+                    
+                    
+                    NavigationLink {
+                        AvatarSelectionView(username: $username)
+                    } label: {
+                        HStack{
+                            Image("nuvoletta") .resizable()
+                                .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                                .overlay(Text("Hi " + username + "!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
+                                .frame( height: geometry.size.height * 0.15, alignment: .topTrailing)
+                            Image(avatarViewModel.getSelectedAvatar().image)
+                                .resizable()
+                                .scaledToFit()
+                                .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                                .frame( height: geometry.size.height * 0.25, alignment: .topTrailing)
+                        }
+                    }
+                    
+                    
                 }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
                 
                 Spacer().frame(height: geometry.size.height * 0.15)
@@ -62,12 +70,12 @@ struct ChooseTheRecipeView: View {
                     } .frame( height: geometry.size.height * 0.35, alignment: .center)
                 })
                 Spacer()
-
+                
             }
             
             
             .navigationBarHidden(true)
-        
+            
         }  .edgesIgnoringSafeArea([.top,.bottom])
     }
 }
