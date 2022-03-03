@@ -29,8 +29,8 @@ struct RecipeCardView: View {
     }
 }
 
-struct RecipeCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeCardView(recipe: RecipeViewModel().recipesStore[1])
-    }
-}
+//struct RecipeCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipeCardView(recipe: RecipeViewModel().recipesStore[1])
+//    }
+//}

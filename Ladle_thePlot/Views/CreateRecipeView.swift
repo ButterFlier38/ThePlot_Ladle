@@ -15,6 +15,7 @@ struct CreateRecipeView: View {
     @State var currentScene = 1
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
+    var LetsMakeItText : String = "Let's make it!"
     
     var body: some View {
         

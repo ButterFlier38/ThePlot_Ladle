@@ -39,7 +39,8 @@ struct ChooseTheRecipeView: View {
                     HStack{
                         Image("nuvoletta") .resizable()
                             .scaledToFit().rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                            .overlay(Text("Hi " + username + "!").font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
+                            .overlay(Text(LocalizedStringKey("Hi \(username) !"))
+                                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.3: geometry.size.height * 0.04)).foregroundColor(CustomColor.selectionblue))
                             .frame( height: geometry.size.height * 0.15, alignment: .topTrailing)
                 Image(avatarViewModel.getSelectedAvatar().image)
                     .resizable()
