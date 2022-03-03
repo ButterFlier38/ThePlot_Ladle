@@ -18,11 +18,6 @@
 		27705AA027C23A9500F996B4 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705A9F27C23A9500F996B4 /* BackButtonView.swift */; };
 		27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AA227C246CB00F996B4 /* StepCardView.swift */; };
 		27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AA427C24AD700F996B4 /* StepCircleCard.swift */; };
-		27705AB727C2D71900F996B4 /* Step3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AB627C2D71900F996B4 /* Step3.swift */; };
-		27705AB927C2D71C00F996B4 /* Step0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AB827C2D71C00F996B4 /* Step0.swift */; };
-		27705ABD27C2D72400F996B4 /* Step2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705ABC27C2D72400F996B4 /* Step2.swift */; };
-		27705ABF27C2D72800F996B4 /* Step4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705ABE27C2D72800F996B4 /* Step4.swift */; };
-		27705AC127C2D74A00F996B4 /* Step1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27705AC027C2D74A00F996B4 /* Step1.swift */; };
 		2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37527B65B57001B34CE /* CreateRecipeView.swift */; };
 		2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37927B65BDA001B34CE /* NameInputView.swift */; };
 		2780A38027B65C60001B34CE /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37F27B65C60001B34CE /* StepsView.swift */; };
@@ -65,11 +60,6 @@
 		27705A9F27C23A9500F996B4 /* BackButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		27705AA227C246CB00F996B4 /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
 		27705AA427C24AD700F996B4 /* StepCircleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCircleCard.swift; sourceTree = "<group>"; };
-		27705AB627C2D71900F996B4 /* Step3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step3.swift; sourceTree = "<group>"; };
-		27705AB827C2D71C00F996B4 /* Step0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step0.swift; sourceTree = "<group>"; };
-		27705ABC27C2D72400F996B4 /* Step2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
-		27705ABE27C2D72800F996B4 /* Step4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step4.swift; sourceTree = "<group>"; };
-		27705AC027C2D74A00F996B4 /* Step1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step1.swift; sourceTree = "<group>"; };
 		2780A37527B65B57001B34CE /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		2780A37927B65BDA001B34CE /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		2780A37F27B65C60001B34CE /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
@@ -165,7 +155,6 @@
 			children = (
 				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
 				5A809A5427C671C1006B1749 /* ActionViews */,
-				27705AB527C2D70E00F996B4 /* Steps */,
 				27705AA127C23FA000F996B4 /* CardViews */,
 				27705A9C27C23A7900F996B4 /* ButtonViews */,
 				2780A37927B65BDA001B34CE /* NameInputView.swift */,
@@ -201,18 +190,6 @@
 				5A1D3B2927C5271C009301D1 /* splashScreenView.swift */,
 			);
 			path = CardViews;
-			sourceTree = "<group>";
-		};
-		27705AB527C2D70E00F996B4 /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-				27705AB627C2D71900F996B4 /* Step3.swift */,
-				27705AB827C2D71C00F996B4 /* Step0.swift */,
-				27705AC027C2D74A00F996B4 /* Step1.swift */,
-				27705ABC27C2D72400F996B4 /* Step2.swift */,
-				27705ABE27C2D72800F996B4 /* Step4.swift */,
-			);
-			path = Steps;
 			sourceTree = "<group>";
 		};
 		47260E9127BBFAE000F0ED80 /* ViewModel */ = {
@@ -330,9 +307,7 @@
 				27E60D0E27CF8EAB00DA1388 /* NextStepButtonView.swift in Sources */,
 				47260E9527BC242400F0ED80 /* AvatarSelectionView.swift in Sources */,
 				2702B04C27B652C100A0E5DD /* ContentView.swift in Sources */,
-				27705AC127C2D74A00F996B4 /* Step1.swift in Sources */,
 				47BE6C3827CD3BEA000EB64B /* ShakingView.swift in Sources */,
-				27705ABF27C2D72800F996B4 /* Step4.swift in Sources */,
 				5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */,
 				5AC3B36727BFB0160001F73F /* AretheysimilarView.swift in Sources */,
 				27F0081727BE866300C7975D /* Avatar.swift in Sources */,
@@ -346,15 +321,12 @@
 				47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */,
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,
 				5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */,
-				27705ABD27C2D72400F996B4 /* Step2.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				5A809A5327C63FA4006B1749 /* TimeLineView.swift in Sources */,
 				27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */,
 				5A1D3B2A27C5271C009301D1 /* splashScreenView.swift in Sources */,
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
-				27705AB727C2D71900F996B4 /* Step3.swift in Sources */,
-				27705AB927C2D71C00F996B4 /* Step0.swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
 				47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
