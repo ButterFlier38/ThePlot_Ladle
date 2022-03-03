@@ -89,7 +89,7 @@ struct DragAndDropView: View {
         
         // :GeometryReader
     }
-}
+
 
 //
 //struct DragAndDropView_Previews: PreviewProvider {
