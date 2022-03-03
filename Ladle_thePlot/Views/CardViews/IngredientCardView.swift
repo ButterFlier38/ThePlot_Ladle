@@ -27,7 +27,7 @@ struct IngredientCardView: View {
 
                           
                
-            if !canDrag{
+           
                 VStack{
                     Text(LocalizedStringKey(String(ingredient.quantity)))
                         .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.07: geometry.size.height * 0.05))
