@@ -27,12 +27,17 @@ struct IngredientCardView: View {
 
                           
                
-           
-            Text(LocalizedStringKey(String(ingredient.quantity + "\n" + ingredient.name)))
-//                .font(Font.custom("HappyMonkey-Regular", size: 30 ))
-                .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.07: geometry.size.height * 0.05))
-                .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
-                .multilineTextAlignment(.center)
+            if !canDrag{
+                VStack{
+                    Text(LocalizedStringKey(String(ingredient.quantity)))
+                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.07: geometry.size.height * 0.05))
+                        .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
+                        .multilineTextAlignment(.center)
+                    Text(LocalizedStringKey(String(ingredient.name)))
+                        .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.07: geometry.size.height * 0.05))
+                        .fontWeight(.bold).foregroundColor(CustomColor.selectionblue)
+                        .multilineTextAlignment(.center)
+                }
 
             
         }
