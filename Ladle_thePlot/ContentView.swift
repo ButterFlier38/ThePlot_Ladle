@@ -22,9 +22,10 @@ struct ContentView: View {
             
             
             NameInputView()
-        }.navigationBarHidden(true)
+        }
+        .statusBar(hidden: true)
+        .navigationBarHidden(true)
             .navigationViewStyle(StackNavigationViewStyle())
-    
         
     }
 }
