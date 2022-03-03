@@ -14,8 +14,7 @@ struct NextStepButtonView: View {
             
             Circle()
                 .fill(CustomColor.selectiongreen).grayscale(0.2)
-                .overlay(  Image(systemName: "arrow.forward").resizable().scaledToFit().foregroundColor(.white).scaleEffect(0.55)
-                )
+                .overlay(Image(systemName: "arrow.forward").resizable().scaledToFit().foregroundColor(.white).scaleEffect(0.55))
         }
     }
 }
