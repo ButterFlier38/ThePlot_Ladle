@@ -38,7 +38,7 @@ struct DragIngredientCardView: View {
                                         .onChanged{
                                             
                                             
-                                                if !isDragged{
+                                                if !isDragged {
                                                     self.pos = CGPoint(x: $0.location.x, y: $0.location.y)
                                                     self.dragAmount = CGSize(width : $0.translation.width, height: $0.translation.height)
                                                     //                                                    self.dragAmount = CGPoint(x : $0.translation.width, y : $0.translation.height)
@@ -52,14 +52,15 @@ struct DragIngredientCardView: View {
                                                 print("\(pos.x)")
                                                 print("\(pos.y)")
                                                 
-                                                
-                                                
+                                                if !isDragged {
                                                 isDragged = true
                                                 dragCount += 1
+                                                }
                                             } else {
                                                 self.dragAmount = .zero
                                                 isDragged = false
                                             }
+                                            
                                             
                                             
                                             

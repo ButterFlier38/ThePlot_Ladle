@@ -11,9 +11,7 @@ struct StepCardView: View {
 //    var ingredient :Ingredient
     var index :Int
     var step :String
-    var recipe :Recipe
-    var ingredientViewModel :IngredientViewModel = IngredientViewModel()
-    
+    var i : Int = 0
     
     var body: some View {
         ZStack{
