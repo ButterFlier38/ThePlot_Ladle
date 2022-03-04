@@ -11,12 +11,21 @@ import SwiftUI
 struct StepsView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
+    var ingrentViewModel : IngredientViewModel = IngredientViewModel()
     var recipe :Recipe
     var count = 0
     var StepsText : String = "Steps"
     var NuvolettaText : String = "Here is the list of all the steps you will have to follow!!"
     
-    //   @State var colors : [Color] = [CustomColor.bggreen, CustomColor.bgyellow, CustomColor.bgblue, CustomColor.bgpink]
+    
+//    func render(listItem: Int, step :String) -> StepCardView {
+//        StepCardView(ingredient: ingrentViewModel.getIngredient(ingredient: recipe.ingredients[listItem], recipe: recipe.name)!, step: step)
+//    }
+//
+    
+    func render(listItem: Int, step :String) -> StepCardView {
+        StepCardView(index: listItem, step: step, recipe: recipe)
+    }
     
     
     var body: some View {
@@ -24,7 +33,7 @@ struct StepsView: View {
         GeometryReader { geometry in
             
             ZStack{
-               
+                
                 Image("IngreBubbTop")
                     .resizable()
                     .scaledToFit()
@@ -33,19 +42,13 @@ struct StepsView: View {
                     .position(x: geometry.size.width/2, y: geometry.size.height/3.4)
                 
                 
-               
+                
                 
                 //            dotted line
                 
                 //            Circle()
                 //                .trim(from: 0.5, to: 0)
                 //                .frame(width: geometry.size.width/3, height: geometry.size.height/3)
-                
-                
-                Semicircle()
-                //                .stroke(colors.randomElement()!, style: StrokeStyle(lineWidth: 15, lineCap: .round, dash: [4, 22]))
-                    .stroke(CustomColor.bgpink, style: StrokeStyle(lineWidth: 15, lineCap: .round, dash: [4, 22]))
-                    .rotationEffect(.degrees(-10))
                 
                 
                 
@@ -67,21 +70,22 @@ struct StepsView: View {
 //                            .padding(.leading)
 //                            .shadow(color: CustomColor.selectionblue, radius: 3)
                         
-                    }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                    //            VStack{
+                    }.frame(width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
+
                     ScrollView(.horizontal) {
                         
                         HStack(alignment: .center, spacing: 100) {
- 
-                            ForEach(recipe.recipeSteps, id: \.self) { step in
-                                
-                                StepCardView(ingredient: IngredientViewModel().getIngredient(ingredient: recipe.ingredients[count], recipe: recipe.name)!, step: step)
+                            
+                            ForEach((0...recipe.recipeSteps.count-1).reversed(), id: \.self) { listItem in
+                                self.render(listItem: listItem, step: recipe.recipeSteps[listItem])
                                     .frame(width: geometry.size.width / 3 ,height: geometry.size.height / 3)
-                                //                .padding([.top, .leading], 50)
                                     .position(x: geometry.size.width * 0.22, y: geometry.size.height * 0.25)
-                            }
-                        }
-                    }
+                            } //:ForEach
+
+                        }//:HStack
+                        .padding(.horizontal, 20)
+                    } // :ScrollView
+                    .padding(20)
                     
                     
                 } //vstack
@@ -123,26 +127,28 @@ struct StepsView: View {
         }
     }
 }
-
-
-
-struct Semicircle: Shape {
-    func path(in rect: CGRect) -> Path {
-        let center = CGPoint(x: rect.midX, y: rect.midY)
-        let radius = rect.width / 4.9
-        let startAngle = Angle(degrees: 340)
-        let endAngle = Angle(degrees: 250)
-        let clockwise = true
-        
-        return Path { p in
-            p.addArc(center: center,
-                     radius: radius,
-                     startAngle: startAngle,
-                     endAngle: endAngle,
-                     clockwise: clockwise)
+    
+    
+    
+    struct Semicircle: Shape {
+        func path(in rect: CGRect) -> Path {
+            let center = CGPoint(x: rect.midX, y: rect.midY)
+            let radius = rect.width / 4.9
+            let startAngle = Angle(degrees: 340)
+            let endAngle = Angle(degrees: 250)
+            let clockwise = true
+            
+            return Path { p in
+                p.addArc(center: center,
+                         radius: radius,
+                         startAngle: startAngle,
+                         endAngle: endAngle,
+                         clockwise: clockwise)
+            }
         }
     }
-}
+
+
 
 
 //        StepsView(username: $username).previewDevice("iPad Pro (11-inch) (3rd generation)")
