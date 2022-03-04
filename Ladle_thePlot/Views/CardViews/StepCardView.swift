@@ -10,8 +10,9 @@ import SwiftUI
 struct StepCardView: View {
 //    var ingredient :Ingredient
     var index :Int
-    var step :String
-    var i : Int = 0
+     var step :String
+     var recipe :Recipe
+     var ingredientViewModel :IngredientViewModel = IngredientViewModel()
     
     var body: some View {
         ZStack{
