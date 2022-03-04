@@ -71,7 +71,7 @@ struct StepsView: View {
                             .shadow(color: CustomColor.selectionblue, radius: 3)
                         
                     }.frame(width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                    //            VStack{
+
                     ScrollView(.horizontal) {
                         
                         HStack(alignment: .center, spacing: 100) {
@@ -83,6 +83,7 @@ struct StepsView: View {
                             } //:ForEach
 
                         }//:HStack
+                        .padding(.horizontal, 20)
                     } // :ScrollView
                     .padding(20)
                     
