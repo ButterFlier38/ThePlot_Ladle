@@ -101,10 +101,14 @@ struct StepsView: View {
                     Image(avatarViewModel.getSelectedAvatar().image)
                     //                Image("character_giorgia")
                         .resizable()
-                        .scaledToFit()
-                        .frame( height: geometry.size.height * 0.4, alignment: .bottom)
-                    Image("nuvoletta") .resizable()
-                        .overlay(Text(LocalizedStringKey(String(NuvolettaText))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(15).multilineTextAlignment(.center))
+                        .scaledToFill()
+                        .frame(height: geometry.size.height * 0.4, alignment: .bottom)
+                    
+                    Image("nuvoletta")
+                        .resizable()
+                        .overlay(Text(LocalizedStringKey(String(NuvolettaText)))
+                                    .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(15).multilineTextAlignment(.center)
+                                    .padding())
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2, alignment: .bottom)
                     
                     Spacer()

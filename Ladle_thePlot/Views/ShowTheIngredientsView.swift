@@ -72,7 +72,7 @@ struct ShowTheIngredientsView: View {
                             }
                         }.frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.45, alignment: .center)
                         // :ForEach for ingredients
-                    } //:HStack for ingredients
+                    }.padding(.horizontal, 30) //:HStack for ingredients
 //                    .frame( height: geometry.size.height * 0.6, alignment: .center)
                 } // :Horizontal Scroll View for ingredients
                 
