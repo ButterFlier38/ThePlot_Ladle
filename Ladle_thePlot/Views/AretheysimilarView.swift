@@ -71,7 +71,7 @@ struct AretheysimilarView: View {
                         .fontWeight(.bold)
                         .foregroundColor(CustomColor.selectionblue)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .shadow(color: CustomColor.selectionblue, radius: 3)
+//                        .shadow(color: CustomColor.selectionblue, radius: 3)
                             
                 
 //                comparison

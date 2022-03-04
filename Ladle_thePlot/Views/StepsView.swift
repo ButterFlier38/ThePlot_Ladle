@@ -100,9 +100,8 @@ struct StepsView: View {
                         .scaledToFit()
                         .frame( height: geometry.size.height * 0.4, alignment: .bottom)
                     Image("nuvoletta") .resizable()
-                        .scaledToFit()
-                        .overlay(Text(LocalizedStringKey(String(NuvolettaText))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
-                        .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+                        .overlay(Text(LocalizedStringKey(String(NuvolettaText))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.14: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(15).multilineTextAlignment(.center))
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2, alignment: .bottom)
                     
                     Spacer()
                     // Continue Button

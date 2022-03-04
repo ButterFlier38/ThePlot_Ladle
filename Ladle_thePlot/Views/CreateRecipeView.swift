@@ -77,7 +77,7 @@ struct CreateRecipeView: View {
                                                                 .scaleEffect(0.7)
                                                                 .aspectRatio(1.2, contentMode: .fit)
                                                                 .frame(width: geometry.size.width  ,height: geometry.size.height * 0.83, alignment: .center)
-                                                                .offset(x: geometry.size.width/5, y:geometry.size.height/10)
+                                                                .position(x: geometry.size.width * 0.65, y:geometry.size.height * 0.48)
                                                                 .padding()
                                                                 .zIndex(0)
                                 
@@ -139,14 +139,27 @@ struct CreateRecipeView: View {
                     
                     HStack{
                         //                            avatar
+                        ZStack{
                         Image (avatarViewModel.getSelectedAvatar().image)
                             .resizable()
                             .scaledToFit()
-                            .position(x: geometry.size.width * 0.15, y: geometry.size.height * 0.5) //perfect position for the character
+                            .position(x: geometry.size.width * 0.12, y: geometry.size.height * 0.55) //perfect position for the character
                             .frame( height: geometry.size.height * 0.4, alignment: .bottom)
-                            .onAppear{
-                               
-                            }
+                            
+                        Image("nuvoletta")
+                            .resizable()
+//                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                            .overlay(
+                               Text("Add the ingredients!")
+                                               .scaledToFit()
+                                               .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.03))
+                                               .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)
+                                          
+                                )
+            
+                            .frame(width: geometry.size.width * 0.3 ,height: geometry.size.height * 0.11, alignment: .bottom)
+                            .position(x: geometry.size.width * 0.001, y: geometry.size.height * 0.5)
+                        }
                         
                         if currentScene > recipe.recipeSteps.count {
                            
