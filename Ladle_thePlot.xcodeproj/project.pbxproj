@@ -23,6 +23,8 @@
 		2780A38027B65C60001B34CE /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37F27B65C60001B34CE /* StepsView.swift */; };
 		27E60D0E27CF8EAB00DA1388 /* NextStepButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0D27CF8EAB00DA1388 /* NextStepButtonView.swift */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
+		27E60D1227D2371F00DA1388 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1127D2371F00DA1388 /* FrameView.swift */; };
+		27E60D1427D2378600DA1388 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1327D2378600DA1388 /* CameraManager.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
 		27F0081727BE866300C7975D /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081627BE866300C7975D /* Avatar.swift */; };
 		27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081827BE86BA00C7975D /* IngredientViewModel.swift */; };
@@ -65,6 +67,8 @@
 		2780A37F27B65C60001B34CE /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
 		27E60D0D27CF8EAB00DA1388 /* NextStepButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButtonView.swift; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
+		27E60D1127D2371F00DA1388 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		27E60D1327D2378600DA1388 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		27F0081627BE866300C7975D /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		27F0081827BE86BA00C7975D /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			children = (
 				47BE6C3727CD3BEA000EB64B /* ShakingView.swift */,
 				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
+				27E60D1127D2371F00DA1388 /* FrameView.swift */,
+				27E60D1327D2378600DA1388 /* CameraManager.swift */,
 				5A809A5527C671E6006B1749 /* CrushView.swift */,
 				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 			);
@@ -315,6 +321,7 @@
 				47A8249927BFAA320042B065 /* ShowTheIngredientsView.swift in Sources */,
 				2780A38027B65C60001B34CE /* StepsView.swift in Sources */,
 				47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */,
+				27E60D1427D2378600DA1388 /* CameraManager.swift in Sources */,
 				5A809A5627C671E6006B1749 /* CrushView.swift in Sources */,
 				27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */,
 				47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */,
@@ -329,6 +336,7 @@
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
 				47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */,
+				27E60D1227D2371F00DA1388 /* FrameView.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
 				27705A9E27C23A8D00F996B4 /* ContinueButtonView.swift in Sources */,
 			);
@@ -474,9 +482,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5;
+				CURRENT_PROJECT_VERSION = 2.6;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = U7LH8RJ437;
+				DEVELOPMENT_TEAM = Z33CSW7W9J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";
@@ -509,9 +517,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.5;
+				CURRENT_PROJECT_VERSION = 2.6;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
-				DEVELOPMENT_TEAM = U7LH8RJ437;
+				DEVELOPMENT_TEAM = Z33CSW7W9J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";

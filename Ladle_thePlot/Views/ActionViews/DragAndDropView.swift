@@ -32,7 +32,7 @@ struct DragAndDropView: View {
     
     var body: some View {
         GeometryReader { geometry in
-           
+            
                 VStack{
                     
                     if sceneViewModel.isEnvironmentNeeded(scene: scene) {
@@ -68,7 +68,19 @@ struct DragAndDropView: View {
 //                    .offset(x: geometry.size.width/8 , y:0)
                     
                     
-                    
+                    Image("nuvoletta")
+                        .resizable()
+//                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                        .overlay(
+                           Text("Add the ingredients!")
+                                           .scaledToFit()
+                                           .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.04))
+                                           .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)
+                                      
+                            )
+        
+                        .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.15, alignment: .bottom)
+                        .position(x: geometry.size.width * 0.35 ,y: geometry.size.height * 0.55)
                     
               
                     

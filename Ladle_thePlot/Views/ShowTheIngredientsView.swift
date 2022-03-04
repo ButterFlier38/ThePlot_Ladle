@@ -15,8 +15,8 @@ struct ShowTheIngredientsView: View {
     @Binding var username : String
     var IngredientsText : String = "Ingredients"
     var GatherIngredients : String = "Gather the following ingredients"
-   
-    
+    @State var angle : Double = -12.0
+    @State var ang : Double = -2.0
     
     var body: some View {
         
@@ -84,11 +84,25 @@ struct ShowTheIngredientsView: View {
                         .resizable()
                         .scaledToFit()
                         .frame( height: geometry.size.height * 0.4, alignment: .bottom)
+//                        .rotationEffect(.degrees(angle))
+//                        .rotation3DEffect(.degrees(angle), axis: (x: 0.2, y: 1, z: 0))
+//                        .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: angle)
+//                        .onAppear{
+//                            angle = 10.0
+//                        }
 //                    Gather the following ingredients
                     Image("nuvoletta") .resizable()
                         .scaledToFit()
                         .overlay(Text(LocalizedStringKey(String(GatherIngredients))).font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.15: geometry.size.height * 0.03)).foregroundColor(CustomColor.selectionblue).padding(10).multilineTextAlignment(.center))
-                        .frame( height: geometry.size.height * 0.2, alignment: .bottom)
+                        .frame(height: geometry.size.height * 0.2, alignment: .bottom)
+//                        .rotationEffect(.degrees(-ang))
+//                        .rotation3DEffect(.degrees(ang), axis: (x: -0.2, y: -1, z: 0))
+//                        .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value:  ang)
+//                        .position(x: geometry.size.width * 0.15, y: geometry.size.height * 0.2)
+//                        .onAppear{
+//                            ang = 10.0
+//                        }
+                       
                     Spacer()
                     // Continue Button
                     NavigationLink {
