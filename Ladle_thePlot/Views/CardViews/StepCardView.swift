@@ -14,53 +14,48 @@ struct StepCardView: View {
     var body: some View {
         ZStack{
             GeometryReader{ geometry in
-        
-        RoundedRectangle(cornerRadius: 33, style: .continuous)
-            .fill(CustomColor.bggreen)
-            .frame(width: geometry.size.width, height: geometry.size.height * 3/4, alignment: .center)
-            .overlay(
-            Text(LocalizedStringKey(String(step)))
-                 .foregroundColor(CustomColor.selectionblue)
-                .font(Font.custom("HappyMonkey-Regular", size: 20))
-                .multilineTextAlignment(.center)
-                .padding(20)
-            ) //:overlay
-            
-//    comments clanvcnadj
-      
+                
+                Text(LocalizedStringKey(String(step))).font(Font.custom("HappyMonkey-Regular", size: 20))
+                    .foregroundColor(CustomColor.selectionblue)
+                    .multilineTextAlignment(.center)
+                    .padding(20)
+                    .padding()
+                    .background(CustomColor.bggreen)
+                    .cornerRadius(33)
 
-//           cirle in the right bottom corner
+                
+                //           cirle in the right bottom corner
                 Circle()
                     .overlay(
                         Image(ingredient.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .scaleEffect(0.47)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .scaleEffect(0.47)
                     ) //: overlay
                     .foregroundColor(.white)
                     .scaleEffect(0.5)
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: geometry.size.width * 0.4, y: geometry.size.height * 0.12)
                     .padding(50)
-                   
                 
                 
                 
-//                circle in the left top corner
+                
+                //                circle in the left top corner
                 Circle()
                     .overlay(
                         Image(ingredient.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .scaleEffect(0.47)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .scaleEffect(0.47)
                         
                     )
                     .foregroundColor(.white)
                     .scaleEffect(0.6)
                     .offset(x: -geometry.size.width * 0.47, y: -geometry.size.height * 0.5)
                     .padding(50)
-               
-        
+                
+                
             }
         }
         
