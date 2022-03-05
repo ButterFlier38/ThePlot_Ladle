@@ -53,8 +53,6 @@ struct ChooseTheRecipeView: View {
                                 .frame( height: geometry.size.height * 0.25, alignment: .topTrailing)
                         }
                     }
-                    
-                    
                 }.frame( width: geometry.size.width ,height: geometry.size.height * 0.1, alignment: .topTrailing)
                 
                 Spacer().frame(height: geometry.size.height * 0.15)
@@ -70,12 +68,8 @@ struct ChooseTheRecipeView: View {
                     } .frame( height: geometry.size.height * 0.35, alignment: .center)
                 })
                 Spacer()
-                
             }
-            
-            
             .navigationBarHidden(true)
-            
         }  .edgesIgnoringSafeArea([.top,.bottom])
     }
 }
