@@ -44,7 +44,7 @@ struct ShowTheIngredientsView: View {
                         HStack{
                             
                             NavigationLink( destination: ChooseTheRecipeView(username: $username)){
-                                BackButtonView()
+                                BackButton()
                             }.padding(.leading, 20)
                             
                         Text(LocalizedStringKey(String(IngredientsText)))
@@ -61,8 +61,10 @@ struct ShowTheIngredientsView: View {
                 
                 Spacer().frame(height: geometry.size.height * 0.05)
                 
-                ScrollView(.horizontal, showsIndicators: false){
-                    
+                        HStack(){
+                            Spacer().frame(width: geometry.size.width * 0.05)
+                            ScrollView(.horizontal, showsIndicators: false){
+                               
                     HStack(alignment: .center, spacing: 20) {
                         // display the ingredients
                         ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
@@ -76,7 +78,7 @@ struct ShowTheIngredientsView: View {
 //                    .frame( height: geometry.size.height * 0.6, alignment: .center)
                 } // :Horizontal Scroll View for ingredients
                 
-                
+                        }
                 
                 // Shows the Avatar
                 HStack{
@@ -108,7 +110,7 @@ struct ShowTheIngredientsView: View {
                     NavigationLink {
                         StepsView(username: $username, recipe: recipe)
                     } label: {
-                        ContinueButtonView()
+                        ContinueButton()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
                     
                   

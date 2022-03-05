@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NextStepButtonView: View {
+struct NextStepButton: View {
     var body: some View {
         GeometryReader { geometry in
             
@@ -21,7 +21,7 @@ struct NextStepButtonView: View {
 
 struct NextStepButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        NextStepButtonView()
+        NextStepButton()
             .previewDevice("iPad (9th generation)")
     }
 }

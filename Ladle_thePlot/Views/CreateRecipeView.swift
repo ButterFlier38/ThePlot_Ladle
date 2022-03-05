@@ -154,7 +154,7 @@ struct CreateRecipeView: View {
                             NavigationLink {
                                          AretheysimilarView(username: $username, recipe: recipe)
                                      } label: {
-                                         NextStepButtonView()
+                                         NextStepButton()
                                             
                                      } .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
                                 .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)

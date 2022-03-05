@@ -16,6 +16,7 @@ struct AretheysimilarView: View {
     var recipe :Recipe
     var buttonText : String = "Done"
     var AreTheySimilarText : String = "Are they similar?"
+    @StateObject private var model = ContentViewModel()
     var body: some View {
         
         GeometryReader { geometry in
@@ -88,11 +89,12 @@ struct AretheysimilarView: View {
                             .strokeBorder(Color.gray, lineWidth: 6)
                             .background(Circle().fill(CustomColor.bggreen))
                             .grayscale(1)
-                            .overlay(
-                                Image(systemName: "camera.fill")
-                                    .font(.system(size: 140.0, weight: .bold))
-                                    .grayscale(1)
-                                    .opacity(0.3)
+                            .overlay( FrameView(image: model.frame)
+                                        .edgesIgnoringSafeArea(.all)
+//                                Image(systemName: "camera.fill")
+//                                    .font(.system(size: 140.0, weight: .bold))
+//                                    .grayscale(1)
+//                                    .opacity(0.3)
                             )
                         
                     

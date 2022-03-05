@@ -39,7 +39,7 @@ struct ChooseTheRecipeView: View {
                     
                     
                     NavigationLink {
-                        AvatarSelectionView(username: $username)
+                        AvatarSelectionView(username: $username, done: false)
                     } label: {
                         HStack{
                             Image("nuvoletta") .resizable()

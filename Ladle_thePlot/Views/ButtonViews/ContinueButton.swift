@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContinueButtonView: View {
+struct ContinueButton: View {
     
     var textButton : String = "Continue"
     var body: some View {
@@ -26,6 +26,6 @@ struct ContinueButtonView: View {
 
 struct ContinueButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ContinueButtonView()
+        ContinueButton()
     }
 }
