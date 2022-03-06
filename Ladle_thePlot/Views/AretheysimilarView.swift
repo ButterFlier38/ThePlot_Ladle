@@ -10,13 +10,17 @@ import UIKit
 
 
 struct AretheysimilarView: View {
+    
+    @State private var showImagePicker: Bool = false
+    @State private var image: Image? = nil
+    
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
-//    var modelView = RecipeViewModel()
     var recipe :Recipe
     var buttonText : String = "Done"
+    var takephotobuttonText : String = "Take a photo"
     var AreTheySimilarText : String = "Are they similar?"
-    @StateObject private var model = ContentViewModel()
+//    @StateObject private var model = ContentViewModel()
     var body: some View {
         
         GeometryReader { geometry in
@@ -43,7 +47,18 @@ struct AretheysimilarView: View {
                 
 //                button here so it's placed always in the same place
                 
-                
+                HStack{
+                    Button() {
+                        self.showImagePicker = true
+                    }label: {
+                        RoundedRectangle(cornerRadius: 60, style: .continuous)
+                            .fill(CustomColor.selectionblue)
+                            .frame(width: 270, height: 100)
+                           .overlay(
+                                Text(LocalizedStringKey(String(takephotobuttonText))).font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
+                            
+                    }
+                    
                 NavigationLink {
                     ChooseTheRecipeView(username: $username)
                 } label: {
@@ -54,8 +69,8 @@ struct AretheysimilarView: View {
                             Text(LocalizedStringKey(String(buttonText))).font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
                         
                 }
-                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.9, alignment: .bottomTrailing)
-                
+                    
+                }.position(x: geometry.size.width * 0.75, y:geometry.size.height * 0.9)
                
                 Image(avatarViewModel.getSelectedAvatar().image)
                     .resizable()
@@ -73,54 +88,40 @@ struct AretheysimilarView: View {
                         .foregroundColor(CustomColor.selectionblue)
                         .frame(maxWidth: .infinity, alignment: .center)
 //                        .shadow(color: CustomColor.selectionblue, radius: 3)
-                            
-                
-//                comparison
-                
-                
+                   
                     HStack (alignment: .center, spacing: 100) {
                     
                         Image(recipe.image)
                             .resizable()
                             .aspectRatio(0.9, contentMode: .fit)
                         
-//                        circle for the camera button
-                        Circle()
-                            .strokeBorder(Color.gray, lineWidth: 6)
-                            .background(Circle().fill(CustomColor.bggreen))
-                            .grayscale(1)
-                            .overlay( FrameView(image: model.frame).frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3, alignment: .center)
-                                        .edgesIgnoringSafeArea(.all)
-//                                Image(systemName: "camera.fill")
-//                                    .font(.system(size: 140.0, weight: .bold))
-//                                    .grayscale(1)
-//                                    .opacity(0.3)
-                            )
+                        ZStack{
+                        Circle().fill(CustomColor.selectionblue).grayscale(0.2)
+                                .aspectRatio(0.9, contentMode: .fit)
+                                .overlay(Image(systemName: "camera.fill").resizable().scaledToFit().padding(40)
+                                        .grayscale(1)
+                                        .opacity(0.3))
                         
-                    
-                    
+                        image?.resizable().scaledToFit().clipShape(Circle())
+                        }
+                        
+//                        circle for the camera button
+                      
+                      
+                        
+    
                     } .padding(30)
                         .frame(width: geometry.size.width/1.4 ,height: geometry.size.height/2)
-                    
-                        
-                    
                     Spacer()
                     Spacer()
-                    
-//                    button done
-                    
-                   
-
-                
                 } //Close vstack
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 
-              
-               
-                
-                
             }  //close the zstack
             .navigationBarHidden(true)
+            .sheet(isPresented: self.$showImagePicker) {
+                PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
+            }
         } //close geometry
         
     }

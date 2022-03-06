@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 struct FrameView: View {
     var image: CGImage?
@@ -14,21 +16,7 @@ struct FrameView: View {
     
     var body: some View {
         if let image = image {
-            //      GeometryReader { geometry in
-            //        Image(image, scale: 1.0, orientation: .down, label: label)
-            //          .resizable()
-            //          .scaledToFill()
-            //          .frame(
-            //            width: geometry.size.width,
-            //            height: geometry.size.height,
-            //            alignment: .center)
-            //          .clipShape(Circle() .frame(
-            //            width: geometry.size.width,
-            //            height: geometry.size.height,
-            //            alignment: .center))
-            //      }
-            
-            GeometryReader { geometry in
+          GeometryReader { geometry in
                 Circle().fill(CustomColor.selectiongreen).grayscale(0.2)
                     .frame(
                         width: geometry.size.width,
@@ -39,15 +27,7 @@ struct FrameView: View {
                                 .scaledToFill()
                                 .clipShape(Circle()))
             }
-            //
-            
-            
-            
-            
-            
         } else {
-            
-            
             GeometryReader { geometry in
                 Circle().fill(CustomColor.selectionblue).grayscale(0.2)
                     .frame(
@@ -62,6 +42,11 @@ struct FrameView: View {
         }
     }
 }
+
+
+
+
+
 
 struct CameraView_Previews: PreviewProvider {
     static var previews: some View {

@@ -21,17 +21,14 @@
 		2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37527B65B57001B34CE /* CreateRecipeView.swift */; };
 		2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37927B65BDA001B34CE /* NameInputView.swift */; };
 		2780A38027B65C60001B34CE /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37F27B65C60001B34CE /* StepsView.swift */; };
+		27916B1927D52CFB00504037 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1727D52CFB00504037 /* ImagePicker.swift */; };
+		27916B1A27D52CFB00504037 /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1827D52CFB00504037 /* PhotoCaptureView.swift */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
 		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
 		27E60D0E27CF8EAB00DA1388 /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
-		27E60D1A27D2ACEC00DA1388 /* FrameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1727D2ACEC00DA1388 /* FrameManager.swift */; };
-		27E60D1B27D2ACEC00DA1388 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1827D2ACEC00DA1388 /* CameraError.swift */; };
-		27E60D1C27D2ACEC00DA1388 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1927D2ACEC00DA1388 /* CameraManager.swift */; };
 		27E60D1E27D2AD5800DA1388 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1D27D2AD5800DA1388 /* FrameView.swift */; };
-		27E60D2027D2AE7300DA1388 /* ContentViewModel(camera).swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */; };
-		27E60D2227D2AEA700DA1388 /* CGImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
 		27F0081727BE866300C7975D /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081627BE866300C7975D /* Avatar.swift */; };
 		27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081827BE86BA00C7975D /* IngredientViewModel.swift */; };
@@ -72,17 +69,14 @@
 		2780A37527B65B57001B34CE /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		2780A37927B65BDA001B34CE /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		2780A37F27B65C60001B34CE /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		27916B1727D52CFB00504037 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		27916B1827D52CFB00504037 /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
 		27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
-		27E60D1727D2ACEC00DA1388 /* FrameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameManager.swift; sourceTree = "<group>"; };
-		27E60D1827D2ACEC00DA1388 /* CameraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
-		27E60D1927D2ACEC00DA1388 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		27E60D1D27D2AD5800DA1388 /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
-		27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContentViewModel(camera).swift"; sourceTree = "<group>"; };
-		27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImageExtension.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		27F0081627BE866300C7975D /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		27F0081827BE86BA00C7975D /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
@@ -215,12 +209,10 @@
 		27A2EAB427D38BB000693B83 /* CameraViews */ = {
 			isa = PBXGroup;
 			children = (
-				27E60D1827D2ACEC00DA1388 /* CameraError.swift */,
-				27E60D1D27D2AD5800DA1388 /* FrameView.swift */,
-				27E60D1927D2ACEC00DA1388 /* CameraManager.swift */,
-				27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */,
+				27916B1727D52CFB00504037 /* ImagePicker.swift */,
+				27916B1827D52CFB00504037 /* PhotoCaptureView.swift */,
 				27A2EAB527D3F26C00693B83 /* SoundManager.swift */,
-				27E60D1727D2ACEC00DA1388 /* FrameManager.swift */,
+				27E60D1D27D2AD5800DA1388 /* FrameView.swift */,
 			);
 			path = CameraViews;
 			sourceTree = "<group>";
@@ -240,7 +232,6 @@
 				2754CEA727B7AB3E002761F9 /* RecipeViewModel.swift */,
 				47260E9227BBFBA900F0ED80 /* AvatarViewModel.swift */,
 				27F0081827BE86BA00C7975D /* IngredientViewModel.swift */,
-				27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */,
 				47B7D50927C3EB1800827E4E /* SceneViewModel.swift */,
 			);
 			path = ViewModel;
@@ -353,7 +344,6 @@
 				47260E9527BC242400F0ED80 /* AvatarSelectionView.swift in Sources */,
 				2702B04C27B652C100A0E5DD /* ContentView.swift in Sources */,
 				47BE6C3827CD3BEA000EB64B /* ShakingView.swift in Sources */,
-				27E60D2227D2AEA700DA1388 /* CGImageExtension.swift in Sources */,
 				5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */,
 				5AC3B36727BFB0160001F73F /* AretheysimilarView.swift in Sources */,
 				27F0081727BE866300C7975D /* Avatar.swift in Sources */,
@@ -364,23 +354,21 @@
 				27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */,
 				47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */,
 				5A809A5627C671E6006B1749 /* CrushView.swift in Sources */,
-				27E60D1B27D2ACEC00DA1388 /* CameraError.swift in Sources */,
 				27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */,
 				47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */,
 				47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */,
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,
+				27916B1A27D52CFB00504037 /* PhotoCaptureView.swift in Sources */,
 				5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */,
-				27E60D1A27D2ACEC00DA1388 /* FrameManager.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				5A809A5327C63FA4006B1749 /* TimeLineView.swift in Sources */,
 				27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */,
 				5A1D3B2A27C5271C009301D1 /* splashScreenView.swift in Sources */,
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
-				27E60D1C27D2ACEC00DA1388 /* CameraManager.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
-				27E60D2027D2AE7300DA1388 /* ContentViewModel(camera).swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
 				47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */,
+				27916B1927D52CFB00504037 /* ImagePicker.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
 				27705A9E27C23A8D00F996B4 /* ContinueButton.swift in Sources */,
 			);
@@ -533,7 +521,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Ladle;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage requested";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage is required to capture the recipe created in real life.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -569,7 +558,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ladle-thePlot-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Ladle;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage requested";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage is required to capture the recipe created in real life.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
