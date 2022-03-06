@@ -24,9 +24,7 @@ struct splashScreenView: View {
                     Image("ladle")
                         .resizable()
                         .scaledToFit()
-                    //                    .foregroundColor(.blue)
-                    
-                    
+                   
                 }
                 .scaleEffect(size)
                 .opacity(opacity)
@@ -39,10 +37,13 @@ struct splashScreenView: View {
                 
             }
             .onAppear{
+                SoundManager.instance.playSound("IntroSound.mp3", spd: 0.2)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     withAnimation{
                         self.isActive = true
                     }
+                    
+                    
                 }
             }
         }

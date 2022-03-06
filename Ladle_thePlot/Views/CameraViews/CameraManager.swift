@@ -1,4 +1,9 @@
-
+//
+//  CameraManager.swift
+//  Ladle_thePlot
+//
+//  Created by Irene Fernando on 04/03/22.
+//
 
 import AVFoundation
 
@@ -69,7 +74,7 @@ class CameraManager: ObservableObject {
     let device = AVCaptureDevice.default(
       .builtInWideAngleCamera,
       for: .video,
-      position: .front)
+      position: .back)
     guard let camera = device else {
       set(error: .cameraUnavailable)
       status = .failed

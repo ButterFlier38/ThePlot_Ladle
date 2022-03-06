@@ -20,6 +20,8 @@ struct ContinueButton: View {
                     .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.4))
 //                    .font(Font.custom("HappyMonkey-Regular", size: 37 ))
                     .foregroundColor(.white).shadow(color: .white, radius: 1))
+            
+           
     }
                 }
 }

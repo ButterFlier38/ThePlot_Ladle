@@ -21,13 +21,16 @@
 		2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37527B65B57001B34CE /* CreateRecipeView.swift */; };
 		2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37927B65BDA001B34CE /* NameInputView.swift */; };
 		2780A38027B65C60001B34CE /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780A37F27B65C60001B34CE /* StepsView.swift */; };
+		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
+		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
+		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
 		27E60D0E27CF8EAB00DA1388 /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
 		27E60D1A27D2ACEC00DA1388 /* FrameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1727D2ACEC00DA1388 /* FrameManager.swift */; };
 		27E60D1B27D2ACEC00DA1388 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1827D2ACEC00DA1388 /* CameraError.swift */; };
 		27E60D1C27D2ACEC00DA1388 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1927D2ACEC00DA1388 /* CameraManager.swift */; };
 		27E60D1E27D2AD5800DA1388 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1D27D2AD5800DA1388 /* FrameView.swift */; };
-		27E60D2027D2AE7300DA1388 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1F27D2AE7300DA1388 /* ContentViewModel.swift */; };
+		27E60D2027D2AE7300DA1388 /* ContentViewModel(camera).swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */; };
 		27E60D2227D2AEA700DA1388 /* CGImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
 		27F0081727BE866300C7975D /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081627BE866300C7975D /* Avatar.swift */; };
@@ -69,13 +72,16 @@
 		2780A37527B65B57001B34CE /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		2780A37927B65BDA001B34CE /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
 		2780A37F27B65C60001B34CE /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
+		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
 		27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
 		27E60D1727D2ACEC00DA1388 /* FrameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameManager.swift; sourceTree = "<group>"; };
 		27E60D1827D2ACEC00DA1388 /* CameraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 		27E60D1927D2ACEC00DA1388 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		27E60D1D27D2AD5800DA1388 /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
-		27E60D1F27D2AE7300DA1388 /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContentViewModel(camera).swift"; sourceTree = "<group>"; };
 		27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImageExtension.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		27F0081627BE866300C7975D /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		2702B04827B652C100A0E5DD /* Ladle_thePlot */ = {
 			isa = PBXGroup;
 			children = (
+				27A2EAB727D3F6E800693B83 /* Sounds */,
 				47260E9127BBFAE000F0ED80 /* ViewModel */,
 				2754CEA527B66F2F002761F9 /* Ladle-thePlot-Info.plist */,
 				2754CEA027B66EFB002761F9 /* CustomFonts */,
@@ -166,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5A809A5227C63FA4006B1749 /* TimeLineView.swift */,
+				27A2EAB427D38BB000693B83 /* CameraViews */,
 				5A809A5427C671C1006B1749 /* ActionViews */,
 				27705AA127C23FA000F996B4 /* CardViews */,
 				27705A9C27C23A7900F996B4 /* ButtonViews */,
@@ -204,12 +212,35 @@
 			path = CardViews;
 			sourceTree = "<group>";
 		};
+		27A2EAB427D38BB000693B83 /* CameraViews */ = {
+			isa = PBXGroup;
+			children = (
+				27E60D1827D2ACEC00DA1388 /* CameraError.swift */,
+				27E60D1D27D2AD5800DA1388 /* FrameView.swift */,
+				27E60D1927D2ACEC00DA1388 /* CameraManager.swift */,
+				27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */,
+				27A2EAB527D3F26C00693B83 /* SoundManager.swift */,
+				27E60D1727D2ACEC00DA1388 /* FrameManager.swift */,
+			);
+			path = CameraViews;
+			sourceTree = "<group>";
+		};
+		27A2EAB727D3F6E800693B83 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */,
+				27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		47260E9127BBFAE000F0ED80 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				2754CEA727B7AB3E002761F9 /* RecipeViewModel.swift */,
 				47260E9227BBFBA900F0ED80 /* AvatarViewModel.swift */,
 				27F0081827BE86BA00C7975D /* IngredientViewModel.swift */,
+				27E60D1F27D2AE7300DA1388 /* ContentViewModel(camera).swift */,
 				47B7D50927C3EB1800827E4E /* SceneViewModel.swift */,
 			);
 			path = ViewModel;
@@ -231,12 +262,6 @@
 			children = (
 				47BE6C3727CD3BEA000EB64B /* ShakingView.swift */,
 				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
-				27E60D1827D2ACEC00DA1388 /* CameraError.swift */,
-				27E60D1D27D2AD5800DA1388 /* FrameView.swift */,
-				27E60D1927D2ACEC00DA1388 /* CameraManager.swift */,
-				27E60D1F27D2AE7300DA1388 /* ContentViewModel.swift */,
-				27E60D2127D2AEA700DA1388 /* CGImageExtension.swift */,
-				27E60D1727D2ACEC00DA1388 /* FrameManager.swift */,
 				5A809A5527C671E6006B1749 /* CrushView.swift */,
 				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 			);
@@ -302,7 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */,
 				5ACCB70127CFA2E5008A75D5 /* Localizable.strings in Resources */,
+				27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */,
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,
 				2702B05127B652C400A0E5DD /* Preview Assets.xcassets in Resources */,
 				2702B04E27B652C400A0E5DD /* Assets.xcassets in Resources */,
@@ -334,6 +361,7 @@
 				27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */,
 				47A8249927BFAA320042B065 /* ShowTheIngredientsView.swift in Sources */,
 				2780A38027B65C60001B34CE /* StepsView.swift in Sources */,
+				27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */,
 				47B7D50A27C3EB1800827E4E /* SceneViewModel.swift in Sources */,
 				5A809A5627C671E6006B1749 /* CrushView.swift in Sources */,
 				27E60D1B27D2ACEC00DA1388 /* CameraError.swift in Sources */,
@@ -350,7 +378,7 @@
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
 				27E60D1C27D2ACEC00DA1388 /* CameraManager.swift in Sources */,
 				2702B04A27B652C100A0E5DD /* Ladle_thePlotApp.swift in Sources */,
-				27E60D2027D2AE7300DA1388 /* ContentViewModel.swift in Sources */,
+				27E60D2027D2AE7300DA1388 /* ContentViewModel(camera).swift in Sources */,
 				27F0081527BE863100C7975D /* Recipe.swift in Sources */,
 				47B7D50E27C3EB6D00827E4E /* RecipeScene.swift in Sources */,
 				27705AA327C246CB00F996B4 /* StepCardView.swift in Sources */,
@@ -498,7 +526,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.6;
+				CURRENT_PROJECT_VERSION = 2.7;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
 				DEVELOPMENT_TEAM = Z33CSW7W9J;
 				ENABLE_PREVIEWS = YES;
@@ -534,7 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.6;
+				CURRENT_PROJECT_VERSION = 2.7;
 				DEVELOPMENT_ASSET_PATHS = "\"Ladle_thePlot/Preview Content\"";
 				DEVELOPMENT_TEAM = Z33CSW7W9J;
 				ENABLE_PREVIEWS = YES;

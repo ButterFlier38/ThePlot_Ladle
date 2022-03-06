@@ -89,7 +89,7 @@ struct AretheysimilarView: View {
                             .strokeBorder(Color.gray, lineWidth: 6)
                             .background(Circle().fill(CustomColor.bggreen))
                             .grayscale(1)
-                            .overlay( FrameView(image: model.frame)
+                            .overlay( FrameView(image: model.frame).frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.3, alignment: .center)
                                         .edgesIgnoringSafeArea(.all)
 //                                Image(systemName: "camera.fill")
 //                                    .font(.system(size: 140.0, weight: .bold))

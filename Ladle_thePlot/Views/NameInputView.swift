@@ -28,6 +28,7 @@ struct NameInputView: View {
     var WhatIsYourChildName : String = "What's your child's name?"
     var Inputusername : String = "Input name"
     
+    
     var body: some View {
         GeometryReader { geometry in
            
@@ -94,16 +95,10 @@ struct NameInputView: View {
                     AvatarSelectionView(username: $username,done: false)
                    
                 } label: {
-                    ContinueButton() .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!username.isEmpty ? 1 : 0.4)
-              }.disabled(username.isEmpty)
-               
-                
-
-                
+                    ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!username.isEmpty ? 1 : 0.4)
+                }.disabled(username.isEmpty)
             }
-
-
-            }     .frame(width: geometry.size.width * 0.8)
+          }     .frame(width: geometry.size.width * 0.8)
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .navigationBarHidden(true)
         }

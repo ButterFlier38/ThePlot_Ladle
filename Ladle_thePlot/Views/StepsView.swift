@@ -120,6 +120,8 @@ struct StepsView: View {
                 
             }
             
+        }.onAppear{
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
         }
     }
 }

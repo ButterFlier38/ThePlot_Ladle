@@ -119,10 +119,11 @@ struct AvatarSelectionView: View {
                     
                     NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $done) {
                         Button(action: {changeIconName(to: iConName)
+                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8)                       
                         }) {
                             ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
                         }.padding(.bottom)
-                            .disabled(avatarViewModel.isSomeAvatarSelected())
+                         .disabled(avatarViewModel.isSomeAvatarSelected())
                     }
                     
                     
@@ -130,6 +131,8 @@ struct AvatarSelectionView: View {
                 .frame(width: geometry.size.width * 0.8)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .navigationBarHidden(true)
+            }.onAppear{
+                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
             }
         }
     }

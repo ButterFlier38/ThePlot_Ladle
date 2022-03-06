@@ -124,6 +124,9 @@ struct ShowTheIngredientsView: View {
             
         } // :GeometryReader
         .edgesIgnoringSafeArea([.top,.bottom])
+        .onAppear{
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
+        }
     }
 }
 

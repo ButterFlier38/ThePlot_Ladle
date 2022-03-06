@@ -1,4 +1,9 @@
-
+//
+//  CGImage.swift
+//  Ladle_thePlot
+//
+//  Created by Irene Fernando on 04/03/22.
+//
 
 import CoreGraphics
 import VideoToolbox
