@@ -62,11 +62,12 @@ struct ShowTheIngredientsView: View {
                 Spacer().frame(height: geometry.size.height * 0.05)
                 
                         HStack(){
-                            Spacer().frame(width: geometry.size.width * 0.05)
+//                            Spacer().frame(width: geometry.size.width * 0.05)
                             ScrollView(.horizontal, showsIndicators: false){
                                
                     HStack(alignment: .center, spacing: 20) {
                         // display the ingredients
+                        Spacer().frame(width: geometry.size.width * 0.002)
                         ForEach(RecipeViewModel().getIngredients(recipe: recipe), id: \.self) { ingredient in
                             
                             if ingredient != "" {
@@ -77,8 +78,10 @@ struct ShowTheIngredientsView: View {
                     }.padding(.horizontal, 30) //:HStack for ingredients
 //                    .frame( height: geometry.size.height * 0.6, alignment: .center)
                 } // :Horizontal Scroll View for ingredients
+//                            .padding(.horizontal, 30)
                 
                         }
+//                        .padding(.horizontal, 30)
                 
                 // Shows the Avatar
                 HStack{
@@ -125,7 +128,7 @@ struct ShowTheIngredientsView: View {
         } // :GeometryReader
         .edgesIgnoringSafeArea([.top,.bottom])
         .onAppear{
-            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8, vol: 0.5)
         }
     }
 }

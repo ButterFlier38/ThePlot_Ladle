@@ -1,10 +1,3 @@
-//
-//  AvatarSelectionView.swift
-//  Ladle_thePlot
-//
-//  Created by Jasmine Aufiero on 15/02/22.
-//
-
 import SwiftUI
 import UIKit
 
@@ -32,7 +25,7 @@ struct AvatarSelectionView: View {
             }
             getIcon(to: iConName)
             done = false
-        }else{done!.toggle()}
+        }else{done! = true}
         
     }
     
@@ -119,7 +112,7 @@ struct AvatarSelectionView: View {
                     
                     NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $done) {
                         Button(action: {changeIconName(to: iConName)
-                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8)                       
+                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8, vol: 0.5)
                         }) {
                             ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
                         }.padding(.bottom)
@@ -132,7 +125,7 @@ struct AvatarSelectionView: View {
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .navigationBarHidden(true)
             }.onAppear{
-                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
+                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8 , vol: 0.5)
             }
         }
     }
@@ -147,4 +140,3 @@ struct AvatarSelectionView: View {
 //            .previewDevice("iPad Pro (11-inch) (3rd generation)")
 //            .previewInterfaceOrientation(.landscapeLeft)
 //    }
-//}

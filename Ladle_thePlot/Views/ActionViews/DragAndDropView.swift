@@ -53,11 +53,6 @@ struct DragAndDropView: View {
                                 
                                 DragIngredientCardView( ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!, dragCount: $dragCount)
                                 .zIndex(1)
-                                
-                                //                        while (!isDragged){
-                                //                          the botton is not there, as soon as it becomes true it has to be there
-                                //                        }
-                                
                             }
                         } // :if Statement
                         

@@ -19,9 +19,7 @@ struct CrushView: View {
     @Binding var currentScene :Int
 
     var body: some View {
-
         GeometryReader { geometry in
-
             Image(image)
                 .resizable()
                 .scaleEffect(scale)

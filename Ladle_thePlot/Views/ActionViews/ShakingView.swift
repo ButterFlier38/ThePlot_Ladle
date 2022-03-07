@@ -39,11 +39,6 @@ struct ShakingView: View {
                     .offset(x: geometry.size.width/14, y:geometry.size.height/6)
                     .padding()
                     .zIndex(0)
-                
-                
-                
-            
-                
             }
             
             

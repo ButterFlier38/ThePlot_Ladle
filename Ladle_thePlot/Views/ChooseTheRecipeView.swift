@@ -12,7 +12,8 @@ struct ChooseTheRecipeView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username: String
     var recipesText :String = "Recipes"
-    
+    var done: Bool = false
+   
     //    @State var degrees : Double = 0
     let layout = [
         GridItem(.flexible(minimum: 175)),
@@ -61,9 +62,20 @@ struct ChooseTheRecipeView: View {
                     ForEach(modelView.recipesStore) { recipe in
                         NavigationLink {
                             ShowTheIngredientsView(recipe: recipe, username: $username)
+                            
                         }label: {
-                            RecipeCardView(recipe: recipe)
-                        }
+                            RecipeCardView(recipe: recipe).grayscale(recipe.islocked ? 0.8 : 0.0)
+                        }.disabled(recipe.islocked)
+                        
+                        
+//                        NavigationLink(ShowTheIngredientsView(recipe: recipe, username: $username), tag: true, selection: recipe.locked ) {
+//                            RecipeCardView(recipe: recipe)
+//                             .disabled(avatarViewModel.isSomeAvatarSelected())
+//                        }
+                        
+                        
+                        
+                        
                         
                     } .frame( height: geometry.size.height * 0.35, alignment: .center)
                 })
@@ -72,7 +84,7 @@ struct ChooseTheRecipeView: View {
             .navigationBarHidden(true)
         }  .edgesIgnoringSafeArea([.top,.bottom])
             .onAppear{
-                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
+                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8, vol: 0.5)
             }
     }
 }
