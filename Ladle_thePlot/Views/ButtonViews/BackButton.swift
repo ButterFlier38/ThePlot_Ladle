@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BackButtonView: View {
+struct BackButton: View {
     var body: some View {
         
             Circle().foregroundColor(CustomColor.selectionblue).scaledToFit()
@@ -19,6 +19,6 @@ struct BackButtonView: View {
 
 struct BackButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        BackButtonView()
+        BackButton()
     }
 }

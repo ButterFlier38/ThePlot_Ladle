@@ -15,17 +15,17 @@ struct ContentView: View {
     }
     var body: some View {
         NavigationView  {
-//            AvatarSelectionView()
+            //            AvatarSelectionView()
             
             
-//         TimelineView(recipe: RecipeViewModel().recipesStore[0])
+            //         TimelineView(recipe: RecipeViewModel().recipesStore[0])
             
             
             NameInputView()
         }
         .statusBar(hidden: true)
         .navigationBarHidden(true)
-            .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
 }
@@ -35,6 +35,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .previewInterfaceOrientation(.landscapeLeft)
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
-//            .environment(\.locale, .init(identifier: "it"))
+        //            .environment(\.locale, .init(identifier: "it"))
     }
 }

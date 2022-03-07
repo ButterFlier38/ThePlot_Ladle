@@ -60,7 +60,7 @@ struct StepsView: View {
                             .frame(width: 20)
                         NavigationLink( destination: ShowTheIngredientsView(recipe: recipe, username: $username))
                         {
-                            BackButtonView()
+                            BackButton()
                         }
                         //
                         Text(LocalizedStringKey(String(StepsText)))
@@ -116,7 +116,7 @@ struct StepsView: View {
                     NavigationLink {
                         CreateRecipeView(recipe: recipe,username: $username)
                     } label: {
-                        ContinueButtonView()
+                        ContinueButton()
                     } .frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.15, alignment: .bottom)
                         .padding(.trailing, 50)
                         .navigationBarHidden(true)
@@ -128,6 +128,8 @@ struct StepsView: View {
                 
             }
             
+        }.onAppear{
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
         }
     }
 }

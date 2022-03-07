@@ -12,10 +12,32 @@ struct AvatarSelectionView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
     @State var iConName : String = ""
-    @State var done : Bool = false
+    @State var done : Bool?
     var chooseYourAvatar : String = "Choose your avatar: "
+    @State var selection: Bool? = nil
     
-    func changeIcon(to iconName: String) {
+    func changeIconName(to iconName: String) {
+        if avatarViewModel.getSelectedAvatar().name != iConName.lowercased(){
+            switch avatarViewModel.getSelectedAvatar().name {
+            case "nino" :
+                iConName = "Nino"
+            case "tonia" :
+                iConName = "Tonia"
+            case "giorgia" :
+                iConName = "Giorgia"
+            case "gino" :
+                iConName = "Gino"
+            default:
+                print(iConName)
+            }
+            getIcon(to: iConName)
+            done = false
+        }else{done!.toggle()}
+        
+    }
+    
+    
+    func getIcon(to iconName: String) {
         guard UIApplication.shared.supportsAlternateIcons else {
             return
         }
@@ -93,38 +115,24 @@ struct AvatarSelectionView: View {
                     }.padding(.horizontal, 20) // :HStack
                         .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.28)
                     
-                    // Continue button
-                    NavigationLink {
-                        ChooseTheRecipeView(username: $username)
-                    } label: {
-                        
-                        ContinueButtonView().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
-                            .onTapGesture {
-                                if avatarViewModel.getSelectedAvatar().name != iConName.lowercased(){
-                                    switch avatarViewModel.getSelectedAvatar().name {
-                                    case "nino" :
-                                        iConName = "Nino"
-                                    case "tonia" :
-                                        iConName = "Tonia"
-                                    case "giorgia" :
-                                        iConName = "Giorgia"
-                                    case "gino" :
-                                        iConName = "Gino"
-                                    default:
-                                        print(iConName)
-                                    }
-                                    changeIcon(to: iConName)
-                                    done = false } else {done = true}
-                            }.disabled(done)
-                    } // :Continue Button
-                    .padding(.bottom)
-                    .disabled(avatarViewModel.isSomeAvatarSelected())
+                    
+                    
+                    NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $done) {
+                        Button(action: {changeIconName(to: iConName)
+                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8)                       
+                        }) {
+                            ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
+                        }.padding(.bottom)
+                         .disabled(avatarViewModel.isSomeAvatarSelected())
+                    }
                     
                     
                 }
                 .frame(width: geometry.size.width * 0.8)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .navigationBarHidden(true)
+            }.onAppear{
+                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
             }
         }
     }

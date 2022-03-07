@@ -22,15 +22,11 @@ class AvatarViewModel : ObservableObject {
     func isAvatarSelected(id: UUID) -> Bool {
         return selectedAvatar.contains(id) ? true : false
     }
-    
-//    func getAvatarName(name : String) -> Bool {
-//        return selectedAvatar. ? true : false
-//    }
-    
+
     
     func toggleAvatarSelection(id: UUID) {
         if selectedAvatar.contains(id) {
-            selectedAvatar.remove(id)
+//            selectedAvatar.remove(id)
             print(selectedAvatar)
         }else {
             selectedAvatar.removeAll()

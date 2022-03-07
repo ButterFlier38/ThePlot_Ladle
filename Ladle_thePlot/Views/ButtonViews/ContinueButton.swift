@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContinueButtonView: View {
+struct ContinueButton: View {
     
     var textButton : String = "Continue"
     var body: some View {
@@ -20,12 +20,14 @@ struct ContinueButtonView: View {
                     .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.4))
 //                    .font(Font.custom("HappyMonkey-Regular", size: 37 ))
                     .foregroundColor(.white).shadow(color: .white, radius: 1))
+            
+           
     }
                 }
 }
 
 struct ContinueButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ContinueButtonView()
+        ContinueButton()
     }
 }
