@@ -44,6 +44,8 @@
 		47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */; };
 		47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */; };
 		5A1D3B2A27C5271C009301D1 /* splashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D3B2927C5271C009301D1 /* splashScreenView.swift */; };
+		5A6D6A1327D61AE1009F4776 /* MIxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D6A1227D61AE1009F4776 /* MIxView.swift */; };
+		5A6D6A1527D61AEB009F4776 /* TapCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D6A1427D61AEB009F4776 /* TapCircleView.swift */; };
 		5A809A5327C63FA4006B1749 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A809A5227C63FA4006B1749 /* TimeLineView.swift */; };
 		5A809A5627C671E6006B1749 /* CrushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A809A5527C671E6006B1749 /* CrushView.swift */; };
 		5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3B36427BFB00B0001F73F /* AnimationView.swift */; };
@@ -92,6 +94,8 @@
 		47C5A9B527BCF6CB004D4A9A /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		47C5A9B827BD04AE004D4A9A /* ChooseTheRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTheRecipeView.swift; sourceTree = "<group>"; };
 		5A1D3B2927C5271C009301D1 /* splashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashScreenView.swift; sourceTree = "<group>"; };
+		5A6D6A1227D61AE1009F4776 /* MIxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MIxView.swift; path = ../../../../../Documents/CircleAnimation/CircleAnimation/MIxView.swift; sourceTree = "<group>"; };
+		5A6D6A1427D61AEB009F4776 /* TapCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TapCircleView.swift; path = ../../../../../Documents/CircleAnimation/CircleAnimation/TapCircleView.swift; sourceTree = "<group>"; };
 		5A809A5227C63FA4006B1749 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		5A809A5527C671E6006B1749 /* CrushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrushView.swift; sourceTree = "<group>"; };
 		5AC3B36427BFB00B0001F73F /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				47BE6C3727CD3BEA000EB64B /* ShakingView.swift */,
 				47B7D50F27C4080F00827E4E /* DragAndDropView.swift */,
 				5A809A5527C671E6006B1749 /* CrushView.swift */,
+				5A6D6A1427D61AEB009F4776 /* TapCircleView.swift */,
+				5A6D6A1227D61AE1009F4776 /* MIxView.swift */,
 				5AC3B36827BFB1920001F73F /* ShakeView.swift */,
 			);
 			path = ActionViews;
@@ -358,10 +364,12 @@
 				47260E9327BBFBA900F0ED80 /* AvatarViewModel.swift in Sources */,
 				47C5A9B927BD04AE004D4A9A /* ChooseTheRecipeView.swift in Sources */,
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,
+				5A6D6A1327D61AE1009F4776 /* MIxView.swift in Sources */,
 				27916B1A27D52CFB00504037 /* PhotoCaptureView.swift in Sources */,
 				5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				5A809A5327C63FA4006B1749 /* TimeLineView.swift in Sources */,
+				5A6D6A1527D61AEB009F4776 /* TapCircleView.swift in Sources */,
 				27705AA527C24AD700F996B4 /* StepCircleCard.swift in Sources */,
 				5A1D3B2A27C5271C009301D1 /* splashScreenView.swift in Sources */,
 				27F0081B27BE86E200C7975D /* IngredientCardView.swift in Sources */,
