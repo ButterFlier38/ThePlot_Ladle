@@ -43,11 +43,6 @@ struct DragAndDropView: View {
                                 
                                 DragIngredientCardView( ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!, dragCount: $dragCount)
                                 .zIndex(1)
-                                
-                                //                        while (!isDragged){
-                                //                          the botton is not there, as soon as it becomes true it has to be there
-                                //                        }
-                                
                             }
                         } // :if Statement
                         
@@ -62,7 +57,7 @@ struct DragAndDropView: View {
                         .resizable()
 //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                         .overlay(
-                           Text("Add the ingredients!")
+                           Text("Add the ingredients into the blender")
                                            .scaledToFit()
                                            .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.04))
                                            .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)

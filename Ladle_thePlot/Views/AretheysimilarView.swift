@@ -102,16 +102,14 @@ struct AretheysimilarView: View {
                                         .grayscale(1)
                                         .opacity(0.3))
                         
-                        image?.resizable().scaledToFit().clipShape(Circle())
+                        image?.resizable()
+                                .clipShape(Circle())
+//                                .aspectRatio(0.9, contentMode: .fit)
+                                .frame( height: geometry.size.height * 0.5, alignment: .center)
                         }
-                        
-//                        circle for the camera button
-                      
-                      
-                        
-    
+                   
                     } .padding(30)
-                        .frame(width: geometry.size.width/1.4 ,height: geometry.size.height/2)
+                        .frame(width: geometry.size.width/1.4,height: geometry.size.height/2)
                     Spacer()
                     Spacer()
                 } //Close vstack
