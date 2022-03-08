@@ -22,7 +22,6 @@ struct CrushView: View {
     @State var change :Bool = false
 
     var body: some View {
-
         GeometryReader { geometry in
 
             if !change {

@@ -18,4 +18,5 @@ struct Recipe : Identifiable {
     var recipeSteps : [String]// the number of steps and the steps description    before was a string
     var recipeAlternativeSteps : [String]?
     var scenes :[String]
+    var islocked : Bool
 }

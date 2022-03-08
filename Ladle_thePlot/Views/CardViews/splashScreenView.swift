@@ -37,7 +37,7 @@ struct splashScreenView: View {
                 
             }
             .onAppear{
-                SoundManager.instance.playSound("IntroSound.mp3", spd: 0.2)
+                SoundManager.instance.playSound("IntroSound.mp3", spd: 0.2 , vol: 1)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     withAnimation{
                         self.isActive = true

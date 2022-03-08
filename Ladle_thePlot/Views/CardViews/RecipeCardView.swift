@@ -19,11 +19,14 @@ struct RecipeCardView: View {
                         .overlay(Image(recipe.image).resizable().scaledToFit()
                                     .padding(37)
                         )
-                       .overlay(
+                 .overlay(
                             RoundedRectangle(cornerRadius: 60)
                                 .stroke(Color(recipe.color), lineWidth: geometry.size.width * 0.04)
 //                                .padding()
                                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.7))
+                 .overlay(Image(systemName: "lock.fill").resizable().scaledToFit().scaleEffect(0.5).foregroundColor(.white).opacity(recipe.islocked ? 1.0 : 0.0).padding(20)
+//                            .position(x: 60, y: 65)
+                 )
                        
         }
     }

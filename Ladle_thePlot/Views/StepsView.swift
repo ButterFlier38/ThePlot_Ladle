@@ -101,8 +101,11 @@ struct StepsView: View {
                     Image(avatarViewModel.getSelectedAvatar().image)
                     //                Image("character_giorgia")
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                         .frame(height: geometry.size.height * 0.4, alignment: .bottom)
+                    
+                    
+                    
                     
                     Image("nuvoletta")
                         .resizable()
@@ -129,7 +132,7 @@ struct StepsView: View {
             }
             
         }.onAppear{
-            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8)
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8, vol: 0.5)
         }
     }
 }

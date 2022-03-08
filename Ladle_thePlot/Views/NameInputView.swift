@@ -92,7 +92,7 @@ struct NameInputView: View {
                     }
                     Spacer().frame(height: geometry.size.height * 0.05)
                 NavigationLink {
-                    AvatarSelectionView(username: $username,done: false)
+                    AvatarSelectionView(username: $username, isdone: false)
                    
                 } label: {
                     ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!username.isEmpty ? 1 : 0.4)
