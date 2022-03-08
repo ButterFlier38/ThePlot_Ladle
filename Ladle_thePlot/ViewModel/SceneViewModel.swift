@@ -24,7 +24,7 @@ struct SceneViewModel {
         
         RecipeScene(name: "Spread the seasoning", recipeName: "pizza", sceneNumber: 7, steps: ["Spread the seasoning!"], stepIngredients: ["pomodoro sauce"], alternativeStepsIngredient: nil, container: "pizzadough", finalResult: "emptypizza"),
         
-        RecipeScene(name: "Add mozzarella", recipeName: "pizza", sceneNumber: 8, steps: ["Add mozzarella!"], stepIngredients: ["mozzarella"], alternativeStepsIngredient: nil, container: "emptypizza", finalResult: nil),
+        RecipeScene(name: "Add mozzarella", recipeName: "pizza", sceneNumber: 8, steps: ["Add mozzarella!"], stepIngredients: ["mozzarella"], alternativeStepsIngredient: nil, container: "emptypizza", finalResult: "rawpizza"),
         
         // for the ice cream
         RecipeScene(name: "Add ingredients", recipeName: "ice cream", sceneNumber: 1, steps: ["Add the condensed milk!", "Add the ice cubes", "Add strawberries", "Add banana"], stepIngredients: ["condensed milk", "ice cubes", "strawberries", "banana"], alternativeStepsIngredient: nil, container: "blender", finalResult: nil),

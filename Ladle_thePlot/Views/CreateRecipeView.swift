@@ -105,15 +105,11 @@ struct CreateRecipeView: View {
                               
                             }
                             
-                            // mixing the ingredients
-                            if scene.name.lowercased().contains("mix") && currentScene == scene.sceneNumber{
+                            // mixing the ingredients and spreading the ingredients
+                            if (scene.name.lowercased().contains("mix") || scene.name.lowercased().contains("spread"))  && currentScene == scene.sceneNumber{
                                 MixView(username: $username, currentScene: $currentScene, firstImage: scene.container!, secondImage: scene.finalResult!, isFinal: currentScene == recipe.scenes.count)
                             }
                             
-                            // spreading the ingredients
-                            if scene.name.lowercased().contains("spread") && currentScene == scene.sceneNumber{
-                                JustForTestView(currentScene: $currentScene)
-                            }
                             
                             // leavening
                             if scene.name.lowercased().contains("grow") && currentScene == scene.sceneNumber{
