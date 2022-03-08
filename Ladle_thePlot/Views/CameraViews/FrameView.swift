@@ -37,6 +37,12 @@ struct FrameView: View {
                                 .font(.system(size: 140.0, weight: .bold))
                                 .grayscale(1)
                                 .opacity(0.3))
+                    
+                Path { path in
+                    path.move(to: CGPoint(x: 200, y: 100))
+                    path.addLine(to: CGPoint(x: 100, y: 300))
+                   
+                }.foregroundColor(.white).opacity(0.3)
             }
         }
     }
@@ -44,7 +50,39 @@ struct FrameView: View {
 
 
 
+import AVFoundation
 
+class FrameManager: NSObject, ObservableObject {
+  static let shared = FrameManager()
+
+  @Published var current: CVPixelBuffer?
+
+  let videoOutputQueue = DispatchQueue(
+    label: "ladle.video",
+    qos: .userInitiated,
+    attributes: [],
+    autoreleaseFrequency: .workItem)
+
+  private override init() {
+    super.init()
+
+    CameraManager.shared.set(self, queue: videoOutputQueue)
+  }
+}
+
+extension FrameManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+  func captureOutput(
+    _ output: AVCaptureOutput,
+    didOutput sampleBuffer: CMSampleBuffer,
+    from connection: AVCaptureConnection
+  ) {
+    if let buffer = sampleBuffer.imageBuffer {
+      DispatchQueue.main.async {
+        self.current = buffer
+      }
+    }
+  }
+}
 
 
 struct CameraView_Previews: PreviewProvider {
