@@ -17,6 +17,8 @@ struct CreateRecipeView: View {
     @State var finalResultNeeded :Bool = false
     @State  var move :CGFloat = 0.41
     var LetsMakeItText : String = "Let's make it!"
+    var isFinal :Bool = false
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -90,37 +92,38 @@ struct CreateRecipeView: View {
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
                               
-                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene)
+                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene, isFinal: currentScene == recipe.scenes.count, username: $username)
                                     .frame(width: geometry.size.width * 0.9 ,height: geometry.size.height * 0.5)
                                     .offset(x: 0 , y:-geometry.size.height/4)
-                                    .zIndex(1)
-                                
-
-                            
+                                    .zIndex(0)
+                                                      
                             }
                             // shaking ingredients
                             
                             if scene.name.lowercased().contains("shake") && currentScene == scene.sceneNumber {
-                                ShakingView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded)
+                                ShakingView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded, isFinal: currentScene == recipe.scenes.count)
                               
                             }
                             
-                            if scene.name.lowercased().contains("mix") {
-    
+                            // mixing the ingredients
+                            if scene.name.lowercased().contains("mix") && currentScene == scene.sceneNumber{
+                                JustForTestView(currentScene: $currentScene)
                             }
                             
-                            if scene.name.lowercased().contains("spread") {
-    
+                            // spreading the ingredients
+                            if scene.name.lowercased().contains("spread") && currentScene == scene.sceneNumber{
+                                JustForTestView(currentScene: $currentScene)
                             }
                             
-                            if scene.name.lowercased().contains("grow") {
+                            // leavening
+                            if scene.name.lowercased().contains("grow") && currentScene == scene.sceneNumber{
+                                JustForTestView(currentScene: $currentScene)
+                            }
+                            
 
-                            }
-                            
-
-                            // crushing ingredientsù
-                            if scene.name.lowercased().contains("crush") {
-                                CrushView(image: scene.container!, currentScene: $currentScene)
+                            // crushing ingredients
+                            if scene.name.lowercased().contains("crush") && currentScene == scene.sceneNumber {
+                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
                             }
                             
                         }
@@ -149,14 +152,14 @@ struct CreateRecipeView: View {
                       
                         }
                         
-                        if currentScene > recipe.recipeSteps.count {
-                           
+                        if currentScene > recipe.scenes.count {
+                            
                             NavigationLink {
-                                         AretheysimilarView(username: $username, recipe: recipe)
-                                     } label: {
-                                         NextStepButton()
-                                            
-                                     } .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
+                                AretheysimilarView(username: $username, recipe: recipe)
+                            } label: {
+                                NextStepButton()
+                                
+                            } .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
                                 .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
                                 .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
                                 .onAppear{
