@@ -60,15 +60,15 @@ struct MixView: View {
                     .rotationEffect(.degrees(-90))
                 
     //            the dots that starts the circle
-                Circle()
-                    .fill(temperatureValue < (config.maximumValue * 4/5)  ? Color.blue : Color.green)
-                    .frame(width: config.knobRadius * 3.5, height: config.knobRadius * 3.5)
+                Image("woodspoon")
+                    .frame(width: config.knobRadius * 1.5, height: config.knobRadius * 4.5)
                     .padding(10)
                     .offset(y: -config.radius)
                     .rotationEffect(Angle.degrees(Double(angleValue)))
                     .gesture(DragGesture(minimumDistance: 0.0)
                                 .onChanged({ value in
                                    change(location: value.location)
+
                                     
                         if  (temperatureValue > 39) {
     //                        if you use 39.9 it becomes more sensible
