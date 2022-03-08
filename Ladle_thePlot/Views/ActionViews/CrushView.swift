@@ -43,11 +43,20 @@ struct CrushView: View {
             }
             
             else {
-                Image(image2)
-                    .resizable()
-                    .scaleEffect(scale)
-                    .aspectRatio(1.2, contentMode: .fit)
-                    .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                if image2 != "no-value" {
+                    Image(image2)
+                        .resizable()
+                        .scaleEffect(scale)
+                        .aspectRatio(1.2, contentMode: .fit)
+                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                }
+                else {
+                    Image(image1)
+                        .resizable()
+                        .scaleEffect(scale)
+                        .aspectRatio(1.2, contentMode: .fit)
+                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                }
                 
                 Button{
                     currentScene += 1
