@@ -8,11 +8,18 @@
 
 import SwiftUI
 
-struct MIxView: View {
+struct MixView: View {
+    @Binding var username : String
+    @Binding var currentScene :Int
+    var firstImage :String
+    var secondImage :String
+    
     @State var temperatureValue: CGFloat = 0.0
     @State var angleValue: CGFloat = 0.0
     @State var counter : Int = 0
-    
+    @State var change :Bool = false
+    @State  var move :CGFloat = 0.975
+    var isFinal :Bool
     
     let config = Config(minimumValue: 0.0,
                         maximumValue: 40.0,
@@ -21,48 +28,103 @@ struct MIxView: View {
                         radius: 125.0
     )
     var body: some View {
-        ZStack {
+        
+        GeometryReader { geometry in
+            
+            ZStack {
+                
+                if !change {
+                    Image(firstImage)
+                        .resizable()
+                        .scaleEffect(0.7)
+                        .aspectRatio(1.2, contentMode: .fit)
+                        .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
+                        .position(x: geometry.size.width * 0.5, y:geometry.size.height * 0.48)
+                        .padding()
+                        .zIndex(0)
+                }
 
-//            background dashed line
-            Circle()
-                .stroke(Color.gray,
-                        style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [3, 23.18]))
-                .frame(width: config.radius * 2, height: config.radius * 2)
-            
-            
-//            the circle that fills with the drag gesture
-            Circle()
-                .trim(from: 0.0, to: temperatureValue/config.totalValue)
-                .stroke(temperatureValue < (config.maximumValue * 4/5) ? Color.blue : Color.green,  style: StrokeStyle(lineWidth: 30,lineCap: .round))
 
-                .rotationEffect(.degrees(-90))
-            
-//            the dots that starts the circle
-            Circle()
-                .fill(temperatureValue < (config.maximumValue * 4/5)  ? Color.blue : Color.green)
-                .frame(width: config.knobRadius * 3.5, height: config.knobRadius * 3.5)
-                .padding(10)
-                .offset(y: -config.radius)
-                .rotationEffect(Angle.degrees(Double(angleValue)))
-                .gesture(DragGesture(minimumDistance: 0.0)
-                            .onChanged({ value in
-                               change(location: value.location)
-                                
-                    if  (temperatureValue > 39) {
-//                        if you use 39.9 it becomes more sensible
-                        counter += 1
-                    }
+    //            background dashed line
+                Circle()
+                    .stroke(Color.gray,
+                            style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [3, 23.18]))
+                    .frame(width: config.radius * 2, height: config.radius * 2)
+                
+                
+    //            the circle that fills with the drag gesture
+                Circle()
+                    .trim(from: 0.0, to: temperatureValue/config.totalValue)
+                    .stroke(temperatureValue < (config.maximumValue * 4/5) ? Color.blue : Color.green,  style: StrokeStyle(lineWidth: 30,lineCap: .round))
+
+                    .rotationEffect(.degrees(-90))
+                
+    //            the dots that starts the circle
+                Image("woodspoon")
+                    .frame(width: config.knobRadius * 1.5, height: config.knobRadius * 4.5)
+                    .padding(10)
+                    .offset(y: -config.radius)
+                    .rotationEffect(Angle.degrees(Double(angleValue)))
+                    .gesture(DragGesture(minimumDistance: 0.0)
+                                .onChanged({ value in
+                                   change(location: value.location)
+
+                                    
+                        if  (temperatureValue > 39) {
+    //                        if you use 39.9 it becomes more sensible
+                            counter += 1
+                        }
+                        
+                     
+                                })
+               
+                    ) // :drag gesture
+
+                if counter > 0 {
+    //
+                    Image(secondImage)
+                        .resizable()
+                        .scaleEffect(0.7)
+                        .aspectRatio(1.2, contentMode: .fit)
+                        .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
+                        .offset(x: geometry.size.width/14, y:geometry.size.height/6)
+                        .padding()
+                        .zIndex(0).onAppear{change.toggle()}
+    //                Text("The button with the animation has to appear")
                     
-                 
-                            })
-           
-                ) // :drag gesture
-
-            if counter > 0 {
-//                Text("\(counter)")
-                Text("\(temperatureValue)")
-//                Text("The button with the animation has to appear")
+                    if !isFinal {
+                        
+                        Button{
+                            currentScene += 1
+                        }label: {
+                            
+                            NextStepButton()
+                                
+                        } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
+                   .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
+                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+                            .onAppear{
+                                move =  0.99
+                            }
+                    }
+//                    else if isFinal {
+//                        
+//                        NavigationLink {
+//                            AretheysimilarView(username: $username, recipe: recipe)
+//                        } label: {
+//                            NextStepButton()
+//                            
+//                        } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
+//                            .shadow(radius: move)
+//                            .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
+//                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+//                            .onAppear{
+//                                move =  0.99
+//                            }
+//                    } //: else if
+                }
             }
+
         }
     }
     
@@ -99,8 +161,8 @@ struct Config {
     let radius: CGFloat
 }
 
-struct MIxView_Previews: PreviewProvider {
-    static var previews: some View {
-        MIxView()
-    }
-}
+//struct MIxView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MixView()
+//    }
+//}
