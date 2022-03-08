@@ -5,9 +5,12 @@ struct AvatarSelectionView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username : String
     @State var iConName : String = ""
-    @State var done : Bool?
+    @State var isdone : Bool?
     var chooseYourAvatar : String = "Choose your avatar: "
     @State var selection: Bool? = nil
+    
+    
+    
     
     func changeIconName(to iconName: String) {
         if avatarViewModel.getSelectedAvatar().name != iConName.lowercased(){
@@ -24,8 +27,10 @@ struct AvatarSelectionView: View {
                 print(iConName)
             }
             getIcon(to: iConName)
-            done = false
-        }else{done! = true}
+            isdone = false
+//            print(done)
+        }
+        else{isdone! = true}
         
     }
     
@@ -39,7 +44,9 @@ struct AvatarSelectionView: View {
                 print("App icon failed to change due to \(error.localizedDescription)")
             } else {
                 print("App icon changed successfully")
-                //            done.toggle()
+//                            done = true
+                print(isdone)
+                
             }
         })
     }
@@ -90,9 +97,12 @@ struct AvatarSelectionView: View {
                     HStack {
                         
                         ForEach(avatarViewModel.avatarsStorage) { avatar in
-                            
                             Button(action:  {withAnimation(.easeOut(duration: 0.2)) {
+                                isdone = false
+                                print(isdone)
                                 avatarViewModel.toggleAvatarSelection(id: avatar.id)
+                                
+//                               changeIconName(to: iConName)
                             }}){
                                 
                                 Circle()
@@ -108,16 +118,16 @@ struct AvatarSelectionView: View {
                     }.padding(.horizontal, 20) // :HStack
                         .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.28)
                     
-                    
-                    
-                    NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $done) {
+             
+                    NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $isdone) {
                         Button(action: {changeIconName(to: iConName)
                             SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8, vol: 0.5)
+                            print(isdone)
                         }) {
                             ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
                         }.padding(.bottom)
                          .disabled(avatarViewModel.isSomeAvatarSelected())
-                    }
+                    }.onAppear{isdone = false}
                     
                     
                 }
@@ -126,6 +136,7 @@ struct AvatarSelectionView: View {
                 .navigationBarHidden(true)
             }.onAppear{
                 SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8 , vol: 0.5)
+               
             }
         }
     }

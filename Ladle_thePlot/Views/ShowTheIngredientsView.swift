@@ -43,7 +43,9 @@ struct ShowTheIngredientsView: View {
                         Spacer().frame(height: geometry.size.height * 0.02)
                         HStack{
                             
-                            NavigationLink( destination: ChooseTheRecipeView(username: $username)){
+                            NavigationLink {
+                                ChooseTheRecipeView(username: $username)
+                            } label: {
                                 BackButton()
                             }.padding(.leading, 20)
                             

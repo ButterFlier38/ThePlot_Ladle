@@ -67,7 +67,7 @@ struct DragAndDropView: View {
                         .resizable()
 //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                         .overlay(
-                           Text("Add the ingredients!")
+                           Text("Add the ingredients into the blender")
                                            .scaledToFit()
                                            .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.04))
                                            .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)
@@ -82,9 +82,7 @@ struct DragAndDropView: View {
                     Button{
                         currentScene += 1
                     }label: {
-                        
                         NextStepButton() .opacity((dragCount == scene.stepIngredients!.count) ? 1 : 0)
-                            
                     } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
                .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
                         .disabled(dragCount != scene.stepIngredients!.count)
@@ -92,9 +90,7 @@ struct DragAndDropView: View {
                         .onAppear{
                             move =  0.99
                         }
-                    
-  
-                }
+               }
               
             }
         }

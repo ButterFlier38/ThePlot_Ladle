@@ -12,7 +12,7 @@ struct ChooseTheRecipeView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var username: String
     var recipesText :String = "Recipes"
-    var done: Bool = false
+//    var done: Bool = false
    
     //    @State var degrees : Double = 0
     let layout = [
@@ -40,7 +40,7 @@ struct ChooseTheRecipeView: View {
                     
                     
                     NavigationLink {
-                        AvatarSelectionView(username: $username, done: false)
+                        AvatarSelectionView(username: $username, isdone: false)
                     } label: {
                         HStack{
                             Image("nuvoletta") .resizable()

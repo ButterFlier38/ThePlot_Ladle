@@ -25,6 +25,7 @@
 		27916B1A27D52CFB00504037 /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1827D52CFB00504037 /* PhotoCaptureView.swift */; };
 		27916B1C27D6201200504037 /* MixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1B27D6201200504037 /* MixView.swift */; };
 		27916B1E27D6202E00504037 /* TapCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1D27D6202E00504037 /* TapCircleView.swift */; };
+		27916B2027D753A100504037 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1F27D753A100504037 /* FrameView.swift */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
 		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
@@ -74,6 +75,7 @@
 		27916B1827D52CFB00504037 /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
 		27916B1B27D6201200504037 /* MixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixView.swift; sourceTree = "<group>"; };
 		27916B1D27D6202E00504037 /* TapCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapCircleView.swift; sourceTree = "<group>"; };
+		27916B1F27D753A100504037 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				27916B1727D52CFB00504037 /* ImagePicker.swift */,
+				27916B1F27D753A100504037 /* FrameView.swift */,
 				27916B1827D52CFB00504037 /* PhotoCaptureView.swift */,
 				27A2EAB527D3F26C00693B83 /* SoundManager.swift */,
 			);
@@ -348,6 +351,7 @@
 				2702B04C27B652C100A0E5DD /* ContentView.swift in Sources */,
 				47BE6C3827CD3BEA000EB64B /* ShakingView.swift in Sources */,
 				5AC3B36527BFB00B0001F73F /* AnimationView.swift in Sources */,
+				27916B2027D753A100504037 /* FrameView.swift in Sources */,
 				5AC3B36727BFB0160001F73F /* AretheysimilarView.swift in Sources */,
 				27F0081727BE866300C7975D /* Avatar.swift in Sources */,
 				27F0081927BE86BA00C7975D /* IngredientViewModel.swift in Sources */,
