@@ -11,6 +11,7 @@ struct Ingredient : Codable, Identifiable  {
     var id = UUID()
     var name :String
     var image :String
+    var droppedImage :String?
     var quantity :String
     var recipeName :String
     var isAlternative :Bool

@@ -21,13 +21,15 @@ struct DragIngredientCardView: View {
     //    let center = CGPoint(x: rect.midX, y: rect.midY)
     
     var body: some View {
+        
         GeometryReader{ geometry in
+            
             VStack(alignment: .center){
+                
                 Circle()
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.8)
                     .foregroundColor(.white)
-                
-                    .overlay(Image(ingredient.image).resizable()
+                    .overlay(Image(self.isDragged ? (((ingredient.droppedImage ?? nil) != nil) ? ingredient.droppedImage! : ingredient.image) : ingredient.image).resizable()
                                 .scaledToFit()
                                 .scaleEffect(self.isDragged ? 0.75 : 0.9)
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5).offset(dragAmount)
@@ -56,6 +58,7 @@ struct DragIngredientCardView: View {
                                                 isDragged = true
                                                 dragCount += 1
                                                 }
+                                                
                                             } else {
                                                 self.dragAmount = .zero
                                                 isDragged = false
