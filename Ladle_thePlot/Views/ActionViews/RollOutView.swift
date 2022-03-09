@@ -53,14 +53,14 @@ struct RollOutView : View{
                 
                 Image("nuvoletta")
                     .resizable()
-                    .frame(width: geometry.size.width * 0.35, height: geometry.size.width * 0.1)
+                    .frame(width: geometry.size.width * 0.5, height: geometry.size.width * 0.1)
                     .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                     .overlay(
                         Text(LocalizedStringKey(String(vignette)))
                             .scaledToFit()
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
                             .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue))
-                    .frame(width: geometry.size.width * 0.4 ,height: geometry.size.height * 0.1, alignment: .bottom)
+                    .frame(width: geometry.size.width * 0.5 ,height: geometry.size.height * 0.1, alignment: .bottom)
                     .position(x: geometry.size.width * 0.55 ,y: geometry.size.height * 0.89)
                 
                 

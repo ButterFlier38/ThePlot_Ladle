@@ -21,8 +21,7 @@ struct StepCardView: View {
                 Text(LocalizedStringKey(String(step))).font(Font.custom("HappyMonkey-Regular", size: 20))
                     .foregroundColor(CustomColor.selectionblue)
                     .multilineTextAlignment(.center)
-                    .padding(25)
-                    .padding()
+                    .padding(35)
                     .background(CustomColor.bggreen)
                     .cornerRadius(33)
 

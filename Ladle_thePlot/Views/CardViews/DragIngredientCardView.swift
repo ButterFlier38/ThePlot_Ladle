@@ -32,7 +32,7 @@ struct DragIngredientCardView: View {
                     .overlay(Image(self.isDragged ? (((ingredient.droppedImage ?? nil) != nil) ? ingredient.droppedImage! : ingredient.image) : ingredient.image).resizable()
                                 .scaledToFit()
                                 .scaleEffect((self.isDragged && ((ingredient.droppedImage ?? nil) == nil)) ? 0.75 : 1)
-                                .scaleEffect((self.isDragged && ((ingredient.droppedImage ?? nil) != nil)) ? 1.8 : 1)
+                                .scaleEffect((self.isDragged && ((ingredient.droppedImage ?? nil) != nil)) ? 2 : 1)
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5).offset(dragAmount)
                              //                            .gesture(    TapGesture(count: 1).onEnded{_ in self.selected = !self.selected})
                                 .gesture(
