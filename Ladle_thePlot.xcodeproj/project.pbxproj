@@ -28,6 +28,7 @@
 		27916B2027D753A100504037 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1F27D753A100504037 /* FrameView.swift */; };
 		27916B2C27D7C65400504037 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B2B27D7C65400504037 /* CameraManager.swift */; };
 		27916B3027D7EE1600504037 /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B2F27D7EE1500504037 /* NextStepButton.swift */; };
+		27916B3427D8B88100504037 /* BlenderSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3327D8B88100504037 /* BlenderSound.mp3 */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
 		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
@@ -80,6 +81,7 @@
 		27916B1F27D753A100504037 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		27916B2B27D7C65400504037 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		27916B2F27D7EE1500504037 /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
+		27916B3327D8B88100504037 /* BlenderSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlenderSound.mp3; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		27A2EAB727D3F6E800693B83 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				27916B3327D8B88100504037 /* BlenderSound.mp3 */,
 				27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */,
 				27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */,
 			);
@@ -336,6 +339,7 @@
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,
 				2702B05127B652C400A0E5DD /* Preview Assets.xcassets in Resources */,
 				2702B04E27B652C400A0E5DD /* Assets.xcassets in Resources */,
+				27916B3427D8B88100504037 /* BlenderSound.mp3 in Resources */,
 				2754CEA427B66F14002761F9 /* HappyMonkey-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

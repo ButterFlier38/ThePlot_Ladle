@@ -95,6 +95,8 @@ struct ShakingView: View {
             currentScene += 1
             change.toggle()
             finalResultNeeded.toggle()
+            SoundManager.instance.playSound("BlenderSound.mp3" , spd: 3, vol: 1)
+
         }
         
         
