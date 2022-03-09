@@ -45,17 +45,25 @@ struct ShakingView: View {
                     
                     if !isFinal {
                         
-                        Button {
-                            currentScene += 1
-                        } label: {
-                            NextStepButton()
-                            
-                        } .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
-                            .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
-                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-                            .onAppear{
-                                move =  0.425
+                       
+                            NextStepButton().onTapGesture {
+                                currentScene += 1
                             }
+                        
+                        
+                        
+                        
+//                        Button {
+//                            currentScene += 1
+//                        } label: {
+//                            NextStepButton()
+//
+//                        } .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
+//                            .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
+//                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+//                            .onAppear{
+//                                move =  0.425
+//                            }
                     }
                     
                 }

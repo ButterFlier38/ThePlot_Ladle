@@ -63,28 +63,39 @@ struct RollOutView : View{
             
             
             else {
+                ZStack{
                 Image(image2)
                     .resizable()
+                    .scaledToFit()
 //                    .scaleEffect(scale)
-                    .aspectRatio(1.2, contentMode: .fit)
+//                .aspectRatio(1.2, contentMode: .fit)
+                    .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6)
                     .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
                 
-                Button{
-                    currentScene += 1
-                }label: {
-                    
-                    NextStepButton()
-                        
-                } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-           .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
-//           .disabled(scale != 0.7)
-                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-                    .onAppear{
-                        move =  0.99
+                
+                
+                
+                    NextStepButton().onTapGesture {
+                        currentScene += 1
                     }
+                }
+//                Button{
+//                    currentScene += 1
+//                }label: {
+//
+//                    NextStepButton()
+//
+//                } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
+//           .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
+////           .disabled(scale != 0.7)
+//                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
+//                    .onAppear{
+//                        move =  0.99
+//                    }
             }
         }
         
     }
     
 }
+

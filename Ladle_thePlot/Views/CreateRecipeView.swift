@@ -120,7 +120,14 @@ struct CreateRecipeView: View {
                             // crushing ingredients
                             if scene.name.lowercased().contains("crush") && currentScene == scene.sceneNumber {
 //                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
-                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "none", currentScene: $currentScene)
+                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "pizzadough", currentScene: $currentScene)
+                            }
+                            
+                            if scene.name.lowercased().contains("oven") && currentScene == scene.sceneNumber {
+//                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
+                                
+                                BakeView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded, isFinal: currentScene == recipe.scenes.count , username : $username, recipe : recipe)
+//                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "pizzadough", currentScene: $currentScene)
                             }
                         }
                     }
