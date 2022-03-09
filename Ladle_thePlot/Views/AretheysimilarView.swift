@@ -87,11 +87,11 @@ struct AretheysimilarView: View {
                     //                        .shadow(color: CustomColor.selectionblue, radius: 3)
                     
                     HStack (alignment: .center, spacing: 50) {
-                        
+                        Spacer() .frame(width: geometry.size.width * 0.15)
                         Image(recipe.image)
                             .resizable()
                             .scaledToFit()
-                            .frame( height: geometry.size.height * 0.5, alignment: .center)
+                            .frame( height: geometry.size.height * 0.4, alignment: .center)
                         //                            .aspectRatio(0.9, contentMode: .fill)
                         
                         ZStack{
@@ -109,10 +109,11 @@ struct AretheysimilarView: View {
                                 .scaledToFit()
 //                                .frame( height: geometry.size.height * 0.5, alignment: .center)
                         }
+                        Spacer() .frame(width: geometry.size.width * 0.1)
                     }
-//                        .padding(30)
-                        .frame( height: geometry.size.height * 0.5, alignment: .center)
-                    
+//                    .padding(.leading, 30)
+                        .frame( height: geometry.size.height * 0.4, alignment: .center)
+//                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
 //                        .frame(width: geometry.size.width/1.4,height: geometry.size.height/2)
                     Spacer()
                     Spacer()
