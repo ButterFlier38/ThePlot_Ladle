@@ -49,18 +49,25 @@ struct CrushView: View {
             
             else {
                 if image2 != "no-value" {
+
                     Image(image2)
-                        .resizable()
-                        .scaleEffect(scale)
-                        .aspectRatio(1.2, contentMode: .fit)
-                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                                       .resizable()
+                                       .scaleEffect(scale)
+                                       .aspectRatio(1.2, contentMode: .fit)
+                                       .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                                      .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
                 }
                 else {
                     Image(image1)
                         .resizable()
                         .scaleEffect(scale)
                         .aspectRatio(1.2, contentMode: .fit)
-                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                        .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                       .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
+                    
+                    
+               
+                    
                 }
                 
                 NextStepButton().onTapGesture {
