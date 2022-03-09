@@ -119,7 +119,8 @@ struct CreateRecipeView: View {
 
                             // crushing ingredients
                             if scene.name.lowercased().contains("crush") && currentScene == scene.sceneNumber {
-                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
+//                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
+                                RollOutView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
                             }
                             
                         }

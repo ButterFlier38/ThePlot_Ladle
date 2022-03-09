@@ -14,6 +14,7 @@
 "What's your child's name?" = "What's your child's name?";
 "Continue" = "Continue";
 "Let's make it!" = "Let's make it!";
+"Start" = "Start";
 
 //ingredients and quantities (from ingredients view model)
 "Flour" = "Flour";
