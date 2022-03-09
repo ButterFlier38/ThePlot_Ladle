@@ -21,7 +21,7 @@ struct SceneViewModel {
 
         RecipeScene(name: "Roll out the dough", recipeName: "pizza", sceneNumber: 6, steps: ["Roll out the dough in order to obtain the pizza base!"], stepIngredients: nil, alternativeStepsIngredient: nil, container: "dough", finalResult: "pizzadough"),
         
-        RecipeScene(name: "Add the ingredients for the seasoning", recipeName: "pizza", sceneNumber: 7, steps: ["Add the pomodoro sauce!", "Add the salt!", "Add the oil!"], stepIngredients: ["pomodoro sauce", "salt", "olive oil"], alternativeStepsIngredient: nil, container: "emptyBowl", finalResult: "pomodorosauce"),
+        RecipeScene(name: "Add the ingredients for the seasoning", recipeName: "pizza", sceneNumber: 7, steps: ["Add the pomodoro sauce!", "Add the salt!", "Add the oil!"], stepIngredients: ["pomodoro sauce", "salt", "olive oil"], alternativeStepsIngredient: nil, container: "bowl", finalResult: "pomodorosauce"),
         
         RecipeScene(name: "Spread the seasoning", recipeName: "pizza", sceneNumber: 8, steps: ["Spread the seasoning!"], stepIngredients: ["pomodoro sauce"], alternativeStepsIngredient: nil, container: "pizzadough", finalResult: "emptypizza"),
         
