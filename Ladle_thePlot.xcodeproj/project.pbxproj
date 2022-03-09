@@ -27,10 +27,11 @@
 		27916B1E27D6202E00504037 /* TapCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1D27D6202E00504037 /* TapCircleView.swift */; };
 		27916B2027D753A100504037 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B1F27D753A100504037 /* FrameView.swift */; };
 		27916B2C27D7C65400504037 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B2B27D7C65400504037 /* CameraManager.swift */; };
+		27916B3027D7EE1600504037 /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B2F27D7EE1500504037 /* NextStepButton.swift */; };
+		27916B3427D8B88100504037 /* BlenderSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3327D8B88100504037 /* BlenderSound.mp3 */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
 		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
-		27E60D0E27CF8EAB00DA1388 /* NextStepButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
 		27F0081727BE866300C7975D /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081627BE866300C7975D /* Avatar.swift */; };
@@ -79,10 +80,11 @@
 		27916B1D27D6202E00504037 /* TapCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapCircleView.swift; sourceTree = "<group>"; };
 		27916B1F27D753A100504037 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		27916B2B27D7C65400504037 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		27916B2F27D7EE1500504037 /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
+		27916B3327D8B88100504037 /* BlenderSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlenderSound.mp3; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
-		27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepButton.swift; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		27F0081627BE866300C7975D /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
@@ -194,7 +196,7 @@
 		27705A9C27C23A7900F996B4 /* ButtonViews */ = {
 			isa = PBXGroup;
 			children = (
-				27E60D0D27CF8EAB00DA1388 /* NextStepButton.swift */,
+				27916B2F27D7EE1500504037 /* NextStepButton.swift */,
 				27705A9D27C23A8D00F996B4 /* ContinueButton.swift */,
 				27705A9F27C23A9500F996B4 /* BackButton.swift */,
 			);
@@ -229,6 +231,7 @@
 		27A2EAB727D3F6E800693B83 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				27916B3327D8B88100504037 /* BlenderSound.mp3 */,
 				27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */,
 				27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */,
 			);
@@ -336,6 +339,7 @@
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,
 				2702B05127B652C400A0E5DD /* Preview Assets.xcassets in Resources */,
 				2702B04E27B652C400A0E5DD /* Assets.xcassets in Resources */,
+				27916B3427D8B88100504037 /* BlenderSound.mp3 in Resources */,
 				2754CEA427B66F14002761F9 /* HappyMonkey-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +356,6 @@
 				2780A37A27B65BDA001B34CE /* NameInputView.swift in Sources */,
 				2780A37627B65B57001B34CE /* CreateRecipeView.swift in Sources */,
 				27F0081F27BE887F00C7975D /* Ingredient.swift in Sources */,
-				27E60D0E27CF8EAB00DA1388 /* NextStepButton.swift in Sources */,
 				47260E9527BC242400F0ED80 /* AvatarSelectionView.swift in Sources */,
 				2702B04C27B652C100A0E5DD /* ContentView.swift in Sources */,
 				47BE6C3827CD3BEA000EB64B /* ShakingView.swift in Sources */,
@@ -375,6 +378,7 @@
 				2754CEA827B7AB3E002761F9 /* RecipeViewModel.swift in Sources */,
 				27916B1A27D52CFB00504037 /* PhotoCaptureView.swift in Sources */,
 				5AC3B36927BFB1920001F73F /* ShakeView.swift in Sources */,
+				27916B3027D7EE1600504037 /* NextStepButton.swift in Sources */,
 				47C5A9B627BCF6CB004D4A9A /* RecipeCardView.swift in Sources */,
 				5A809A5327C63FA4006B1749 /* TimeLineView.swift in Sources */,
 				27916B1E27D6202E00504037 /* TapCircleView.swift in Sources */,
@@ -544,8 +548,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,8 +585,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

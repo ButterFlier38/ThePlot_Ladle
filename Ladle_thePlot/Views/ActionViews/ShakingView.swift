@@ -82,11 +82,7 @@ struct ShakingView: View {
                             
                             //                                    .padding().padding(10)
                         })
-                //                .overlay(Text("ipad.homebutton")
-                //                           .scaledToFit()
-                //                            .padding().padding(10)
-                //                            .multilineTextAlignment(.center)
-                //                          )
+            
                     .frame(width: geometry.size.width * 0.7 ,height: geometry.size.height * 0.11, alignment: .bottom)
                     .position(x: geometry.size.width * 0.62, y: geometry.size.height * 0.92)
                 
@@ -99,6 +95,8 @@ struct ShakingView: View {
             currentScene += 1
             change.toggle()
             finalResultNeeded.toggle()
+            SoundManager.instance.playSound("BlenderSound.mp3" , spd: 3, vol: 1)
+
         }
         
         

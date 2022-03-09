@@ -18,19 +18,24 @@ struct CrushView: View {
     var image2 :String
     @State private var scale :CGFloat = 0.4
     @Binding var currentScene :Int
-    @State  var move :CGFloat = 0.975
+    @State  var move :CGFloat = 0.96
     @State var change :Bool = false
-
+    var NuvolettaCrushText : String = "Tap on the dough"
     var body: some View {
         GeometryReader { geometry in
-
+            ZStack{
+                
             if !change {
                 Image(image1)
                     .resizable()
                     .scaleEffect(scale)
                     .aspectRatio(1.2, contentMode: .fit)
-                    .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
-
+                    .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                   .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
+                   
+                
+                
+                
                     .onTapGesture {
                         if scale < 0.7 {
                             scale += 0.1
@@ -44,35 +49,48 @@ struct CrushView: View {
             
             else {
                 if image2 != "no-value" {
+
                     Image(image2)
-                        .resizable()
-                        .scaleEffect(scale)
-                        .aspectRatio(1.2, contentMode: .fit)
-                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                                       .resizable()
+                                       .scaleEffect(scale)
+                                       .aspectRatio(1.2, contentMode: .fit)
+                                       .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                                      .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
                 }
                 else {
                     Image(image1)
                         .resizable()
                         .scaleEffect(scale)
                         .aspectRatio(1.2, contentMode: .fit)
-                        .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/2)
+                        .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                       .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
+                    
+                    
+               
+                    
                 }
                 
-                Button{
+                NextStepButton().onTapGesture {
                     currentScene += 1
-                }label: {
-                    
-                    NextStepButton()
-                        
-                } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-           .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
-           .disabled(scale != 0.7)
-                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-                    .onAppear{
-                        move =  0.99
-                    }
+                }.disabled(scale != 0.7)
+                   
             }
+                
+                Image("nuvoletta")
+                    .resizable()
+//                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                    .overlay(
+                       Text(LocalizedStringKey(String(NuvolettaCrushText)))
+                                       .scaledToFit()
+                                       .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
+                                       .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue))
+                    .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.1, alignment: .bottom)
+                    .position(x: geometry.size.width * 0.34 ,y: geometry.size.height * 0.6)
+                
+ 
         }
+//            .offset(x: 0 , y:-geometry.size.height/3)
+    }
     }
 }
 
