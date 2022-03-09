@@ -86,7 +86,7 @@ struct AretheysimilarView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     //                        .shadow(color: CustomColor.selectionblue, radius: 3)
                     
-                    HStack (alignment: .center, spacing: 100) {
+                    HStack (alignment: .center, spacing: 50) {
                         
                         Image(recipe.image)
                             .resizable()
@@ -99,18 +99,21 @@ struct AretheysimilarView: View {
                             Button() {
                                 self.showImagePicker = true
                             }label: {
-                                FrameView(image: model.frame).frame( height: geometry.size.height * 0.5, alignment: .center)
+                                FrameView(image: model.frame)
+//
                             }
                             
-                            
-                            image?.resizable()
+                           image?.resizable()
                                 .clipShape(Circle())
-                            //                                .aspectRatio(0.9, contentMode: .fit)
-                                .frame( height: geometry.size.height * 0.5, alignment: .center)
+//                                .aspectRatio(0.9, contentMode: .fit)
+                                .scaledToFit()
+//                                .frame( height: geometry.size.height * 0.5, alignment: .center)
                         }
-                        
-                    } .padding(30)
-                        .frame(width: geometry.size.width/1.4,height: geometry.size.height/2)
+                    }
+//                        .padding(30)
+                        .frame( height: geometry.size.height * 0.5, alignment: .center)
+                    
+//                        .frame(width: geometry.size.width/1.4,height: geometry.size.height/2)
                     Spacer()
                     Spacer()
                 } //Close vstack
