@@ -44,7 +44,7 @@ struct DragIngredientCardView: View {
                                                 if !isDragged {
                                                     self.pos = CGPoint(x: $0.location.x, y: $0.location.y)
                                                     self.dragAmount = CGSize(width : $0.translation.width, height: $0.translation.height)
-                                                    //                                                    self.dragAmount = CGPoint(x : $0.translation.width, y : $0.translation.height)
+                                                  
                                                 }
                                             
                                         }

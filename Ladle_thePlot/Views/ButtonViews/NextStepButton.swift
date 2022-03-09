@@ -19,7 +19,10 @@ struct NextStepButton: View {
             .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
             .onAppear{
                 move =  0.95
-            }    }
+            }
+            
+            
+        }
     }
 }
 

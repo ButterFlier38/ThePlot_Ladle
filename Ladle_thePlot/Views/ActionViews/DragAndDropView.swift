@@ -19,10 +19,7 @@ struct DragAndDropView: View {
     @Binding var username : String
     
     var sceneViewModel :SceneViewModel = SceneViewModel()
-    
-    
-    @State var dragCount = 0
-    @State  var move :CGFloat = 0.975
+
     var NuvolettaAddText : String = "Place the ingredients"
     @State private var goToSimilarView: Bool = false
     
@@ -95,6 +92,8 @@ struct DragAndDropView: View {
                 } // :Vstack
 //                .offset(x: 0 , y:-geometry.size.height/4)
               
+            }.onAppear {
+                SoundManager.instance.playSound("NextStepSound.mp3" , spd: 1, vol: 0.5)
             }
         }
         

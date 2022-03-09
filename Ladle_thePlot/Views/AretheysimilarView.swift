@@ -126,6 +126,10 @@ struct AretheysimilarView: View {
                 PhotoCaptureView(showImagePicker: self.$showImagePicker, image: self.$image)
             }
         } //close geometry
+        .onAppear {
+            SoundManager.instance.playSound("VictorySound.mp3" , spd: 1, vol: 1)
+        }
+        
         
     }
 }
