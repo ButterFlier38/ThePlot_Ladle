@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ShakingView: View {
     @Binding var currentScene :Int
-    @State var change :Bool = false
     var scene :RecipeScene
-    var sceneViewModel :SceneViewModel = SceneViewModel()
     @Binding var finalResultNeeded :Bool
     @State  var move :CGFloat = 0.41
+    @State var change :Bool = false
     var isFinal :Bool
+    var vignette :String
+    var sceneViewModel :SceneViewModel = SceneViewModel()
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -64,6 +66,7 @@ struct ShakingView: View {
                 Image("nuvoletta")
                     .resizable()
                     .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                    .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.1)
                     .overlay(
                         HStack{
                             Spacer().frame(width: geometry.size.width * 0.1)
@@ -75,7 +78,7 @@ struct ShakingView: View {
                                 .padding(3)
                                 .multilineTextAlignment(.center)
                                 .rotationEffect(.degrees(90))
-                            Text(LocalizedStringKey("Shake your ipad to blend the ingredients!"))
+                            Text(LocalizedStringKey(vignette))
                                 .scaledToFit()
                                 .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.03))
                                 .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)

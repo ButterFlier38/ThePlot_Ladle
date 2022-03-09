@@ -14,13 +14,12 @@ struct DragAndDropView: View {
     var recipe :Recipe
     @Binding var currentScene :Int
     @State var dragCount = 0
-    @State  var move :CGFloat = 0.945
     var isFinal :Bool
     @Binding var username : String
+    var vignette :String
     
     var sceneViewModel :SceneViewModel = SceneViewModel()
 
-    var NuvolettaAddText : String = "Place the ingredients"
     @State private var goToSimilarView: Bool = false
     
     
@@ -59,9 +58,10 @@ struct DragAndDropView: View {
                     
                     Image("nuvoletta")
                         .resizable()
+                        .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.1)
 //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                         .overlay(
-                           Text(LocalizedStringKey(String(NuvolettaAddText)))
+                           Text(LocalizedStringKey(String(vignette)))
                                            .scaledToFit()
                                            .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
                                            .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)

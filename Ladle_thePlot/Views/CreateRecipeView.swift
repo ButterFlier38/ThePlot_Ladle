@@ -87,7 +87,7 @@ struct CreateRecipeView: View {
                             
                             if scene.name.lowercased().contains("add") && currentScene == scene.sceneNumber {
                               
-                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene, isFinal: currentScene == recipe.scenes.count, username: $username)
+                                DragAndDropView(scene: scene, recipe: recipe, currentScene: $currentScene, isFinal: currentScene == recipe.scenes.count, username: $username, vignette: scene.name)
 //                                    .frame(width: geometry.size.width * 0.9 ,height: geometry.size.height * 0.5)
 //                                    .offset(x: 0 , y:-geometry.size.height/4)
                                     .zIndex(0)
@@ -96,13 +96,13 @@ struct CreateRecipeView: View {
                             // shaking ingredients
                             
                             if scene.name.lowercased().contains("shake") && currentScene == scene.sceneNumber {
-                                ShakingView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded, isFinal: currentScene == recipe.scenes.count)
+                                ShakingView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded, isFinal: currentScene == recipe.scenes.count, vignette: scene.name)
                               
                             }
                             
                             // mixing the ingredients and spreading the ingredients
                             if (scene.name.lowercased().contains("mix") || scene.name.lowercased().contains("spread"))  && currentScene == scene.sceneNumber{
-                                MixView(username: $username, currentScene: $currentScene, firstImage: scene.container!, secondImage: scene.finalResult!, isFinal: currentScene == recipe.scenes.count)
+                                MixView(username: $username, currentScene: $currentScene, firstImage: scene.container!, secondImage: scene.finalResult!, vignette: scene.name, isFinal: currentScene == recipe.scenes.count)
                             }
                             
                             
@@ -113,13 +113,13 @@ struct CreateRecipeView: View {
                             
                             // roll out view
                             if scene.name.lowercased().contains("roll out") && currentScene == scene.sceneNumber{
-                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "none", currentScene: $currentScene)
+                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "none",vignette: scene.name, currentScene: $currentScene)
                             }
                             
 
                             // crushing ingredients
                             if scene.name.lowercased().contains("crush") && currentScene == scene.sceneNumber {
-                                CrushView(image1: scene.container!, image2: scene.finalResult ?? "none", currentScene: $currentScene)
+                                CrushView(image1: scene.container!, image2: scene.finalResult ?? "none", vignette: scene.name, currentScene: $currentScene)
                                 
                             }
                             

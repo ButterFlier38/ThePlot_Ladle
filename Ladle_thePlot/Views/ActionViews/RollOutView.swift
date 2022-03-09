@@ -12,8 +12,9 @@ struct RollOutView : View{
     
     var image1 :String
     var image2 :String
-    
+    var vignette :String
     @Binding var currentScene :Int
+
     @State  var move :CGFloat = 0.975
     @State  var moveMattarello :CGFloat = 0.80
     @State var change :Bool = false
@@ -52,9 +53,9 @@ struct RollOutView : View{
                 
                 Image("nuvoletta")
                     .resizable()
-                //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                    .frame(width: geometry.size.width * 0.35, height: geometry.size.width * 0.1)              //     .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                     .overlay(
-                        Text(LocalizedStringKey(String("Tap to roll out the dough!")))
+                        Text(LocalizedStringKey(String(vignette)))
                             .scaledToFit()
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
                             .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue))
