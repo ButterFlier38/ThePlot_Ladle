@@ -15,7 +15,7 @@ struct TimeLineView: View {
     @EnvironmentObject var avatarViewModel : AvatarViewModel
     @Binding var finalResultNeeded :Bool
     
-@State private var currentIndex = 0
+    @State  var ScrollToIndex : Int = 0
     
     
     var StartText : String = "Start"
@@ -23,9 +23,19 @@ struct TimeLineView: View {
         //       timeline view
         ZStack {
             GeometryReader { geometry in
+                
+//                if let index = currentScene {
+//                    ScrollToIndex = index
+//                }
+                
                 ScrollView{
+                    ScrollViewReader { proxy in
+                        
+                      
                     VStack(alignment:.leading, spacing: 10){
                         
+                       
+                       
                         Text(LocalizedStringKey(String(StartText)))
                             .font(Font.custom("HappyMonkey-Regular", size: 40))
                             .minimumScaleFactor(0.0001)
@@ -112,11 +122,17 @@ struct TimeLineView: View {
                             } //: else if statemnet
                         } //:foreach
                         
+//                        .onChange(of: ScrollToIndex, perform: { value in
+//                            proxy.scrollTo(value, anchor:  nil)
+//                        })
+                        
                     } //:Vstack
                     .frame( alignment: .leading)
                     .padding(5)
+                        
 
                     
+                } //scroll view reader
                 } //:scrollview
                 .frame(width: geometry.size.width * 0.1, alignment: .leading)
              
@@ -124,6 +140,7 @@ struct TimeLineView: View {
 //            .frame( width:UIScreen.main.bounds.width, alignment: .leading)
            
         } //zstack
+        
         
     } //: body
 } //: view

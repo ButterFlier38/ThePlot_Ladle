@@ -92,7 +92,8 @@ struct StepsView: View {
                 
                 Ellipse()
                     .fill(CustomColor.bggreen)
-                    .position(x: geometry.size.width/8, y: geometry.size.width/1.38)
+                    .position(x: geometry.size.width/5.5, y: geometry.size.height/1.3)
+                    .frame(width:  geometry.size.width * 0.75, height:  geometry.size.height * 0.7)
                 //            smaller y goes lower,
                 //                .scaleEffect(1)
                 
@@ -132,7 +133,7 @@ struct StepsView: View {
             }
             
         }.onAppear{
-            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8, vol: 0.5)
+            SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8, vol: 0.2)
         }
     }
 }

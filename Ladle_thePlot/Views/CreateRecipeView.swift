@@ -122,11 +122,7 @@ struct CreateRecipeView: View {
                                 CrushView(image1: scene.container!, image2: scene.finalResult ?? "none", vignette: scene.name, currentScene: $currentScene)
                                 
                             }
-                            
                         }
-                        
-                        
-                        
                     }
                     
                 }

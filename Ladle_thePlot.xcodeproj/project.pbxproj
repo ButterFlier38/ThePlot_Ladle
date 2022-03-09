@@ -32,8 +32,8 @@
 		27916B3627D8BAE900504037 /* NextStepSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3527D8BAE900504037 /* NextStepSound.mp3 */; };
 		27916B3827D8BB3100504037 /* AvatarChangeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3727D8BB3100504037 /* AvatarChangeSound.mp3 */; };
 		27916B3A27D8BD3E00504037 /* VictorySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3927D8BD3E00504037 /* VictorySound.mp3 */; };
+		27916B3E27D8C37200504037 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3D27D8C37200504037 /* ButtonClick.mp3 */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
-		27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
 		27F0081527BE863100C7975D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0081427BE863100C7975D /* Recipe.swift */; };
@@ -90,8 +90,8 @@
 		27916B3527D8BAE900504037 /* NextStepSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NextStepSound.mp3; sourceTree = "<group>"; };
 		27916B3727D8BB3100504037 /* AvatarChangeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AvatarChangeSound.mp3; sourceTree = "<group>"; };
 		27916B3927D8BD3E00504037 /* VictorySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VictorySound.mp3; sourceTree = "<group>"; };
+		27916B3D27D8C37200504037 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
-		27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
 		27F0081427BE863100C7975D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 				27916B3327D8B88100504037 /* BlenderSound.mp3 */,
 				27916B3527D8BAE900504037 /* NextStepSound.mp3 */,
 				27916B3927D8BD3E00504037 /* VictorySound.mp3 */,
+				27916B3D27D8C37200504037 /* ButtonClick.mp3 */,
 				27916B3727D8BB3100504037 /* AvatarChangeSound.mp3 */,
-				27A2EAB827D3F6F800693B83 /* ButtonClick.mp3 */,
 				27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */,
 			);
 			path = Sounds;
@@ -351,7 +351,6 @@
 				27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */,
 				27916B3627D8BAE900504037 /* NextStepSound.mp3 in Resources */,
 				5ACCB70127CFA2E5008A75D5 /* Localizable.strings in Resources */,
-				27A2EABA27D3F6F800693B83 /* ButtonClick.mp3 in Resources */,
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,
 				2702B05127B652C400A0E5DD /* Preview Assets.xcassets in Resources */,
 				2702B04E27B652C400A0E5DD /* Assets.xcassets in Resources */,
@@ -359,6 +358,7 @@
 				27916B3427D8B88100504037 /* BlenderSound.mp3 in Resources */,
 				2754CEA427B66F14002761F9 /* HappyMonkey-Regular.ttf in Resources */,
 				27916B3A27D8BD3E00504037 /* VictorySound.mp3 in Resources */,
+				27916B3E27D8C37200504037 /* ButtonClick.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
