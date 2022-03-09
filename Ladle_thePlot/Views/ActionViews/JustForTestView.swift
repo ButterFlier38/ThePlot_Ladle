@@ -18,6 +18,8 @@ struct JustForTestView: View {
                 currentScene += 1
             }
           
+        }.onAppear {
+            SoundManager.instance.playSound("NextStepSound.mp3" , spd: 1, vol: 0.5)
         }
     }
 }

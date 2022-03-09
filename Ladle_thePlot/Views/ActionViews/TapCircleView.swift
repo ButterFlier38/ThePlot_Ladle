@@ -54,6 +54,8 @@ struct FillingCircle: View{
                 self.fill += 0.10
           
             
+        }.onAppear {
+            SoundManager.instance.playSound("NextStepSound.mp3" , spd: 1, vol: 0.5)
         }
         
         

@@ -90,6 +90,8 @@ struct CrushView: View {
  
         }
 //            .offset(x: 0 , y:-geometry.size.height/3)
+    }.onAppear {
+        SoundManager.instance.playSound("NextStepSound.mp3" , spd: 1, vol: 0.5)
     }
     }
 }
