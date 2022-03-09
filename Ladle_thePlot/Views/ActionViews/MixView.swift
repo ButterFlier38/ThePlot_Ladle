@@ -38,6 +38,7 @@ struct MixView: View {
                         .zIndex(0)
                     
                     MixAnimationView(counter: $counter)
+                        .position(x: geometry.size.width * 0.65, y:geometry.size.height * 0.48)
                 }
                 
                 
@@ -71,7 +72,7 @@ struct MixView: View {
                 Image("nuvoletta")
                     .resizable()
                     .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.1)
-//                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
+                    .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                     .overlay(
                        Text(LocalizedStringKey(String(vignette)))
                                        .scaledToFit()
@@ -81,7 +82,7 @@ struct MixView: View {
                         )
     
                     .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.1, alignment: .bottom)
-                    .position(x: geometry.size.width * 0.34 ,y: geometry.size.height * 0.6)
+                    .position(x: geometry.size.width * 0.5 ,y: geometry.size.height * 0.88)
                 
             } // :zstack
             

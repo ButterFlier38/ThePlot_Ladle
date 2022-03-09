@@ -13,8 +13,8 @@ struct MixAnimationView : View{
     @State var temperatureValue: CGFloat = 0.0
     @State var angleValue: CGFloat = 0.0
     @Binding var counter : Int
-   
-
+    
+    
     
     let config = Config(minimumValue: 0.0,
                         maximumValue: 40.0,
@@ -26,44 +26,47 @@ struct MixAnimationView : View{
         
         
         //            background dashed line
-                    Circle()
-                        .stroke(Color.gray,
-                                style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [3, 23.18]))
-                        .frame(width: config.radius * 2, height: config.radius * 2)
-                    
-                    
+        Circle()
+            .stroke(Color.gray,
+                    style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [3, 23.18]))
+            .frame(width: config.radius * 2, height: config.radius * 2)
+        
+        
         //            the circle that fills with the drag gesture
-                    Circle()
-                        .trim(from: 0.0, to: temperatureValue/config.totalValue)
-                        .stroke(temperatureValue < (config.maximumValue * 4/5) ? CustomColor.selectionblue : CustomColor.selectiongreen,  style: StrokeStyle(lineWidth: 30,lineCap: .round))
-
-                        .rotationEffect(.degrees(-90))
-                    
+        Circle()
+            .trim(from: 0.0, to: temperatureValue/config.totalValue)
+            .stroke(temperatureValue < (config.maximumValue * 4/5) ? CustomColor.selectionblue : CustomColor.selectiongreen,  style: StrokeStyle(lineWidth: 30,lineCap: .round))
+            .frame(width: config.radius * 1.5, height: config.radius * 1.5)
+        
+            .rotationEffect(.degrees(-90))
+        
         //            the dots that starts the circle
-                    Image("woodspoon")
-                        .frame(width: config.knobRadius * 1.5, height: config.knobRadius * 4.5)
-                        .padding(10)
-                        .offset(y: -config.radius)
-                        .rotationEffect(Angle.degrees(Double(angleValue)))
-                        .gesture(DragGesture(minimumDistance: 0.0)
-                                    .onChanged({ value in
-                                       change(location: value.location)
-
-                                        
-                            if  (temperatureValue > 39) {
-        //                        if you use 39.9 it becomes more sensible
-                                counter += 1
-                            }
-                            
-                         
-                                    })
-                   
-                        ) // :drag gesture
+        Image("woodspoon")
+            .resizable()
+            .rotationEffect(.degrees(90))
+            .frame(width: config.knobRadius * 5.5, height: config.knobRadius * 15.5)
+            .padding(10)
+            .offset(y: -config.radius)
+            .rotationEffect(Angle.degrees(Double(angleValue)))
+            .gesture(DragGesture(minimumDistance: 0.0)
+                        .onChanged({ value in
+                change(location: value.location)
+                
+                
+                if  (temperatureValue > 39) {
+                    //                        if you use 39.9 it becomes more sensible
+                    counter += 1
+                }
+                
+                
+            })
+                     
+            ) // :drag gesture
         
     }
     
     func change(location: CGPoint) {
-       
+        
         // creating vector from location point
         let vector = CGVector(dx: location.x, dy: location.y)
         
@@ -76,11 +79,11 @@ struct MixAnimationView : View{
         
         // convert angle value to temperature value
         let value = fixedAngle / (2.0 * .pi) * config.totalValue
-
-            temperatureValue = value
-            angleValue = fixedAngle * 180 / .pi // converting to degree
         
- 
+        temperatureValue = value
+        angleValue = fixedAngle * 180 / .pi // converting to degree
+        
+        
     }
 }
 
