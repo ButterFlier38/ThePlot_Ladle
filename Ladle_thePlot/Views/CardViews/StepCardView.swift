@@ -21,7 +21,7 @@ struct StepCardView: View {
                 Text(LocalizedStringKey(String(step))).font(Font.custom("HappyMonkey-Regular", size: 20))
                     .foregroundColor(CustomColor.selectionblue)
                     .multilineTextAlignment(.center)
-                    .padding(20)
+                    .padding(25)
                     .padding()
                     .background(CustomColor.bggreen)
                     .cornerRadius(33)
@@ -38,8 +38,8 @@ struct StepCardView: View {
                                 .scaleEffect(0.47)
                         ) //: overlay
                         .scaleEffect(0.5)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: geometry.size.width * 0.4, y: geometry.size.height * 0.12)
+//                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: geometry.size.width * 0.53, y: geometry.size.height * 0.12)
                         .padding(50)
                     
                     
@@ -57,7 +57,7 @@ struct StepCardView: View {
                             
                         )
                         .scaleEffect(0.5)
-                        .offset(x: -geometry.size.width * 0.47, y: -geometry.size.height * 0.5)
+                        .offset(x: -geometry.size.width * 0.55, y: -geometry.size.height * 0.5)
                         .padding(50)
                     
                 
@@ -74,8 +74,8 @@ struct StepCardView: View {
                                 .scaleEffect(0.47)
                         ) //: overlay
                         .scaleEffect(0.5)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: geometry.size.width * 0.4, y: geometry.size.height * 0.12)
+//                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: geometry.size.width * 0.53, y: geometry.size.height * 0.12)
                         .padding(50)
                     
                     
@@ -93,7 +93,7 @@ struct StepCardView: View {
                             
                         )
                         .scaleEffect(0.5)
-                        .offset(x: -geometry.size.width * 0.47, y: -geometry.size.height * 0.5)
+                        .offset(x: -geometry.size.width * 0.55, y: -geometry.size.height * 0.5)
                         .padding(50)
      
                 }

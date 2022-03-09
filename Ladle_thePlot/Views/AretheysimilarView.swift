@@ -45,11 +45,7 @@ struct AretheysimilarView: View {
                     .offset(x : 0, y : -500 )
                     .zIndex(0)
                 
-                
-                //                button here so it's placed always in the same place
-                
-                
-                
+
                 NavigationLink {
                     ChooseTheRecipeView(username: $username)
                 } label: {
@@ -105,16 +101,13 @@ struct AretheysimilarView: View {
                             
                            image?.resizable()
                                 .clipShape(Circle())
-//                                .aspectRatio(0.9, contentMode: .fit)
                                 .scaledToFit()
-//                                .frame( height: geometry.size.height * 0.5, alignment: .center)
+
                         }
                         Spacer() .frame(width: geometry.size.width * 0.1)
                     }
-//                    .padding(.leading, 30)
                         .frame( height: geometry.size.height * 0.4, alignment: .center)
-//                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-//                        .frame(width: geometry.size.width/1.4,height: geometry.size.height/2)
+
                     Spacer()
                     Spacer()
                 } //Close vstack

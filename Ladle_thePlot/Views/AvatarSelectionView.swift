@@ -44,8 +44,7 @@ struct AvatarSelectionView: View {
                 print("App icon failed to change due to \(error.localizedDescription)")
             } else {
                 print("App icon changed successfully")
-//                            done = true
-                print(isdone)
+
                 
             }
         })
@@ -99,10 +98,8 @@ struct AvatarSelectionView: View {
                         ForEach(avatarViewModel.avatarsStorage) { avatar in
                             Button(action:  {withAnimation(.easeOut(duration: 0.2)) {
                                 isdone = false
-                                print(isdone)
                                 avatarViewModel.toggleAvatarSelection(id: avatar.id)
-                                
-//                               changeIconName(to: iConName)
+
                             }}){
                                 
                                 Circle()
@@ -121,8 +118,7 @@ struct AvatarSelectionView: View {
              
                     NavigationLink(destination: ChooseTheRecipeView(username: $username), tag: true, selection: $isdone) {
                         Button(action: {changeIconName(to: iConName)
-                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8, vol: 0.5)
-                            print(isdone)
+                            SoundManager.instance.playSound("ButtonClick.mp3" , spd: 0.8, vol: 0.2)
                         }) {
                             ContinueButton().frame(width: geometry.size.width * 0.25,height: geometry.size.height * 0.12, alignment: .bottom).opacity(!avatarViewModel.isSomeAvatarSelected() ? 1 : 0.4)
                         }.padding(.bottom)
