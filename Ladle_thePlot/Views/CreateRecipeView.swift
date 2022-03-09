@@ -122,11 +122,7 @@ struct CreateRecipeView: View {
 //                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
                                 RollOutView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
                             }
-                            
                         }
-                        
-                        
-                        
                     }
                     
                 }

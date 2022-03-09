@@ -15,7 +15,7 @@ struct ShakingView: View {
     @Binding var finalResultNeeded :Bool
     @State  var move :CGFloat = 0.41
     var isFinal :Bool
-    
+    var NuvolettaShakeText : String = "Shake your iPad to blend the ingredients!"
     var body: some View {
         GeometryReader { geometry in
             
@@ -75,7 +75,7 @@ struct ShakingView: View {
                                 .padding(3)
                                 .multilineTextAlignment(.center)
                                 .rotationEffect(.degrees(90))
-                            Text(LocalizedStringKey("Shake your ipad to blend the ingredients!"))
+                            Text(LocalizedStringKey(String(NuvolettaShakeText)))
                                 .scaledToFit()
                                 .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.03))
                                 .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)
