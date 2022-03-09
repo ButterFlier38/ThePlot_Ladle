@@ -80,48 +80,32 @@ struct MixView: View {
                
                     ) // :drag gesture
 
+              
+                
+                
                 if counter > 0 {
     //
+                    ZStack{
                     Image(secondImage)
                         .resizable()
                         .scaleEffect(0.7)
                         .aspectRatio(1.2, contentMode: .fit)
                         .frame(width: geometry.size.width  ,height: geometry.size.height * 0.8, alignment: .bottomTrailing)
-                        .offset(x: geometry.size.width/14, y:geometry.size.height/6)
-                        .padding()
+//                        .offset(x: geometry.size.width/14, y:geometry.size.height/6)
+//                        .padding()
                         .zIndex(0).onAppear{change.toggle()}
     //                Text("The button with the animation has to appear")
                     
+                    
+                    
                     if !isFinal {
-                        
-                        Button{
+                        NextStepButton().onTapGesture {
                             currentScene += 1
-                        }label: {
-                            
-                            NextStepButton()
-                                
-                        } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-                   .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
-                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-                            .onAppear{
-                                move =  0.99
-                            }
+                        }
+                         }
+                    
                     }
-//                    else if isFinal {
-//                        
-//                        NavigationLink {
-//                            AretheysimilarView(username: $username, recipe: recipe)
-//                        } label: {
-//                            NextStepButton()
-//                            
-//                        } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-//                            .shadow(radius: move)
-//                            .position(x: geometry.size.width * move, y: geometry.size.height * 0.99)
-//                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-//                            .onAppear{
-//                                move =  0.99
-//                            }
-//                    } //: else if
+                 
                 }
             }
 

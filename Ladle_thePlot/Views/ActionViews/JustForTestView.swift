@@ -13,14 +13,11 @@ struct JustForTestView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            Button{
+            
+            NextStepButton().onTapGesture {
                 currentScene += 1
-            }label: {
-                
-                NextStepButton()
-                    
-            } .frame(width: geometry.size.width * 0.2,height: geometry.size.height * 0.2, alignment: .bottomTrailing)
-       .position(x: geometry.size.width, y: geometry.size.height * 0.99)
+            }
+          
         }
     }
 }

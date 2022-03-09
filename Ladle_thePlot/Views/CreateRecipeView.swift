@@ -15,10 +15,9 @@ struct CreateRecipeView: View {
     @State var currentScene = 1
     @Binding var username : String
     @State var finalResultNeeded :Bool = false
-    @State  var move :CGFloat = 0.41
     var LetsMakeItText : String = "Let's make it!"
     var isFinal :Bool = false
-    
+    @State private var goToSimilarView: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -50,13 +49,13 @@ struct CreateRecipeView: View {
                         
                         Circle()
                             .fill(.red).grayscale(0.2)
-                            .frame(width: geometry.size.width * 0.1,height: geometry.size.height * 0.1, alignment: .topTrailing)
-                            .overlay(  Image(systemName: "xmark").scaleEffect(2.5).foregroundColor(.white)
-
-                            )
-//                            .position(x: geometry.size.width * 0.9,y: geometry.size.height * 0.1)
-//
+                            .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1, alignment: .topTrailing)
+                            .overlay(  Image(systemName: "xmark").resizable().scaledToFit().scaleEffect(2.5).foregroundColor(.white)
+                                        .frame(width: geometry.size.width * 0.02 ,height: geometry.size.height * 0.02 , alignment: .center)
+                                       )
+            
                     }.padding(.trailing, 10)
+                        
                     
 //                    .frame(alignment: .center)
 
@@ -82,11 +81,7 @@ struct CreateRecipeView: View {
                                                                 .position(x: geometry.size.width * 0.65, y:geometry.size.height * 0.48)
                                                                 .padding()
                                                                 .zIndex(0)
-                                
-                                
-                                
-                                                            
-                                                        }
+                                   }
                             
                             // adding ingredients
                             
@@ -133,9 +128,6 @@ struct CreateRecipeView: View {
                 
                 
                 VStack (spacing:10) {
-                    
-                    
-                    
                     HStack{
                         //                            avatar
                         ZStack{
@@ -144,30 +136,24 @@ struct CreateRecipeView: View {
                             .scaledToFit()
                             .position(x: geometry.size.width * 0.12, y: geometry.size.height * 0.55) //perfect position for the character
                             .frame( height: geometry.size.height * 0.4, alignment: .bottom)
-                            
-                      
                         }
-                        
-                        if currentScene > recipe.scenes.count {
-                            
-                            NavigationLink {
-                                AretheysimilarView(username: $username, recipe: recipe)
-                            } label: {
-                                NextStepButton()
-                                
-                            } .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1, alignment: .bottomTrailing).shadow(radius: move)
-                                .position(x: geometry.size.width * move, y: geometry.size.height * 0.6)
-                                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: move)
-                                .onAppear{
-                                    move =  0.425
-                                }
-                        }
-                        
                     } //. HSTACK
                     .frame(width: geometry.size.width * 0.8 ,height: geometry.size.height * 0.3, alignment: .bottomTrailing)
-                    
                 } //close the VSTack
                 
+              
+                  
+                   NextStepButton().onTapGesture {
+                      self.goToSimilarView.toggle()
+                       
+                   }.disabled((currentScene <= recipe.scenes.count))
+                   
+                       .opacity((currentScene <= recipe.scenes.count) ? 0 : 1)
+             
+               NavigationLink(destination:  AretheysimilarView(username: $username, recipe: recipe), isActive: self.$goToSimilarView) { EmptyView() }
+                   
+       
+               
             } //close the ZStack
             .navigationBarHidden(true)
         } //close geometry bracket
