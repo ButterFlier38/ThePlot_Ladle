@@ -19,7 +19,7 @@ struct CrushView: View {
     var vignette :String
 
     @Binding var currentScene :Int
-    @State private var scale :CGFloat = 0.4
+    @State private var scale :CGFloat = 0.3
     @State var change :Bool = false
     
     
@@ -32,16 +32,16 @@ struct CrushView: View {
                     .resizable()
                     .scaleEffect(scale)
                     .aspectRatio(1.2, contentMode: .fit)
-                    .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height - geometry.size.height/2.5)
+                    .position(x: geometry.size.width - geometry.size.width/2.5, y: geometry.size.height * 0.5)
                     .frame(width: geometry.size.width * 0.9, alignment: .bottomTrailing)
                 
                 
                     .onTapGesture { // when the tap finish, current scene would be incremented
-                        if scale < 0.7 {
+                        if scale < 0.6 {
                             scale += 0.1
                         }
                         
-                        else if scale == 0.7 {
+                        else if scale == 0.6 {
                             change.toggle()
                             scale += 0.001
                         }
@@ -51,6 +51,7 @@ struct CrushView: View {
                 
                 Image("nuvoletta")
                     .resizable()
+                    .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                     .frame(width: geometry.size.width * 0.35, height: geometry.size.width * 0.1)
                 //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                     .overlay(
@@ -59,7 +60,7 @@ struct CrushView: View {
                             .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
                             .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue))
                     .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.1, alignment: .bottom)
-                    .position(x: geometry.size.width * 0.34 ,y: geometry.size.height * 0.6)
+                    .position(x: geometry.size.width * 0.55 ,y: geometry.size.height * 0.89)
                 
                 
                 NextStepButton().onTapGesture {

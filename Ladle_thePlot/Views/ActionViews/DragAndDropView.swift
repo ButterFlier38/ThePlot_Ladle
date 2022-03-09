@@ -69,7 +69,7 @@ struct DragAndDropView: View {
                             )
         
                         .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.1, alignment: .bottom)
-                        .position(x: geometry.size.width * 0.34 ,y: geometry.size.height * 0.6)
+                        .position(x: geometry.size.width * 0.35 ,y: geometry.size.height * 0.53)
                     
                     
                                  

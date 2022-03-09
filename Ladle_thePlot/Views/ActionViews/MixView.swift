@@ -82,7 +82,7 @@ struct MixView: View {
                         )
     
                     .frame(width: geometry.size.width * 0.25 ,height: geometry.size.height * 0.1, alignment: .bottom)
-                    .position(x: geometry.size.width * 0.5 ,y: geometry.size.height * 0.88)
+                    .position(x: geometry.size.width * 0.55 ,y: geometry.size.height * 0.89)
                 
             } // :zstack
             
