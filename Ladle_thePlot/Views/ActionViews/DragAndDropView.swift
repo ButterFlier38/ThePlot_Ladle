@@ -12,12 +12,16 @@ import UniformTypeIdentifiers
 struct DragAndDropView: View {
     var scene :RecipeScene
     var recipe :Recipe
-    var sceneViewModel :SceneViewModel = SceneViewModel()
     @Binding var currentScene :Int
-    @State var dragCount = 0
-    @State  var move :CGFloat = 0.975
     var isFinal :Bool
     @Binding var username : String
+    
+    var sceneViewModel :SceneViewModel = SceneViewModel()
+    
+    
+    @State var dragCount = 0
+    @State  var move :CGFloat = 0.975
+
     
     
     var body: some View {
