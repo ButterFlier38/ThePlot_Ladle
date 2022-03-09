@@ -134,9 +134,8 @@ struct AvatarSelectionView: View {
                 .frame(width: geometry.size.width * 0.8)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .navigationBarHidden(true)
-            }.onAppear{
-                SoundManager.instance.playSound("ButtonClick.mp3", spd: 0.8 , vol: 0.5)
-               
+            }.onAppear {
+                SoundManager.instance.playSound("NextStepSound.mp3" , spd: 1, vol: 0.5)
             }
         }
     }
