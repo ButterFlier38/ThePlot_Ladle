@@ -14,6 +14,7 @@
 "What's your child's name?" = "Qual è il nome del tuo bambino?";
 "Continue" = "Continua";
 "Let's make it!" = "Mani in pasta!";
+"Start" = "Inizio";
 
 
 //ingredients and quantities (from ingredients view model)
