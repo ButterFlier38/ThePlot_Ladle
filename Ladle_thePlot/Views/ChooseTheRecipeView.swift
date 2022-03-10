@@ -69,7 +69,7 @@ struct ChooseTheRecipeView: View {
                     } .frame( height: geometry.size.height * 0.35, alignment: .center)
                 })
                     .padding()
-                Spacer()
+//                Spacer()
             }
             .navigationBarHidden(true)
         }  .edgesIgnoringSafeArea([.top,.bottom])
