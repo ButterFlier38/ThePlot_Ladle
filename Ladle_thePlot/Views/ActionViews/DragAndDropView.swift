@@ -43,7 +43,6 @@ struct DragAndDropView: View {
                         ForEach(scene.stepIngredients!, id: \.self) { ingredient in
                             
                             if ingredient != "" {
-                                
                                 DragIngredientCardView( ingredient: IngredientViewModel().getIngredient(ingredient: ingredient, recipe: recipe.name)!, dragCount: $dragCount)
                                 .zIndex(1)
                             }
