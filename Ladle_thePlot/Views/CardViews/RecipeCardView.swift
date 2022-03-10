@@ -16,7 +16,7 @@ struct RecipeCardView: View {
             .foregroundColor(Color(recipe.color))
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.7)
                         .padding()
-                        .overlay(Image(recipe.image).resizable().scaledToFit()
+                        .overlay(Image(recipe.image).resizable().scaledToFit().opacity(recipe.image == "meatballs" ? 0.5 : 1)
                                     .padding(37)
                         )
                  .overlay(

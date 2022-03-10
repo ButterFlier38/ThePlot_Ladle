@@ -93,10 +93,18 @@ struct BakeView: View {
                 .fill(CustomColor.selectionblue)
                 .frame(width: geometry.size.width * 0.45  ,height: geometry.size.height * 0.4, alignment: .bottomTrailing)
                 .position(x: geometry.size.width * 0.4, y:geometry.size.height * 0.45).opacity(0.3).zIndex(0)
-
-            Image("oven").resizable().scaledToFit()
-                .frame(width: geometry.size.width * 0.4  ,height: geometry.size.height * 0.4, alignment: .bottomTrailing)
-                .position(x: geometry.size.width * 0.55, y:geometry.size.height * 0.45).zIndex(0)
+                .overlay( Image("oven").resizable().scaledToFill()
+//                            .scaleEffect(2.5)
+                            .frame(width: geometry.size.width * 0.5  ,height: geometry.size.height * 0.45)
+                            .position(x: geometry.size.width * 0.45, y: geometry.size.height * 0.45)
+                )
+//                          )
+//            Image("oven")
+////                .resizable()
+////                .scaledToFit()
+//                .frame(width: geometry.size.width * 0.4  ,height: geometry.size.height * 0.4, alignment: .bottomTrailing)
+//                .position(x: geometry.size.width * 0.55, y:geometry.size.height * 0.45).zIndex(0)
+                
 //
             Image("nuvoletta")
                 .resizable()

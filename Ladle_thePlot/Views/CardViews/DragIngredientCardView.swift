@@ -66,18 +66,8 @@ struct DragIngredientCardView: View {
                                                 self.dragAmount = .zero
                                                 isDragged = false
                                             }
-                                            
-                                            
-                                            
-                                            
-                                        }
-                                    //                                 }
-                                )
-                    )
-                
-               
+                                         } ))
             }
-            
         }
     }
 }
