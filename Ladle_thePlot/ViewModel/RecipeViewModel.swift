@@ -17,11 +17,11 @@ struct RecipeViewModel {
      
      Recipe(name: "crepe", image: "crepe" ,color: "bgblue", ingredients: ["milk", "eggs", "melted butter", "sugar","salt","flour","fruit"], alternativeIngredients: ["yogurt",  "", "frozen fruit", "honey"], recipeSteps: ["Place the milk, eggs, melted butter, sugar, vanilla, salt, and flour into a blender. Blend until the batter Melt a small of pat of butter in a frying pan over medium-low heat.", "Pour about 1/4 cup batter into the pan. Turn the pan from side to side to make an even circle.Cook the crepe until lightly browned. Then flip it over and cook the other side. Repeat the process. Place a crepe on a plate and add chocolate and fruit to the center.Roll it up and it’s ready to eat!"], recipeAlternativeSteps: [""], scenes: ["Add ingredients","Rotate the pan"],islocked: true),
      
-     Recipe(name: "crepe", image: "icecream2" ,color: "bgyellow", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true),
+     Recipe(name: "pannaicecream", image: "icecream2" ,color: "bgyellow", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true),
      
-     Recipe(name: "crepe", image: "spagetti" ,color: "bggreen", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true),
+     Recipe(name: "spagetti", image: "spagetti" ,color: "bggreen", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true),
      
-     Recipe(name: "crepe", image: "meatballs" ,color: "bgpink", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true)
+     Recipe(name: "meatballs", image: "meatballs" ,color: "bgpink", ingredients: ["", ""], alternativeIngredients: [""], recipeSteps: [""], recipeAlternativeSteps: [""], scenes: [""],islocked: true)
      
     ]
      
