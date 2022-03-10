@@ -34,6 +34,7 @@
 		27916B3A27D8BD3E00504037 /* VictorySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3927D8BD3E00504037 /* VictorySound.mp3 */; };
 		27916B3E27D8C37200504037 /* ButtonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27916B3D27D8C37200504037 /* ButtonClick.mp3 */; };
 		27916B4027D9029A00504037 /* BakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27916B3F27D9029A00504037 /* BakeView.swift */; };
+		27916B4227D9F27300504037 /* OvenSound.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 27916B4127D9F27300504037 /* OvenSound.ogg */; };
 		27A2EAB627D3F26C00693B83 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2EAB527D3F26C00693B83 /* SoundManager.swift */; };
 		27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */; };
 		27E60D1027CFB8A500DA1388 /* DragIngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */; };
@@ -93,6 +94,7 @@
 		27916B3927D8BD3E00504037 /* VictorySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VictorySound.mp3; sourceTree = "<group>"; };
 		27916B3D27D8C37200504037 /* ButtonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ButtonClick.mp3; sourceTree = "<group>"; };
 		27916B3F27D9029A00504037 /* BakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BakeView.swift; sourceTree = "<group>"; };
+		27916B4127D9F27300504037 /* OvenSound.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = OvenSound.ogg; sourceTree = "<group>"; };
 		27A2EAB527D3F26C00693B83 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		27A2EAB927D3F6F800693B83 /* IntroSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSound.mp3; sourceTree = "<group>"; };
 		27E60D0F27CFB8A500DA1388 /* DragIngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragIngredientCardView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				27916B3327D8B88100504037 /* BlenderSound.mp3 */,
 				27916B3527D8BAE900504037 /* NextStepSound.mp3 */,
+				27916B4127D9F27300504037 /* OvenSound.ogg */,
 				27916B3927D8BD3E00504037 /* VictorySound.mp3 */,
 				27916B3D27D8C37200504037 /* ButtonClick.mp3 */,
 				27916B3727D8BB3100504037 /* AvatarChangeSound.mp3 */,
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A2EABB27D3F6F800693B83 /* IntroSound.mp3 in Resources */,
+				27916B4227D9F27300504037 /* OvenSound.ogg in Resources */,
 				27916B3627D8BAE900504037 /* NextStepSound.mp3 in Resources */,
 				5ACCB70127CFA2E5008A75D5 /* Localizable.strings in Resources */,
 				2754CEA327B66F14002761F9 /* OFL.txt in Resources */,

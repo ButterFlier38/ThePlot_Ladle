@@ -22,6 +22,8 @@ struct BakeView: View {
     @State var pos = CGPoint(x: 10, y: 20)
     @State var isDragged : Bool = false
     @State private var scale: CGFloat = 0
+    @State private var scal2: CGFloat = 0
+
     @State private var indx : Double = 0
     @State private var opac: CGFloat = 1
     
@@ -32,8 +34,6 @@ struct BakeView: View {
     var body: some View {
         GeometryReader { geometry in
         ZStack{
-            
-            
             Image(scene.finalResult!)
                 .resizable()
                 .scaleEffect(scale)
@@ -76,7 +76,10 @@ struct BakeView: View {
                             isDragged = true
                             scale = 0.7
                             opac = 0.0
+                                scal2 = 1.0
                                 indx = 2
+                                SoundManager.instance.playSound("OvenSound.ogg" , spd: 2.5, vol: 0.5)
+
                             }
 //
                         } else {
@@ -116,9 +119,10 @@ struct BakeView: View {
                 else if isFinal && scale >= 0.7 {
                     self.goToSimilarView.toggle()
                 }
-            }
+            }.scaleEffect(scal2)
             .disabled(scale == 0)
                 .opacity((scale != 0) ? 1 : 0).zIndex(3)
+                .animation(.linear(duration: 1).delay(2.5), value: scal2)
            NavigationLink(destination:  AretheysimilarView(username: $username, recipe: recipe), isActive: self.$goToSimilarView) { EmptyView() }
              }
         }.onAppear {

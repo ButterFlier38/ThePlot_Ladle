@@ -1,3 +1,5 @@
+
+
 //
 //  RollOutView.swift
 //  Ladle_thePlot
@@ -15,12 +17,15 @@ struct RollOutView : View{
     var vignette :String
     @Binding var currentScene :Int
 
-    @State  var move :CGFloat = 0.975
+@State  var move :CGFloat = 0.975
     @State  var moveMattarello :CGFloat = 0.80
     @State var change :Bool = false
     
     @State var isClicked : Bool = false
     @State var count : Int = 0
+    
+    @State var location: CGPoint = CGPoint(x: 50, y: 50) // 1
+    @State var dragAmount : CGSize = .zero
     
     var body: some View{
         GeometryReader { geometry in
@@ -37,19 +42,40 @@ struct RollOutView : View{
                     .scaleEffect(0.7)
                     .scaledToFit()
                     .rotationEffect(.degrees(90))
-                    .offset(y: isClicked ? -85 :85)
+//                    .offset(y: isClicked ? -85 :85)
+                    .offset(dragAmount)
                     .position(x: geometry.size.width - geometry.size.width/2, y: geometry.size.height - geometry.size.height/1.7)
                     .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: moveMattarello)
-                    .onTapGesture{
-                        count += 1
-                        isClicked.toggle()
-                        moveMattarello =  0.90
+//                    .onTapGesture{
+//                        count += 1
+//                        isClicked.toggle()
+//                        moveMattarello =  0.90
+//
+//                        if count == 2 {
+//                            change.toggle()
+//                        }
+//
+//                    } // :on tap gesture
+                
+                    .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                                .onChanged({ value in
+                                    self.location = value.location
+                                    self.dragAmount = CGSize(width : value.translation.width, height: value.translation.height)
+                                    })
+                             
+                                    .onEnded({ value in
+                        self.dragAmount = .zero
                         
-                        if count == 2 {
+                                           if value.translation.height > 60 {
+                                                // down
+                                               count += 1
+                                            }
+                        if count > 1 {
                             change.toggle()
                         }
-                        
-                    } // :on tap gesture
+                                        }))
+                
+                
                 
                 Image("nuvoletta")
                     .resizable()
@@ -79,4 +105,3 @@ struct RollOutView : View{
     }
     
 }
-

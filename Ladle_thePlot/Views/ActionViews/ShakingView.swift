@@ -74,7 +74,7 @@ struct ShakingView: View {
                 Image("nuvoletta")
                     .resizable()
                     .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
-                    .frame(width: geometry.size.width * 0.3, height: geometry.size.width * 0.1)
+                    .frame(width: geometry.size.width * 0.7, height: geometry.size.width * 0.1)
                     .overlay(
                         HStack{
                             Spacer().frame(width: geometry.size.width * 0.1)

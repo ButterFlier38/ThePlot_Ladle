@@ -55,7 +55,7 @@ struct AretheysimilarView: View {
                         .overlay(
                             Text(LocalizedStringKey(String(buttonText))).font(Font.custom("HappyMonkey-Regular", size: 37 )).foregroundColor(.white).shadow(color: .white, radius: 1))
                     
-                }.position(x: geometry.size.width * 0.85, y:geometry.size.height * 0.9)
+                }.position(x: geometry.size.width * 0.8, y:geometry.size.height * 0.85)
                 
                 Image(avatarViewModel.getSelectedAvatar().image)
                     .resizable()
