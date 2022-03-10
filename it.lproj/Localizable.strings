@@ -49,7 +49,7 @@
 "Honey" = "Miele";
 "40g" = "40gr";
 "Ice Cubes" = "Cubetti di Ghiaccio";
-"50g" = "50g";
+"50g" = "50gr";
 "Strawberries"= "Fragole";
 "50g"= "50gr";
  "Milk"=  "Latte";
@@ -75,7 +75,11 @@
 "Add the oil and water. Stir with a wooden spoon until you have a sticky dough. Add a splash more water if needed." = "Procedi aggiungendo l'olio e l'acqua. Mescola con un mestolo di legno o una spatola fino ad ottenre un impasto appiccicoso. Se necessario aggiungi dell'acqua.";
 "Scatter a bit of flour over the surface and tip the dough onto it. Work it until you have a ball (10 mins).  Make sure that the dough is smooth and elastic." = "Distribuisci della farina sulla superficie di lavoro e posiziona l'impasto sopra. Lavora l'impasto fino ad ottenere una forma si sfera (circa 10 minuti). Assicurati che l'impasto è liscio ed elastico.";
 "Brush a clean bowl with a little olive oil, put the dough in it and cover with cling film. Leave it somewhere warm for it to grow until doubled in size." = "Trasferisci l'impasto in una nuova ciotola, precedentelmente spennellato con dell'olio d'oliva; coprire con della pellicola trasparente. Laciare riposare l'impasto in un luogo caldo fino al raddoppio del volume.";
-"Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough.Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly." = "Stendi l'impasto e pre-riscalda il forno a 220 C in modalità ventilata. Spennella una teglia da forno con dell'olio e stendici sopra l'impasto. Ora aiutandoti con un cucchiaio stendi la passata di pomodoro sulla pizza, lasciando un bordo libero. Cucina la pizza per 12-15 minuti. Quando sarà ben dorata sforna la pizza e lascaila raffreddare.";
+
+"Roll out the dough. Heat oven to 220C fan. Brush the baking trays with extra oil and roll out the dough, then lift onto the baking tray. Use the back of the spoon to spread the sauce over the dough." = "Stendi l'impasto e pre-riscalda il forno a 220 C in modalità ventilata. Spennella una teglia da forno con dell'olio e stendici sopra l'impasto. Ora aiutandoti con un cucchiaio stendi la passata di pomodoro sulla pizza lasciando un bordo libero.";
+
+"Bake the pizza for 12-15 mins until puffed up and golden around the edges, then carefully lift out of the oven. Leave to cool slightly." = "Cucina la pizza per 12-15 minuti. Quando sarà ben dorata sforna la pizza e lascaila raffreddare.";
+
 "Take the condensed milk and add it to the blender. Then take the ice and add it too." = "Aggiungi il latte condensato e il ghiaccio al frullatore.";
 "Now take the strawberries, wash them and cut them in half.  Repeat the process with the banana.Finally add the fruit to the blender and turn it on!" = "Ora occupati della frutta. Prendi le fragole, lavale e taglaile a pezzi. Ripeti il processo per la banana. Infine poni la frutta a pezzi nel frullatore.";
 
@@ -95,29 +99,29 @@
 "Mix to the powders" = "Mescola le polveri";
 "Mix to create a hole in the middle!" = "Mescola gli ingredienti e crea uno spazio al centro per i prossimi ingredienti!";
 
-"Add the liquids" = "Aggiungi gli ingredienti liquidi";
+"Add the liquids!" = "Aggiungi gli ingredienti liquidi!";
 "Add the warm water!" = "Versa l'acqua calda!";
 "Add the oil" = "Aggiugni l'olio";
 
-"Mix to create the dough" = "Mescola fino a creare l'impasto";
+"Mix to create the dough!" = "Mescola fino a creare l'impasto!";
 "The dough has to growth" = "L'impasto deve crescere";
 "Now the dough has to grow! Put a linen on the ipad and when you here a sound it means that the dough is ready." = "Ora l'impasto deve crescere! Posiziona uno canovaccio sull'ipad e fai crescere l'impasto fino a quando senti un suono.";
 
 "Crush the dough to roll out the dough" = "Lavora l'impasto e stendilo";
 "Crush the dough in order to obtain the pizza base!"= "Lavoro l'impasto e stendilo per ottenere la base della pizza!";
 
-"Add the ingredients for the seasoning" = "E ora prepariamo la salsa!";
+"Add the ingredients for the seasoning!" = "E ora prepariamo la salsa!";
 "Add the pomodoro sauce!" = "Aggiungi la passata di pomodoro!";
 "Add the salt!" = "Aggiungi il sale!";
 
 //"Spread the seasoning" = "Stendi la salsa di pomodoro";
 "Spread the seasoning!" = "Stendi la salsa di pomodoro!";
 
-"Add mozzarella" = "Aggiungi la mozzarella";
+//"Add mozzarella" = "Aggiungi la mozzarella";
 "Add mozzarella!" = "Aggiungi i pezzetti di mozzarella!";
 
 
-"Add ingredients" = "Aggiungi gli ingredienti";
+"Add the ingredients!" = "Aggiungi gli ingredienti!";
 "Add the condensed milk!" = "Aggiungi il latte condensato!";
 "Add the ice cubes" = "Aggiungi i cubetti di ghiaccio";
 "Add strawberries" = "Aggiugni le fragole";
@@ -133,5 +137,30 @@
 "Add sugar" = "Aggiungi lo zucchero";
 
 "Take a photo of the dish made in real-life!" = "Scatta una foto del piatto fatto nella vita reale!";
+
 "Place the ingredients" = "Mettere gli ingredienti";
 "Tap on the dough" = "Tocca l'impasto";
+
+
+
+
+
+
+
+
+"Add the powders!" = "Aggiungi le polveri";
+//"Add the liquids!" ddd
+//"Mix to create the dough!"ddd
+"Crush the dough by tapping it!" = "Lavora l'impasto toccandolo!";
+//"The dough has to growth!"
+"Roll out the dough by moving the rolling pin!" = "Stendere l'impasto muovendo il mattarello!";
+//"Add the ingredients for the seasoning!"ddd
+//"Spread the seasoning!"ggg
+//"Add mozzarella!" = "Aggiungi la mozzarella";ddd
+"Place the pizza in the oven" = "Mettete la pizza in forno";
+//"Add the ingredients" = ddd
+//"Shake to use the blender" = "Scuoti per usare il frullatore";
+"Shake to use the blender" = "Scuoti il discpositivo per frullare";
+
+
+

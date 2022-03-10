@@ -28,7 +28,7 @@ struct BakeView: View {
     @State private var opac: CGFloat = 1
     
     @State private var goToSimilarView: Bool = false
-    
+    var vignette :String
     
     
     var body: some View {
@@ -110,7 +110,7 @@ struct BakeView: View {
                 .resizable()
 //                            .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                 .overlay(
-                   Text(LocalizedStringKey(String(NuvolettaBakeText)))
+                   Text(LocalizedStringKey(vignette))
                                    .scaledToFit()
                                    .font(Font.custom("HappyMonkey-Regular", size:  geometry.size.height > geometry.size.width ? geometry.size.width * 0.2: geometry.size.height * 0.025))
                                    .multilineTextAlignment(.center).padding().foregroundColor(CustomColor.selectionblue)

@@ -76,7 +76,7 @@ struct StepsView: View {
                         
                         HStack(alignment: .center, spacing: 100) {
                             
-                            ForEach((0...recipe.recipeSteps.count-1).reversed(), id: \.self) { listItem in
+                            ForEach((0...recipe.recipeSteps.count-1), id: \.self) { listItem in
                                 self.render(listItem: listItem, step: recipe.recipeSteps[listItem])
                                     .frame(width: geometry.size.width / 3 ,height: geometry.size.height / 3)
                                     .position(x: geometry.size.width * 0.22, y: geometry.size.height * 0.25)
