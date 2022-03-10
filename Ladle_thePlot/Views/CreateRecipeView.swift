@@ -121,6 +121,12 @@ struct CreateRecipeView: View {
                             if scene.name.lowercased().contains("crush") && currentScene == scene.sceneNumber {
                                 CrushView(image1: scene.container!, image2: scene.finalResult ?? "none", vignette: scene.name, currentScene: $currentScene)
                                 
+                                if scene.name.lowercased().contains("oven") && currentScene == scene.sceneNumber {
+    //                                CrushView(image1: scene.container!, image2: scene.finalResult!, currentScene: $currentScene)
+                                    
+                                    BakeView(currentScene: $currentScene, scene: scene, finalResultNeeded: $finalResultNeeded, isFinal: currentScene == recipe.scenes.count , username : $username, recipe : recipe)
+    //                                RollOutView(image1: scene.container!, image2: scene.finalResult ?? "pizzadough", currentScene: $currentScene)
+                                }
                             }
                         }
                     }
